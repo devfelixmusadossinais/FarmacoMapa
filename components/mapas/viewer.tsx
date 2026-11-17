@@ -45,16 +45,16 @@ export function Viewer({ item }: { item: ItemCatalogo }) {
   return (
     <article>
       <p className="text-sm text-ink/55">
-        <Link href="/" className="hover:text-teal">
+        <Link href="/app" className="hover:text-teal">
           Início
         </Link>
         <span className="px-1.5">/</span>
         {item.tipo === "bonus" || !area ? (
-          <Link href="/bonus" className="hover:text-teal">
+          <Link href="/app/bonus" className="hover:text-teal">
             Bônus
           </Link>
         ) : (
-          <Link href={`/mapas?area=${area.slug}`} className="hover:text-teal">
+          <Link href={`/app/mapas?area=${area.slug}`} className="hover:text-teal">
             {area.nome}
           </Link>
         )}

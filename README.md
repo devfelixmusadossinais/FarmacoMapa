@@ -1,3 +1,5 @@
+> **Um site só:** a landing (os `.html` da raiz + css/img/js/assets) abre em `/` e o app abre em `/app`. O `prebuild` copia a landing para `public/` (gerada, fora do git). Edite a landing nos arquivos da raiz.
+
 # Mapa Mental Bioanálise
 
 App de estudo, mobile primeiro, para revisar bioanálise com mapas mentais. A interface está em português. O catálogo traz 170 mapas em 14 áreas, mais 5 vagas de bônus ainda vazias.
@@ -28,13 +30,13 @@ npm start
 
 | Rota | O que faz |
 | --- | --- |
-| `/` | Porta de acesso, onboarding (nome, foco, meta 2/3/5) e início com “continuar estudando” |
-| `/mapas` | Biblioteca. Filtro `?area=` e busca `?q=` sem acento |
-| `/mapas/[slug]` | Mapa: zoom 100–300%, lightbox, favoritar, marcar revisado |
-| `/favoritos` | Mapas marcados com o coração |
-| `/bonus` | As 5 vagas de bônus |
-| `/sugestoes` | Formulário. O pedido fica neste navegador |
-| `/premium` | O que a versão completa inclui e o e-mail liberado |
+| `/app` | Porta de acesso, onboarding (nome, foco, meta 2/3/5) e início com “continuar estudando” |
+| `/app/mapas` | Biblioteca. Filtro `?area=` e busca `?q=` sem acento |
+| `/app/mapas/[slug]` | Mapa: zoom 100–300%, lightbox, favoritar, marcar revisado |
+| `/app/favoritos` | Mapas marcados com o coração |
+| `/app/bonus` | As 5 vagas de bônus |
+| `/app/sugestoes` | Formulário. O pedido fica neste navegador |
+| `/app/premium` | O que a versão completa inclui e o e-mail liberado |
 
 No celular o menu abre pela esquerda. No desktop a mesma navegação fica fixa ao lado.
 

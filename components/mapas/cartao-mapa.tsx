@@ -8,7 +8,7 @@ export function CartaoMapa({ item }: { item: ItemCatalogo }) {
   const area = areaPorId(item.area);
   return (
     <Link
-      href={`/mapas/${item.slug}`}
+      href={`/app/mapas/${item.slug}`}
       className="group flex flex-col overflow-hidden rounded-[24px] bg-white shadow-[0_10px_30px_-18px_rgba(20,49,45,0.45)] ring-1 ring-black/5 transition hover:-translate-y-0.5"
     >
       <QuadroMapa item={item} />

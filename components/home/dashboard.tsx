@@ -104,7 +104,7 @@ export function Dashboard() {
 
           {area ? (
             <Link
-              href={`/mapas?area=${area.slug}`}
+              href={`/app/mapas?area=${area.slug}`}
               className="flex items-center gap-3 rounded-[22px] border border-white/10 bg-white/6 px-4 py-4 transition hover:bg-white/10"
             >
               <AreaIcon nome={area.icone} className="bg-pine-2" />
@@ -123,7 +123,7 @@ export function Dashboard() {
         <section className="rounded-[28px] bg-white p-4 shadow-[0_16px_40px_-28px_rgba(20,49,45,0.7)] ring-1 ring-black/5 sm:p-6">
           <p className="text-[11px] font-semibold tracking-[0.16em] text-teal">CONTINUAR ESTUDANDO</p>
           <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link href={`/mapas/${continuar.slug}`} className="block overflow-hidden rounded-2xl sm:w-72 sm:shrink-0">
+            <Link href={`/app/mapas/${continuar.slug}`} className="block overflow-hidden rounded-2xl sm:w-72 sm:shrink-0">
               <QuadroMapa item={continuar} />
             </Link>
             <div className="min-w-0 flex-1">
@@ -139,7 +139,7 @@ export function Dashboard() {
                 <div className="h-full rounded-full bg-teal" style={{ width: `${percentualGeral}%` }} />
               </div>
               <Button asChild className="mt-4 h-11 rounded-2xl px-5">
-                <Link href={`/mapas/${continuar.slug}`}>
+                <Link href={`/app/mapas/${continuar.slug}`}>
                   Continuar
                   <ArrowRight />
                 </Link>

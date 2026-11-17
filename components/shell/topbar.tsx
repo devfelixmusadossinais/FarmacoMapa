@@ -26,7 +26,7 @@ export function Topbar({ onMenu }: { onMenu: () => void }) {
     if (areaSlug) busca.set("area", areaSlug);
     if (texto.trim()) busca.set("q", texto.trim());
     const query = busca.toString();
-    router.push(query ? `/mapas?${query}` : "/mapas");
+    router.push(query ? `/app/mapas?${query}` : "/app/mapas");
   }
 
   const inicial = primeiroNome(perfil?.nome ?? "E").charAt(0).toUpperCase();
@@ -70,7 +70,7 @@ export function Topbar({ onMenu }: { onMenu: () => void }) {
         </label>
         <select
           id="filtro-area"
-          value={pathname.startsWith("/mapas") ? area : ""}
+          value={pathname.startsWith("/app/mapas") ? area : ""}
           onChange={(evento) => irParaBusca(consulta, evento.target.value)}
           className="hidden h-11 max-w-48 rounded-2xl border border-border bg-white px-3 text-sm lg:block"
         >
@@ -88,9 +88,9 @@ export function Topbar({ onMenu }: { onMenu: () => void }) {
           size="icon"
           className="relative size-11 rounded-2xl bg-white"
           aria-label="Favoritos"
-          onClick={() => router.push("/favoritos")}
+          onClick={() => router.push("/app/favoritos")}
         >
-          <Heart className={pathname === "/favoritos" ? "fill-clay text-clay" : ""} />
+          <Heart className={pathname === "/app/favoritos" ? "fill-clay text-clay" : ""} />
           {favoritos.length > 0 ? (
             <span className="absolute -top-1 -right-1 inline-flex min-w-5 items-center justify-center rounded-full bg-pine px-1 text-[10px] text-white">
               {favoritos.length}

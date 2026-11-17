@@ -29,7 +29,7 @@ export function PainelFavoritos() {
             Abra um mapa e toque em Favoritar. A lista fica vazia até você escolher o primeiro.
           </p>
           <Button asChild className="mt-5 h-11 rounded-2xl">
-            <Link href="/mapas">Ver os mapas</Link>
+            <Link href="/app/mapas">Ver os mapas</Link>
           </Button>
         </div>
       ) : (

@@ -35,7 +35,7 @@ export function Explorer({ areaInicial, consultaInicial }: { areaInicial: string
       if (areaRef.current) params.set("area", areaRef.current);
       if (texto) params.set("q", texto);
       const query = params.toString();
-      router.replace(query ? `/mapas?${query}` : "/mapas", { scroll: false });
+      router.replace(query ? `/app/mapas?${query}` : "/app/mapas", { scroll: false });
     }, 220);
     return () => window.clearTimeout(timer);
   }, [consulta, router]);
@@ -46,7 +46,7 @@ export function Explorer({ areaInicial, consultaInicial }: { areaInicial: string
     if (proximaArea) params.set("area", proximaArea);
     if (texto) params.set("q", texto);
     const query = params.toString();
-    router.replace(query ? `/mapas?${query}` : "/mapas", { scroll: false });
+    router.replace(query ? `/app/mapas?${query}` : "/app/mapas", { scroll: false });
   }
 
   const mapas = useMemo(

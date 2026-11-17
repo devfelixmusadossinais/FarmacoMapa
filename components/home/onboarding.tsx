@@ -20,7 +20,7 @@ export function Onboarding() {
   function concluir(perfil: Perfil) {
     window.scrollTo(0, 0);
     salvarPerfil(perfil);
-    router.push("/");
+    router.push("/app");
   }
 
   return (

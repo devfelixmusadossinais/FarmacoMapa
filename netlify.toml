@@ -4,6 +4,9 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Um site só: a landing (arquivos .html da raiz, copiados para public/ no
+# prebuild) responde em / e o app Next responde em /app. A API fica em /api.
+#
 # O plugin oficial da Netlify executa as rotas de API (acesso, imagem, webhook).
 # Não use `output: 'export'`: export estático não consegue barrar a imagem.
 # As imagens não vão dentro da função (limite de 50 MB no zip). O comando de
@@ -12,8 +15,44 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Landing na raiz, com e sem .html (as URLs .html continuam abrindo direto).
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/obrigado"
+  to = "/obrigado.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contato"
+  to = "/contato.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/termos-de-uso"
+  to = "/termos-de-uso.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/politica-de-privacidade"
+  to = "/politica-de-privacidade.html"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/api/*"
   [headers.values]
     X-Robots-Tag = "noindex"
     Cache-Control = "private, no-store"
+
+[[headers]]
+  for = "/app/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

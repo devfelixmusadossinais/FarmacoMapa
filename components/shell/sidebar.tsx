@@ -50,35 +50,35 @@ export function Sidebar({ onFechar }: { onFechar?: () => void }) {
 
       <ScrollArea className="h-0 min-h-0 flex-1 px-3">
         <nav className="flex flex-col gap-1 pb-4">
-          <Link href="/" onClick={ir} className={classeItem(pathname === "/")}>
+          <Link href="/app" onClick={ir} className={classeItem(pathname === "/app")}>
             <Home className="size-4" />
             Início
           </Link>
           <Link
-            href="/mapas"
+            href="/app/mapas"
             onClick={ir}
-            className={classeItem(pathname === "/mapas" && !areaAtual)}
+            className={classeItem(pathname === "/app/mapas" && !areaAtual)}
           >
             <LayoutGrid className="size-4" />
             <span className="flex-1">Todos os mapas</span>
             <span className="text-xs text-white/50">{TOTAL_MAPAS}</span>
           </Link>
-          <Link href="/bonus" onClick={ir} className={classeItem(pathname === "/bonus")}>
+          <Link href="/app/bonus" onClick={ir} className={classeItem(pathname === "/app/bonus")}>
             <Gift className="size-4" />
             Bônus
           </Link>
-          <Link href="/sugestoes" onClick={ir} className={classeItem(pathname === "/sugestoes")}>
+          <Link href="/app/sugestoes" onClick={ir} className={classeItem(pathname === "/app/sugestoes")}>
             <MessageSquarePlus className="size-4" />
             Sugestões
           </Link>
 
           <p className="mt-4 px-3 text-[10px] font-semibold tracking-[0.16em] text-white/45">ÁREAS</p>
           {areas.map((area) => {
-            const ativo = pathname === "/mapas" && areaAtual === area.slug;
+            const ativo = pathname === "/app/mapas" && areaAtual === area.slug;
             return (
               <Link
                 key={area.id}
-                href={`/mapas?area=${area.slug}`}
+                href={`/app/mapas?area=${area.slug}`}
                 onClick={ir}
                 className={classeItem(ativo)}
               >
@@ -106,7 +106,7 @@ export function Sidebar({ onFechar }: { onFechar?: () => void }) {
         </div>
 
         <Link
-          href="/premium"
+          href="/app/premium"
           onClick={ir}
           className="flex items-center gap-3 rounded-2xl bg-white/8 px-3 py-3 ring-1 ring-white/10 transition hover:bg-white/12"
         >

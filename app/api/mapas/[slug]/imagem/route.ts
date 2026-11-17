@@ -3,6 +3,7 @@ import path from "node:path";
 import { obterItem } from "@/lib/catalog";
 import { infoImagem, type Variante } from "@/lib/imagens";
 import { lerSessao } from "@/lib/sessao";
+import { nomeArquivo } from "@/lib/nomes";
 
 const TIPOS: Record<string, string> = {
   ".webp": "image/webp",
@@ -103,6 +104,13 @@ export async function GET(requisicao: Request, contexto: { params: Promise<{ slu
     return new Response("Arquivo ausente", { status: 404 });
   }
 
+  const baixar = url.searchParams.get("download") === "1";
+  const extensao = servida === "full" ? path.extname(item.image).toLowerCase() : ".webp";
+  const nome = `${nomeArquivo(item.titulo) || item.slug}${extensao}`;
+  const ascii = nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^\x20-\x7e]/g, "_");
+  const disposicao: Record<string, string> = baixar
+    ? { "Content-Disposition": `attachment; filename="${ascii}"; filename*=UTF-8''${encodeURIComponent(nome)}` }
+    : {};
   const tipo =
     servida === "full" ? (TIPOS[path.extname(item.image).toLowerCase()] ?? "application/octet-stream") : "image/webp";
   return new Response(new Uint8Array(bytes), {
@@ -112,6 +120,7 @@ export async function GET(requisicao: Request, contexto: { params: Promise<{ slu
       "Cache-Control": servida === variante ? cache : "private, max-age=3600",
       ETag: servida === variante ? etag : `"${info?.hash ?? "x"}-full"`,
       "X-Content-Type-Options": "nosniff",
+      ...disposicao,
     },
   });
 }

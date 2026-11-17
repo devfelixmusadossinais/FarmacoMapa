@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, X } from "lucide-react";
+import { Download, Search, X } from "lucide-react";
+import { ZIP_TODOS } from "@/lib/nomes";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 import { CartaoMapa } from "@/components/mapas/cartao-mapa";
@@ -66,6 +67,16 @@ export function Explorer({ areaInicial, consultaInicial }: { areaInicial: string
       </p>
       <h1 className="mt-2 font-heading text-4xl leading-tight text-ink sm:text-5xl">{titulo}</h1>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink/65">{subtitulo}</p>
+
+      <a
+        href={ZIP_TODOS}
+        download
+        className="mt-4 inline-flex h-12 items-center gap-2 rounded-2xl bg-pine px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-pine/90"
+      >
+        <Download className="size-4" />
+        Baixar todos os {TOTAL_MAPAS} mapas (ZIP, ~125 MB)
+      </a>
+      <p className="mt-1.5 text-xs text-ink/50">Um arquivo só, com uma pasta por área. Bom para guardar no tablet ou no computador.</p>
 
       <div className="relative mt-5">
         <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-ink/40" />

@@ -56,3 +56,7 @@ next-env.d.ts
 # loja local de acessos (fora da Netlify)
 data/acessos.local.json
 
+
+# ZIP gerado no prebuild
+/public/downloads
+

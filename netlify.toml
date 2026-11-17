@@ -60,3 +60,10 @@
   for = "/app/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+# ZIP com todos os mapas (gerado no prebuild). Protegido pela edge function downloads.ts.
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    Cache-Control = "private, no-cache"
+    Content-Disposition = 'attachment; filename="Mapa-Mental-Bioanalise-170-mapas.zip"'

@@ -84,7 +84,7 @@ Sair apaga o cookie. O progresso não vai embora com o logout.
 
 `GET /api/mapas/[slug]/imagem` confere o cookie e só então devolve o JPG. Sem cookie: 401. Sem imagem publicada: 404. O arquivo pedido é o campo `image` do catálogo, resolvido dentro de `content/mapas/`, então `../` não escapa.
 
-No `next dev` e no `next start` a rota lê o disco. Na Netlify os ~120 MB de JPG não cabem numa função: o zip de uma Lambda tem limite de 50 MB, e JPEG quase não comprime. Por isso o `netlify.toml` roda `scripts/publicar-mapas-netlify.mjs` antes do build. Esse script, só quando `NETLIFY=true`, copia os arquivos para `.netlify/blobs/deploy/mapas/`. A Netlify sobe essa pasta como blob do deploy (loja `mapas`). A função fica pequena e lê o blob com `getDeployStore("mapas")` depois do cookie. `outputFileTracingExcludes` tira `content/mapas` do bundle para o deploy não estourar o limite.
+No `next dev` e no `next start` a rota lê o disco. Na Netlify os ~120 MB de JPG não cabem numa função: o zip de uma Lambda tem limite de 50 MB, e JPEG quase não comprime. Por isso o plugin local `netlify/plugins/mapas-blobs` (onPostBuild) copia os JPGs para a pasta de blobs do deploy, com a chave `mapas/<arquivo>`. A função fica pequena e lê o blob com `getDeployStore()` depois do cookie. `outputFileTracingExcludes` tira `content/mapas` do bundle para o deploy não estourar o limite.
 
 Não use `output: 'export'`. Export estático não tem como barrar a imagem.
 
@@ -154,7 +154,7 @@ Os blobs são do deploy, não uma loja global. Um deploy antigo não mistura a i
 
 O site deste repositório não foi publicado em lugar nenhum.
 
-## Cakto (acesso autom�tico)
+## Cakto (acesso autom�tico)
 
 Webhook: `POST /api/webhooks/cakto`, eventos `purchase_approved`, `refund` e `chargeback`. Valida `X-Cakto-Signature` (HMAC) ou o campo `secret` do corpo contra `CAKTO_WEBHOOK_SECRET`. O e-mail do comprador vai para o Netlify Blobs (loja `acessos`); o login em `/app` aceita quem tem pelo menos um pedido pago, mais `data/allowlist.json` (admin) e `ALLOWLIST_EMAILS`.
 

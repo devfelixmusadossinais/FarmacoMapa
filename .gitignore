@@ -46,7 +46,11 @@ data/allowlist.runtime.json
 next-env.d.ts
 
 # landing copiada no prebuild (edite os .html da raiz)
-/public
+/public/*.html
+/public/css
+/public/img
+/public/js
+/public/assets
 
 
 # loja local de acessos (fora da Netlify)

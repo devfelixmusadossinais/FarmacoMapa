@@ -7,8 +7,7 @@
     "prebuild": "node scripts/copiar-landing.mjs",
     "build": "next build",
     "start": "next start -p 4178 -H 0.0.0.0",
-    "lint": "eslint",
-    "mapas:netlify": "node scripts/publicar-mapas-netlify.mjs"
+    "lint": "eslint"
   },
   "dependencies": {
     "@netlify/blobs": "^10.7.0",

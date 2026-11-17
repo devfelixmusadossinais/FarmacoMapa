@@ -2373,52 +2373,57 @@
     {
       "id": "bonus-01",
       "slug": "bonus-01",
-      "titulo": "Bônus 01 — em breve",
+      "titulo": "Guia Avançado de Tubos de Coleta",
       "area": null,
       "keywords": [],
       "image": null,
-      "resumo": "",
-      "pontosChave": []
+      "resumo": "Cores e aditivos, ordem de coleta e cuidados com as amostras: os erros que mais estragam amostra, antes que você cometa.",
+      "pontosChave": [],
+      "capa": "/img/web/bonus-01-guia-tubos-coleta-700.webp"
     },
     {
       "id": "bonus-02",
       "slug": "bonus-02",
-      "titulo": "Bônus 02 — em breve",
+      "titulo": "Atlas Visual de Hematologia",
       "area": null,
       "keywords": [],
       "image": null,
-      "resumo": "",
-      "pontosChave": []
+      "resumo": "Mais células sanguíneas, hemograma e alterações hematológicas pra você não errar nenhuma lâmina.",
+      "pontosChave": [],
+      "capa": "/img/web/bonus-03-atlas-hematologia-700.webp"
     },
     {
       "id": "bonus-03",
       "slug": "bonus-03",
-      "titulo": "Bônus 03 — em breve",
+      "titulo": "Guia Visual de Parasitologia",
       "area": null,
       "keywords": [],
       "image": null,
-      "resumo": "",
-      "pontosChave": []
+      "resumo": "Principais protozoários e helmintos, formas evolutivas e ciclos, e as características que diferenciam cada um na identificação.",
+      "pontosChave": [],
+      "capa": "/img/web/bonus-02-guia-parasitologia-700.webp"
     },
     {
       "id": "bonus-04",
       "slug": "bonus-04",
-      "titulo": "Bônus 04 — em breve",
+      "titulo": "Checklist para Práticas de Laboratório",
       "area": null,
       "keywords": [],
       "image": null,
-      "resumo": "",
-      "pontosChave": []
+      "resumo": "Materiais, procedimentos, biossegurança, registro de resultados, limpeza e descarte. Chega na aula prática sabendo o que fazer e em que ordem.",
+      "pontosChave": [],
+      "capa": "/img/web/bonus-04-checklist-praticas-700.webp"
     },
     {
       "id": "bonus-05",
       "slug": "bonus-05",
-      "titulo": "Bônus 05 — em breve",
+      "titulo": "Caderno de Revisão para Provas",
       "area": null,
       "keywords": [],
       "image": null,
-      "resumo": "",
-      "pontosChave": []
+      "resumo": "Resumos, perguntas, casos clínicos, tabelas e revisão final pra revisar na véspera e entrar na prova seguro.",
+      "pontosChave": [],
+      "capa": "/img/web/bonus-05-caderno-revisao-700.webp"
     }
   ]
 }

@@ -1,5 +1,5 @@
 [build]
-  command = "node scripts/publicar-mapas-netlify.mjs && npm run build"
+  command = "npm run build"
   publish = ".next"
 
 [build.environment]
@@ -11,10 +11,14 @@
 # O plugin oficial da Netlify executa as rotas de API (acesso, imagem, webhook).
 # Não use `output: 'export'`: export estático não consegue barrar a imagem.
 # As imagens não vão dentro da função (limite de 50 MB no zip). O comando de
-# build copia os JPGs para .netlify/blobs/deploy/mapas, e a rota lê esse blob
+# plugin local netlify/plugins/mapas-blobs copia os JPGs para os blobs do deploy, e a rota lê esse blob
 # só depois de validar o cookie.
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Sobe os JPGs como blobs do deploy (chave mapas/<arquivo>), depois do plugin do Next.
+[[plugins]]
+  package = "./netlify/plugins/mapas-blobs"
 
 # Landing na raiz, com e sem .html (as URLs .html continuam abrindo direto).
 [[redirects]]

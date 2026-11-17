@@ -28,6 +28,24 @@ export function QuadroMapa({
     );
   }
 
+  if (item.capa) {
+    return (
+      <div
+        className={cn(
+          "relative flex items-center justify-center overflow-hidden bg-[#14312d]",
+          zoomavel ? "min-h-[320px] py-6" : "aspect-[16/10] py-3",
+          className,
+        )}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={item.capa}
+          alt={zoomavel ? `Capa: ${item.titulo}` : ""}
+          className={cn("block w-auto object-contain drop-shadow-xl", zoomavel ? "max-h-[70vh]" : "h-full")}
+        />
+      </div>
+    );
+  }
   return (
     <div
       className={cn(

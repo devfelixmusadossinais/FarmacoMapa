@@ -29,19 +29,27 @@ async function lerDoDisco(relativo: string) {
   }
 }
 
-async function lerDoBlob(chave: string) {
+async function lerDoBlob(arquivo: string) {
   if (!process.env.NETLIFY && !process.env.NETLIFY_BLOBS_CONTEXT) return null;
-  try {
-    const { getDeployStore } = await import("@netlify/blobs");
-    const store = getDeployStore("mapas");
-    const dados = await store.get(chave, { type: "arrayBuffer" });
-    if (!dados) return null;
-    return Buffer.from(dados);
-  } catch {
-    return null;
+  const { getDeployStore } = await import("@netlify/blobs");
+  // O plugin local netlify/plugins/mapas-blobs sobe os JPGs para a loja do deploy
+  // (sem nome) com a chave "mapas/<arquivo>". Mesma regra de região do plugin do Next.
+  const regional = process.env.USE_REGIONAL_BLOBS?.toUpperCase() === "TRUE";
+  const tentativas: Array<{ region?: "us-east-2" }> = regional
+    ? [{}, { region: "us-east-2" }]
+    : [{ region: "us-east-2" }, {}];
+  for (const opcoes of tentativas) {
+    try {
+      const store = getDeployStore(opcoes);
+      const dados = await store.get(`mapas/${arquivo}`, { type: "arrayBuffer" });
+      if (dados) return Buffer.from(dados);
+    } catch (erro) {
+      console.error("[imagem] falha ao ler blob:", erro instanceof Error ? erro.message : "erro");
+    }
   }
+  console.error(`[imagem] blob ausente: mapas/${arquivo}`);
+  return null;
 }
-
 export async function GET(_requisicao: Request, contexto: { params: Promise<{ slug: string }> }) {
   const sessao = await lerSessao();
   if (!sessao) {

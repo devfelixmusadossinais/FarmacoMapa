@@ -9,8 +9,13 @@ import path from "node:path";
 
 const raiz = process.cwd();
 const destino = path.join(raiz, "public");
-rmSync(destino, { recursive: true, force: true });
 mkdirSync(destino, { recursive: true });
+// Só apaga o que este script gera; outros arquivos do app em public/ ficam.
+for (const f of readdirSync(destino)) {
+  if (f.endsWith(".html") || ["css", "img", "js", "assets"].includes(f)) {
+    rmSync(path.join(destino, f), { recursive: true, force: true });
+  }
+}
 
 const paginas = readdirSync(raiz).filter((f) => f.endsWith(".html"));
 if (!paginas.includes("index.html")) {

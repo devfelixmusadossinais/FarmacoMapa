@@ -22,7 +22,7 @@ export function CartaoMapa({ item }: { item: ItemCatalogo }) {
         </div>
         {item.resumo ? (
           <p className="mt-2 text-sm leading-relaxed text-ink/65">{item.resumo}</p>
-        ) : item.image ? null : (
+        ) : item.image || item.capa ? null : (
           <p className="mt-2 text-sm leading-relaxed text-ink/65">
             Resumo em preparação. A vaga deste mapa já está reservada no catálogo.
           </p>

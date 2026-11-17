@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/brand/logo";
 import { PerfilForm } from "@/components/estudo/perfil-form";
-import { TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } from "@/lib/catalog";
+import { listarAreas, TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } from "@/lib/catalog";
 import { useStudy } from "@/lib/study-store";
 import type { Perfil } from "@/lib/types";
 
@@ -21,6 +21,13 @@ export function Onboarding() {
     window.scrollTo(0, 0);
     salvarPerfil(perfil);
     router.push("/app");
+  }
+
+  // Pular: grava um perfil padrão (dá pra editar depois) e nunca mais mostra esta tela.
+  function pular() {
+    window.scrollTo(0, 0);
+    salvarPerfil({ nome: "Estudante", areaFoco: listarAreas()[0]?.id ?? "geral", metaDiaria: 3 });
+    router.push("/app/mapas");
   }
 
   return (
@@ -49,6 +56,14 @@ export function Onboarding() {
         <div className="mt-6 rounded-[28px] bg-white p-5 text-ink shadow-2xl">
           <PerfilForm onSubmit={concluir} rotuloBotao="Começar a estudar" />
         </div>
+
+        <button
+          type="button"
+          onClick={pular}
+          className="mx-auto mt-5 rounded-2xl border border-white/25 px-5 py-3 text-sm font-medium text-white/90 transition hover:bg-white/10"
+        >
+          Pular por agora e ver os mapas →
+        </button>
       </div>
     </div>
   );

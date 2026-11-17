@@ -13,6 +13,8 @@ export type EntradaCatalogo = {
   area: string | null;
   keywords: string[];
   image: string | null;
+  /** Capa pública (bônus). Vem da landing, em public/img/web. */
+  capa?: string | null;
   resumo: string;
   pontosChave: string[];
 };

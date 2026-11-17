@@ -666,6 +666,25 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
 .ptags{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .ptags li{background:var(--menta);color:var(--menta-t);font:800 12px var(--body);padding:6px 12px;border-radius:999px}
 
+
+/* ===== carrosseis automaticos (arrastaveis) ===== */
+.rail{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;scroll-snap-type:none;scroll-behavior:auto;margin-left:0;margin-right:0}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;user-select:none}
+.rail img{-webkit-user-drag:none;user-select:none}
+.maps.rail{display:flex;grid-template-columns:none;margin-top:28px;padding:4px 2px 14px;align-items:stretch}
+.maps.rail .mapa{flex:0 0 min(84%,430px)}
+.wrail.rail{padding:22px 6px 12px;margin:0 -6px}
+@media(min-width:900px){.wrail.rail{justify-content:flex-start}.maps.rail .mapa{flex-basis:430px}}
+/* bonus e bento: centralizados e responsivos */
+.bcards{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.bcards .bc{flex:0 0 calc(50% - 7px)}
+@media(min-width:600px){.bcards .bc{flex-basis:calc(33.333% - 10px)}}
+@media(min-width:820px){.bcards .bc{flex-basis:calc(20% - 12px)}}
+.bento{display:flex;flex-wrap:wrap;justify-content:center;gap:36px 14px;margin-top:46px}
+.bento .bx{flex:0 0 calc(50% - 7px)}
+.bento .bx.wide{flex:0 0 100%}
+@media(min-width:720px){.bento .bx{flex-basis:calc(33.333% - 10px)}.bento .bx.wide{flex-basis:100%}}
 </style>
 </head>
 <body>
@@ -718,7 +737,6 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       <div class="price"><span class="de">A partir<br>de</span><span class="val"><small>R$</small>10</span><span class="un">pagamento único<br>acesso vitalício</span></div>
       <a href="#planos" class="btn pulse block caps">Quero meus 80 mapas agora <span class="ar">→</span></a>
       <div class="trust"><span><svg class="ic"><use href="#i-check"/></svg>80 mapas</span><span><svg class="ic"><use href="#i-check"/></svg>10 áreas do laboratório</span><span><svg class="ic"><use href="#i-check"/></svg>1 assunto por página</span><span><svg class="ic"><use href="#i-shield"/></svg>30 dias de garantia</span></div>
-      <div class="ph pill nota-prova"></div>
     </div>
   </div>
 </header>
@@ -753,6 +771,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
     <div class="rv">
       <span class="kicker">A causa</span>
       <h2>O problema não é você. É tentar aprender uma matéria <span class="hl">VISUAL lendo texto.</span></h2>
+    </div>
   </div>
 </section>
 
@@ -782,7 +801,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       <h2>Olha os mapas <span class="hl">por dentro</span></h2>
       <p class="lead">Toque na imagem pra ampliar e ver cada detalhe.</p>
     </div>
-    <div class="maps">
+    <div class="rail maps" data-rail>
       <article class="mapa rv">
         <button type="button" data-zoom="img/web/mapa-05-monocito-linfocito.webp" data-alt="Mapa: Monócito ou linfócito?"><img src="img/web/mapa-05-monocito-linfocito-700.webp" srcset="img/web/mapa-05-monocito-linfocito-400.webp 400w, img/web/mapa-05-monocito-linfocito-700.webp 700w" sizes="(min-width:760px) 440px, 92vw" width="1448" height="1086" loading="lazy" decoding="async" alt="Mapa: Monócito ou linfócito?"></button>
         <div class="t"><h3>Monócito ou linfócito?</h3><p>O monócito é a célula grande (12 a 20 µm), com núcleo reniforme ou lobulado e citoplasma abundante cinza-azulado. O linfócito é pequeno a médio (7 a 15 µm), com núcleo redondo ou oval, cromatina densa e citoplasma escasso azul-claro. O mapa ainda mostra o erro que mais derruba aluno: confundir linfócito reativo com monócito. <b>Para memorizar: monócito é maior e tem núcleo reniforme; linfócito é mais compacto e tem núcleo redondo.</b></p></div>
@@ -791,6 +810,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
         <button type="button" data-zoom="img/web/mapa-06-leucocitos.webp" data-alt="Mapa: Leucócitos"><img src="img/web/mapa-06-leucocitos-700.webp" srcset="img/web/mapa-06-leucocitos-400.webp 400w, img/web/mapa-06-leucocitos-700.webp 700w" sizes="(min-width:760px) 440px, 92vw" width="1448" height="1086" loading="lazy" decoding="async" alt="Mapa: Leucócitos"></button>
         <div class="t"><h3>Leucócitos</h3><p>Neutrófilo, linfócito, monócito, eosinófilo e basófilo lado a lado, com a função de cada um e quando aumenta. Granulócitos x agranulócitos, contagem total e as principais alterações (leucocitose, leucopenia, neutrofilia, eosinofilia, linfocitose, monocitose) numa página só.</p></div>
       </article>
+      <article class="mapa rv">
         <button type="button" data-zoom="img/web/mapa-03-hemograma.webp" data-alt="Mapa: Hemograma, visão geral"><img src="img/web/mapa-03-hemograma-700.webp" srcset="img/web/mapa-03-hemograma-400.webp 400w, img/web/mapa-03-hemograma-700.webp 700w" sizes="(min-width:760px) 440px, 92vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Mapa: Hemograma, visão geral"></button>
         <div class="t"><h3>Hemograma, visão geral</h3><p>Eritrograma, leucograma e plaquetograma numa página só, com os índices (VCM, HCM, CHCM, VPM, PDW) e o que cada um indica. Do tubo de EDTA à análise automatizada, à revisão microscópica e à interpretação.</p></div>
       </article>
@@ -800,7 +820,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       </article>
     </div>
 
-    <p class="lead rv leva"><b>E esses são só 6 dos 80 mapas.</b> Olha o que você leva:</p>
+    <p class="lead rv leva"><b>E esses são só 4 dos 80 mapas.</b> Olha o que você leva:</p>
     <div class="bento">
       <div class="bx wide rv" style="--p:var(--ceu);--t:var(--ceu-t)"><svg class="ic"><use href="#i-file"/></svg>80 mapas visuais<small>Os principais temas de análises clínicas, 1 assunto por página</small></div>
       <div class="bx rv" style="--p:var(--menta);--t:var(--menta-t)"><svg class="ic"><use href="#i-award"/></svg>10 áreas do laboratório<small>Da coleta ao controle de qualidade, organizadas como você estuda</small></div>
@@ -891,7 +911,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
 <section class="prova cv">
   <div class="wrap center">
     <div class="rv"><h2>Quem já estuda <span class="hl" style="color:var(--sol)">com os mapas</span></h2><p class="lead">Mensagens de quem já está usando. Toque pra ampliar.</p></div>
-    <div class="wrail rv" tabindex="0" aria-label="Depoimentos de alunos">
+    <div class="wrail rail rv" data-rail tabindex="0" aria-label="Depoimentos de alunos">
       <figure class="wshot"><button type="button" data-zoom="img/web/prova-valeria.webp" data-alt="Depoimento de Valeria"><img src="img/web/prova-valeria-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Valeria no WhatsApp"></button></figure>
       <figure class="wshot"><button type="button" data-zoom="img/web/prova-nicolas.webp" data-alt="Depoimento de Nicolás"><img src="img/web/prova-nicolas-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Nicolás no WhatsApp"></button></figure>
       <figure class="wshot"><button type="button" data-zoom="img/web/prova-martina.webp" data-alt="Depoimento de Martina"><img src="img/web/prova-martina-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Martina no WhatsApp"></button></figure>
@@ -929,7 +949,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
           <li><svg class="ic"><use href="#i-check"/></svg>Acesso vitalício, sem mensalidade</li>
         </ul>
         <p class="diff-t">O dobro de mapas e os 5 bônus num pagamento só. É o kit completo, do 1º semestre ao estágio.</p>
-        <div class="price-box"><span class="de">Pagamento único<br>ou em até [CONFIRMAR: parcelas]</span><span class="val"><small>R$</small>37</span><span class="un">acesso vitalício</span></div>
+        <div class="price-box"><span class="de">Pagamento único<br></span><span class="val"><small>R$</small>37</span><span class="un">acesso vitalício</span></div>
         <a href="#" id="checkout-premium" class="btn block pulse" data-checkout="premium">Quero o Premium com 5 bônus por R$37 <span class="ar">→</span></a>
         <div class="pay"><span>Compra segura</span>·<span>Garantia de 30 dias</span></div>
       </div>
@@ -994,7 +1014,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       </svg></div>
       <div>
         <h2>Risco ZERO: 30 dias de garantia</h2>
-        <p>Entra, abre os mapas, usa na sua próxima revisão. Você tem 30 dias inteiros. Se não achar que é o jeito mais fácil de estudar, pede o reembolso e recebe <b>100% do valor de volta.</p>
+        <p>Entra, abre os mapas, usa na sua próxima revisão. Você tem 30 dias inteiros. Se não achar que é o jeito mais fácil de estudar, pede o reembolso e recebe <b>100% do valor de volta.</b></p>
         <ul class="garl"><li>Compra protegida</li><li>Garantia de 30 dias</li><li>Pagamento único de R$10 ou R$37</li></ul>
       </div>
     </div>
@@ -1033,7 +1053,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
   </div>
 </section>
 
-<footer>Atlas Visual de Análises Clínicas · <a href="termos-de-uso.html">Termos de uso</a> · <a href="politica-de-privacidade.html">Política de privacidade</a> · <a href="contato.html">Contato</a><br>Pagamento processado por [GATEWAY]. © 2026 Atlas Visual de Análises Clínicas. Todos os direitos reservados. Material de finalidade educativa.</footer>
+<footer>Atlas Visual de Análises Clínicas · <a href="termos-de-uso.html">Termos de uso</a> · <a href="politica-de-privacidade.html">Política de privacidade</a> · <a href="contato.html">Contato</a><br>Pagamento processado por CaktoPay. © 2026 Atlas Visual de Análises Clínicas. Todos os direitos reservados. Material de finalidade educativa.</footer>
 
 <!-- POPUP: abre no clique do Essencial -->
 <div class="up" id="upsell" role="dialog" aria-modal="true" aria-labelledby="upT">
@@ -1110,6 +1130,40 @@ document.addEventListener("DOMContentLoaded",function(){
   }else{[].forEach.call(document.querySelectorAll(".rv"),function(el){el.classList.add("in")});st.classList.add("show")}
 });
 
+</script>
+<script>
+/* carrosseis: andam sozinhos (da direita pra esquerda), arrastam com dedo/mouse e voltam a andar depois */
+(function(){
+function initRail(r){
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var kids=[].slice.call(r.children),n=kids.length;if(!n)return;
+  for(var c=0;c<3;c++){kids.forEach(function(k){var x=k.cloneNode(true);x.setAttribute("aria-hidden","true");x.classList.remove("rv");r.appendChild(x)})}
+  var W=0,pos=0,last=0,hold=0,drag=false,vis=false,raf=0,moved=0,sx=0,sl=0,speed=reduce?22:38;
+  function measure(){var f=r.children[n];if(f)W=f.offsetLeft-r.children[0].offsetLeft}
+  function sync(){measure();if(W>0&&(r.scrollLeft<=0||r.scrollLeft>=W*3)){r.scrollLeft=W}pos=r.scrollLeft}
+  function wrap(){if(W<=0)return;if(r.scrollLeft>=W*2){r.scrollLeft-=W}else if(r.scrollLeft<=1){r.scrollLeft+=W}}
+  function step(ts){
+    var dt=last?Math.min(ts-last,64):16;last=ts;
+    if(!drag&&speed&&Date.now()>hold){pos+=speed*dt/1000;if(W>0&&pos>=W*2)pos-=W;r.scrollLeft=pos}else{pos=r.scrollLeft}
+    raf=vis?requestAnimationFrame(step):0}
+  function go(){if(!raf){last=0;raf=requestAnimationFrame(step)}}
+  function pause(ms){hold=Date.now()+(ms||4000)}
+  ["touchstart","touchmove","wheel"].forEach(function(ev){r.addEventListener(ev,function(){pause(4000)},{passive:true})});
+  r.addEventListener("scroll",function(){if(Date.now()<=hold||drag)wrap()},{passive:true});
+  r.addEventListener("pointerdown",function(e){moved=0;if(e.pointerType==="mouse"&&e.button===0){drag=true;sx=e.clientX;sl=r.scrollLeft;r.classList.add("drag")}pause(4000)});
+  r.addEventListener("pointermove",function(e){if(!drag)return;var d=e.clientX-sx;moved=Math.max(moved,Math.abs(d));r.scrollLeft=sl-d;wrap()});
+  function end(){if(drag){drag=false;r.classList.remove("drag");pause(3000)}}
+  ["pointerup","pointercancel","pointerleave"].forEach(function(ev){r.addEventListener(ev,end)});
+  r.addEventListener("dragstart",function(e){e.preventDefault()});
+  /* arrastou com o mouse: nao abre o zoom */
+  window.addEventListener("click",function(e){if(moved>6&&r.contains(e.target)){e.stopPropagation();e.preventDefault();moved=0}},true);
+  addEventListener("resize",sync);addEventListener("load",sync);
+  sync();
+  if("IntersectionObserver" in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis){sync();go()}},{threshold:0.05}).observe(r)}else{vis=true;go()}
+}
+function init(){[].forEach.call(document.querySelectorAll("[data-rail]"),initRail)}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
+})();
 </script>
 </body>
 </html>

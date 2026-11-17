@@ -645,6 +645,26 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
 .kit .slot.pimg{margin:0 auto 16px}
 .conta .lead+.lead{margin-top:14px}
 .recebe .lead{margin-top:14px}
+.bonus-map{margin:16px auto 0;max-width:560px;background:#fff;border:2px solid var(--cta);border-radius:18px;padding:14px 18px;font:700 16px/1.4 var(--body);color:var(--ink);box-shadow:var(--shadow)}
+.areas .cta-row{display:flex;justify-content:center}
+.wrail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:22px 6px 12px;margin:0 -6px;scrollbar-width:thin}
+.wshot{flex:0 0 min(74%,290px);scroll-snap-align:center;margin:0;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 18px 36px -18px rgba(0,0,0,.6)}
+.wshot button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.wshot img{display:block;width:100%;height:auto}
+@media(min-width:900px){.wrail{justify-content:center}.wshot{flex-basis:230px}}
+.prof{display:grid;gap:20px;margin-top:26px;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--shadow)}
+@media(min-width:760px){.prof{grid-template-columns:300px 1fr;align-items:start;padding:24px;gap:28px}}
+.prof>img{display:block;width:100%;height:auto;aspect-ratio:640/854;object-fit:cover;border-radius:18px}
+.prof h3{font-size:26px;margin:0 0 2px}
+.pcargo{font-weight:800;color:var(--ice-d);margin:0 0 12px}
+.prof .pt p{font-size:15.5px;line-height:1.55;color:var(--ink2);margin:0 0 10px}
+.prof dl{margin:14px 0;display:grid;gap:8px}
+.prof dt{font:800 12px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--ice-d)}
+.prof dd{margin:0 0 6px;font-size:15px;line-height:1.5}
+.prof blockquote{margin:14px 0;padding:14px 16px;background:var(--alt);border-left:4px solid var(--cta);border-radius:12px;font-weight:600;line-height:1.5}
+.prof cite{display:block;margin-top:8px;font:700 13px var(--body);font-style:normal;color:var(--ink2)}
+.ptags{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.ptags li{background:var(--menta);color:var(--menta-t);font:800 12px var(--body);padding:6px 12px;border-radius:999px}
 
 </style>
 </head>
@@ -799,9 +819,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       <div class="bx rv" style="--p:var(--menta);--t:var(--menta-t)"><svg class="ic"><use href="#i-award"/></svg>10 áreas do laboratório<small>Da coleta ao controle de qualidade, organizadas como você estuda</small></div>
       <div class="bx rv" style="--p:var(--solp);--t:var(--solp-t)"><svg class="ic"><use href="#i-phone"/></svg>PDF pra celular e impressão<small>Revisa no celular, tablet ou notebook, ou imprime e encaderna o seu caderno</small></div>
       <div class="bx rv" style="--p:var(--lil);--t:var(--lil-t)"><svg class="ic"><use href="#i-inf"/></svg>Acesso vitalício<small>Paga uma vez, é seu pra sempre, do 1º semestre ao estágio</small></div>
-      <div class="bx rv" style="--p:var(--coral);--t:var(--coral-t)"><svg class="ic"><use href="#i-gift"/></svg>No Premium: 160 mapas + 5 bônus<small>O dobro de mapas e 5 materiais extras</small></div>
     </div>
-    <div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero os 80 mapas por R$10 <span class="ar">→</span></a></div>
   </div>
 </section>
 
@@ -822,6 +840,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       <details><summary><span class="n">09</span>Urinálise</summary><p>Exame físico · exame químico · sedimentoscopia · cristais · cilindros · células no sedimento</p></details>
       <details><summary><span class="n">10</span>Controle de Qualidade</summary><p>Erros laboratoriais · controle interno · controle externo · calibração · boas práticas · confiabilidade dos resultados</p></details>
     </div>
+    <div class="cta-row rv" style="margin-top:26px;text-align:center"><a href="#planos" class="btn pulse caps">Quero os 80 mapas por R$10 <span class="ar">→</span></a></div>
   </div>
 </section>
 
@@ -877,17 +896,20 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       <div class="bc rv"><span class="tg">BÔNUS 05</span><img src="img/web/bonus-05-caderno-revisao-400.webp" srcset="img/web/bonus-05-caderno-revisao-400.webp 400w, img/web/bonus-05-caderno-revisao-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Caderno de Revisão para Provas"><div class="t"><b>Caderno de Revisão para Provas</b><p>Resumos, perguntas, casos clínicos, tabelas e revisão final pra revisar na véspera e entrar na prova seguro.</p></div></div>
     </div>
     <p class="bonus-fin rv">Tudo isso sai DE GRAÇA escolhendo o Premium</p>
+    <div class="bonus-map rv"><b>E além dos 5 bônus, o Premium traz +80 mapas mentais além dos 80 do Essencial: 160 mapas no total.</b></div>
   </div>
 </section>
 
-<!-- PROVA SOCIAL (so entra com prova real) -->
+<!-- PROVA SOCIAL -->
 <section class="prova cv">
   <div class="wrap center">
-    <div class="rv"><h2>Quem já estuda <span class="hl" style="color:var(--sol)">com os mapas</span></h2></div>
-    <div class="provas">
-      <div class="ph rv">[PROVA REAL AQUI: depoimento 1, nome + cidade + curso + 5 estrelas + texto ou print real]</div>
-      <div class="ph rv">[PROVA REAL AQUI: depoimento 2, nome + cidade + curso + 5 estrelas + texto ou print real]</div>
-      <div class="ph rv">[PROVA REAL AQUI: depoimento 3, nome + cidade + curso + 5 estrelas + texto ou print real]</div>
+    <div class="rv"><h2>Quem já estuda <span class="hl" style="color:var(--sol)">com os mapas</span></h2><p class="lead">Mensagens de quem já está usando. Toque pra ampliar.</p></div>
+    <div class="wrail rv" tabindex="0" aria-label="Depoimentos de alunos">
+      <figure class="wshot"><button type="button" data-zoom="img/web/prova-valeria.webp" data-alt="Depoimento de Valeria"><img src="img/web/prova-valeria-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Valeria no WhatsApp"></button></figure>
+      <figure class="wshot"><button type="button" data-zoom="img/web/prova-nicolas.webp" data-alt="Depoimento de Nicolás"><img src="img/web/prova-nicolas-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Nicolás no WhatsApp"></button></figure>
+      <figure class="wshot"><button type="button" data-zoom="img/web/prova-martina.webp" data-alt="Depoimento de Martina"><img src="img/web/prova-martina-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Martina no WhatsApp"></button></figure>
+      <figure class="wshot"><button type="button" data-zoom="img/web/prova-tomas.webp" data-alt="Depoimento de Tomás"><img src="img/web/prova-tomas-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Tomás no WhatsApp"></button></figure>
+      <figure class="wshot"><button type="button" data-zoom="img/web/prova-alejandro.webp" data-alt="Depoimento de Alejandro"><img src="img/web/prova-alejandro-480.webp" width="480" height="853" loading="lazy" decoding="async" alt="Depoimento de Alejandro no WhatsApp"></button></figure>
     </div>
     <div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero meus mapas agora <span class="ar">→</span></a></div>
   </div>
@@ -946,22 +968,29 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
 
 <!-- AUTORIDADE -->
 <section class="recebe cv">
-  <div class="wrap center autor">
+  <div class="wrap center">
     <div class="rv">
-      <span class="kicker">Quem fez</span>
+      <span class="kicker">Quem revisou</span>
       <h2>Conteúdo revisado <span class="hl">por quem é do laboratório</span></h2>
     </div>
-    <div class="ph rv" style="margin-top:18px">[PROVA REAL AQUI: nome, foto, formação e registro (CRBM/CRF) de quem criou ou revisou os mapas]</div>
-    <div class="rv" style="margin-top:26px">
-      <h3 style="font-size:22px">Como os mapas foram feitos</h3>
-      <p class="lead">Cada mapa nasceu de uma pergunta que derruba aluno de verdade: "que célula é essa?", "qual tubo vem primeiro?", "isso é plasma ou soro?". A resposta virou uma página só, desenhada, com o que importa pra reconhecer na bancada e acertar na prova.</p>
-      <ul>
-        <li><svg class="ic"><use href="#i-check"/></svg>1 assunto por página</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>Organizado nas 10 áreas do laboratório</li>
-        <li><svg class="ic"><use href="#i-check"/></svg>Erros frequentes e "para memorizar" em cada mapa</li>
-        <li class="ph">[CONFIRMAR: fontes/bibliografia de referência usadas, se houver]</li>
-      </ul>
-    </div>
+    <article class="prof rv">
+      <img src="img/web/professora-laura-mendoza-400.webp" srcset="img/web/professora-laura-mendoza-400.webp 400w, img/web/professora-laura-mendoza.webp 640w" sizes="(min-width:700px) 300px, 80vw" width="640" height="854" loading="lazy" decoding="async" alt="Profa. Laura Mendoza, especialista em Análises Clínicas">
+      <div class="pt">
+        <h3>Profa. Laura Mendoza</h3>
+        <p class="pcargo">Professora e especialista em Análises Clínicas</p>
+        <p>A Profa. Laura Mendoza atua na área de Análises Clínicas e contribuiu para que os conteúdos do Atlas Visual fossem apresentados de forma clara, organizada e didática.</p>
+        <p>Sua revisão editorial ajuda a transformar conceitos de hematologia, coleta de amostras, uroanálise, microbiologia, bioquímica e demais áreas do laboratório em mapas visuais mais simples de consultar, revisar e compreender.</p>
+        <p>O objetivo é oferecer aos estudantes um material complementar que combine organização, recursos visuais e uma linguagem educativa acessível, facilitando o estudo dos principais temas de Análises Clínicas.</p>
+        <dl>
+          <dt>Formação</dt><dd>Biomedicina e Ciências Biológicas</dd>
+          <dt>Experiência</dt><dd>Ensino, organização e apresentação educativa de conteúdos ligados às rotinas e aos fundamentos do laboratório.</dd>
+          <dt>Área de atuação</dt><dd>Análises Clínicas e educação laboratorial. Material desenvolvido para estudantes de Biomedicina, Farmácia, Análises Clínicas e Tecnologia Médica.</dd>
+          <dt>Revisão do material</dt><dd>Acompanhamento da clareza, da organização visual, da linguagem educativa e da apresentação dos conteúdos de laboratório.</dd>
+        </dl>
+        <blockquote>“Nosso objetivo é transformar temas de laboratório que muitas vezes parecem complexos em conteúdos mais visuais, organizados e fáceis de revisar.”<cite>Profa. Laura Mendoza, Especialista em Análises Clínicas</cite></blockquote>
+        <ul class="ptags"><li>Conteúdo educativo</li><li>Organização por temas</li><li>Revisão visual e textual</li><li>Material complementar de estudo</li></ul>
+      </div>
+    </article>
   </div>
 </section>
 

@@ -1,5 +1,6 @@
 [build]
   command = "node scripts/publicar-mapas-netlify.mjs && npm run build"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "22"

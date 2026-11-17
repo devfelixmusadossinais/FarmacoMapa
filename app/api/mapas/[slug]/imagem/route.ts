@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { obterItem } from "@/lib/catalog";
+import { infoImagem, type Variante } from "@/lib/imagens";
 import { lerSessao } from "@/lib/sessao";
 
 const TIPOS: Record<string, string> = {
@@ -11,17 +12,16 @@ const TIPOS: Record<string, string> = {
   ".gif": "image/gif",
 };
 
-const RAIZ = path.resolve(process.cwd(), "content", "mapas");
+const CONTENT = path.resolve(process.cwd(), "content");
 
-function caminhoSeguro(relativo: string) {
-  const arquivo = path.resolve(RAIZ, relativo);
-  if (arquivo !== RAIZ && arquivo.startsWith(`${RAIZ}${path.sep}`)) return arquivo;
-  return null;
+/** Caminho relativo a content/ (e chave do blob): mapas/<arquivo> ou variantes/<arquivo>.<v>.webp */
+function chaveDe(arquivo: string, variante: Variante) {
+  return variante === "full" ? `mapas/${arquivo}` : `variantes/${arquivo}.${variante}.webp`;
 }
 
-async function lerDoDisco(relativo: string) {
-  const arquivo = caminhoSeguro(relativo);
-  if (!arquivo) return null;
+async function lerDoDisco(chave: string) {
+  const arquivo = path.resolve(CONTENT, chave);
+  if (!arquivo.startsWith(`${CONTENT}${path.sep}`)) return null;
   try {
     return await readFile(arquivo);
   } catch {
@@ -29,31 +29,47 @@ async function lerDoDisco(relativo: string) {
   }
 }
 
-async function lerDoBlob(arquivo: string) {
-  if (!process.env.NETLIFY && !process.env.NETLIFY_BLOBS_CONTEXT) return null;
+type LojaDeploy = { get(chave: string, opcoes: { type: "arrayBuffer" }): Promise<ArrayBuffer | null> };
+let lojas: LojaDeploy[] | null = null;
+
+async function abrirLojas() {
+  if (lojas) return lojas;
   const { getDeployStore } = await import("@netlify/blobs");
-  // O plugin local netlify/plugins/mapas-blobs sobe os JPGs para a loja do deploy
-  // (sem nome) com a chave "mapas/<arquivo>". Mesma regra de região do plugin do Next.
+  // Mesma regra de região do plugin do Next. A primeira que responder fica na frente.
   const regional = process.env.USE_REGIONAL_BLOBS?.toUpperCase() === "TRUE";
-  const tentativas: Array<{ region?: "us-east-2" }> = regional
-    ? [{}, { region: "us-east-2" }]
-    : [{ region: "us-east-2" }, {}];
+  const tentativas: Array<{ region?: "us-east-2" }> = regional ? [{}, { region: "us-east-2" }] : [{ region: "us-east-2" }, {}];
+  lojas = [];
   for (const opcoes of tentativas) {
     try {
-      const store = getDeployStore(opcoes);
-      const dados = await store.get(`mapas/${arquivo}`, { type: "arrayBuffer" });
+      lojas.push(getDeployStore(opcoes) as unknown as LojaDeploy);
+    } catch (erro) {
+      console.error("[imagem] loja indisponível:", erro instanceof Error ? erro.message : "erro");
+    }
+  }
+  return lojas;
+}
+
+async function lerDoBlob(chave: string) {
+  if (!process.env.NETLIFY && !process.env.NETLIFY_BLOBS_CONTEXT) return null;
+  for (const loja of await abrirLojas()) {
+    try {
+      const dados = await loja.get(chave, { type: "arrayBuffer" });
       if (dados) return Buffer.from(dados);
     } catch (erro) {
       console.error("[imagem] falha ao ler blob:", erro instanceof Error ? erro.message : "erro");
     }
   }
-  console.error(`[imagem] blob ausente: mapas/${arquivo}`);
   return null;
 }
-export async function GET(_requisicao: Request, contexto: { params: Promise<{ slug: string }> }) {
+
+async function ler(chave: string) {
+  return (await lerDoDisco(chave)) ?? (await lerDoBlob(chave));
+}
+
+export async function GET(requisicao: Request, contexto: { params: Promise<{ slug: string }> }) {
   const sessao = await lerSessao();
   if (!sessao) {
-    return new Response("Acesso negado", { status: 401 });
+    return new Response("Acesso negado", { status: 401, headers: { "Cache-Control": "private, no-store" } });
   }
 
   const { slug } = await contexto.params;
@@ -61,16 +77,40 @@ export async function GET(_requisicao: Request, contexto: { params: Promise<{ sl
   if (!item) return new Response("Mapa não encontrado", { status: 404 });
   if (!item.image) return new Response("Imagem ainda não publicada", { status: 404 });
 
-  const bytes = (await lerDoDisco(item.image)) ?? (await lerDoBlob(item.image));
+  const url = new URL(requisicao.url);
+  const pedida = url.searchParams.get("v");
+  const variante: Variante = pedida === "thumb" || pedida === "md" ? pedida : "full";
+  const info = infoImagem(item.image);
+  const etag = `"${info?.hash ?? "x"}-${variante}"`;
+  // URL com o hash atual nunca muda de conteúdo: cache de 1 ano só no navegador (private).
+  const cache =
+    info && url.searchParams.get("h") === info.hash
+      ? "private, max-age=31536000, immutable"
+      : "private, max-age=3600";
+
+  if (info && requisicao.headers.get("if-none-match") === etag) {
+    return new Response(null, { status: 304, headers: { ETag: etag, "Cache-Control": cache } });
+  }
+
+  let servida = variante;
+  let bytes = await ler(chaveDe(item.image, variante));
+  if (!bytes && variante !== "full") {
+    servida = "full";
+    bytes = await ler(chaveDe(item.image, "full"));
+  }
   if (!bytes) {
+    console.error(`[imagem] arquivo ausente: ${chaveDe(item.image, variante)}`);
     return new Response("Arquivo ausente", { status: 404 });
   }
 
-  const tipo = TIPOS[path.extname(item.image).toLowerCase()] ?? "application/octet-stream";
-  return new Response(bytes, {
+  const tipo =
+    servida === "full" ? (TIPOS[path.extname(item.image).toLowerCase()] ?? "application/octet-stream") : "image/webp";
+  return new Response(new Uint8Array(bytes), {
     headers: {
       "Content-Type": tipo,
-      "Cache-Control": "private, no-store",
+      "Content-Length": String(bytes.length),
+      "Cache-Control": servida === variante ? cache : "private, max-age=3600",
+      ETag: servida === variante ? etag : `"${info?.hash ?? "x"}-full"`,
       "X-Content-Type-Options": "nosniff",
     },
   });

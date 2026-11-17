@@ -55,7 +55,6 @@
   for = "/api/*"
   [headers.values]
     X-Robots-Tag = "noindex"
-    Cache-Control = "private, no-store"
 
 [[headers]]
   for = "/app/*"

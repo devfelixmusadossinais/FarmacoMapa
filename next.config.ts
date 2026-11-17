@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   // Os JPGs (~120 MB) não entram na função. Na Netlify a rota lê o blob do deploy.
   outputFileTracingExcludes: {
-    "*": ["./content/mapas/**/*"],
+    "*": ["./content/mapas/**/*", "./content/variantes/**/*"],
   },
   async rewrites() {
     return {

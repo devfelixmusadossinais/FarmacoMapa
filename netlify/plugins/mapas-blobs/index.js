@@ -31,6 +31,14 @@ module.exports = {
       mkdirSync(destino, { recursive: true });
       for (const f of arquivos) cpSync(path.join(origem, f), path.join(destino, f));
       console.log(`[mapas-blobs] ${arquivos.length} mapas em ${path.relative(base, destino)}`);
+      const origemV = path.join(base, "content", "variantes");
+      if (existsSync(origemV)) {
+        const destinoV = path.join(destinoBase, "variantes");
+        mkdirSync(destinoV, { recursive: true });
+        const variantes = readdirSync(origemV).filter((f) => f.endsWith(".webp"));
+        for (const f of variantes) cpSync(path.join(origemV, f), path.join(destinoV, f));
+        console.log(`[mapas-blobs] ${variantes.length} variantes em ${path.relative(base, destinoV)}`);
+      }
     }
   },
 };

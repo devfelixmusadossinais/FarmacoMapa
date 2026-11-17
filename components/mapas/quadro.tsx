@@ -1,27 +1,39 @@
 import { cn } from "cn";
 import { AreaIcon } from "@/components/brand/area-icon";
 import { areaPorId } from "@/lib/catalog";
+import { infoImagem, urlImagem, type Variante } from "@/lib/imagens";
 import type { ItemCatalogo } from "@/lib/types";
 
 export function QuadroMapa({
   item,
   className,
   zoomavel = false,
+  variante,
 }: {
   item: ItemCatalogo;
   className?: string;
   zoomavel?: boolean;
+  /** thumb nos cartões, md no visualizador, full só no zoom alto. */
+  variante?: Variante;
 }) {
   const area = areaPorId(item.area);
 
   if (item.image) {
+    const v: Variante = variante ?? (zoomavel ? "md" : "thumb");
+    const info = infoImagem(item.image);
     return (
       <div className={cn("relative overflow-hidden bg-white", zoomavel ? "min-h-48" : "aspect-[16/10]", className)}>
         {/* A imagem só existe depois do cookie de acesso. Sem ele a rota responde 401. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`/api/mapas/${item.slug}/imagem`}
+          src={urlImagem(item.slug, item.image, v)}
           alt={zoomavel ? item.titulo : ""}
+          width={info?.w}
+          height={info?.h}
+          loading={zoomavel ? "eager" : "lazy"}
+          decoding="async"
+          fetchPriority={zoomavel ? "high" : "auto"}
+          style={info ? { backgroundImage: `url(${info.blur})`, backgroundSize: "100% 100%" } : undefined}
           className="block h-auto w-full object-contain"
         />
       </div>

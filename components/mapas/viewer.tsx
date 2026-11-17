@@ -100,7 +100,7 @@ export function Viewer({ item }: { item: ItemCatalogo }) {
       <div className="mt-5 overflow-hidden rounded-[24px] bg-white ring-1 ring-black/5">
         <div className="max-h-[68vh] overflow-auto">
           <div style={{ width: `${zoom}%` }} className="min-w-full">
-            <QuadroMapa item={item} zoomavel />
+            <QuadroMapa item={item} zoomavel variante={zoom > 150 ? "full" : "md"} />
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@ export function Viewer({ item }: { item: ItemCatalogo }) {
           </DialogDescription>
           <div className="min-h-0 flex-1 overflow-auto rounded-2xl bg-[#0e2421]">
             <div style={{ width: `${zoom}%` }} className="min-w-full">
-              <QuadroMapa item={item} zoomavel />
+              <QuadroMapa item={item} zoomavel variante={zoom > 150 ? "full" : "md"} />
             </div>
           </div>
           <div className="flex items-center justify-center gap-2">

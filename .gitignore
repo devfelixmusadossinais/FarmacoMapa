@@ -48,3 +48,7 @@ next-env.d.ts
 # landing copiada no prebuild (edite os .html da raiz)
 /public
 
+
+# loja local de acessos (fora da Netlify)
+data/acessos.local.json
+

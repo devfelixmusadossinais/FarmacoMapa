@@ -153,3 +153,8 @@ Não publique enquanto a lista de exemplo e o segredo de desenvolvimento estiver
 Os blobs são do deploy, não uma loja global. Um deploy antigo não mistura a imagem com o próximo, e um deploy que falha não apaga a produção.
 
 O site deste repositório não foi publicado em lugar nenhum.
+
+## Cakto (acesso autom�tico)
+
+Webhook: `POST /api/webhooks/cakto`, eventos `purchase_approved`, `refund` e `chargeback`. Valida `X-Cakto-Signature` (HMAC) ou o campo `secret` do corpo contra `CAKTO_WEBHOOK_SECRET`. O e-mail do comprador vai para o Netlify Blobs (loja `acessos`); o login em `/app` aceita quem tem pelo menos um pedido pago, mais `data/allowlist.json` (admin) e `ALLOWLIST_EMAILS`.
+

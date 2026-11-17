@@ -66,15 +66,18 @@ export async function processarWebhook(requisicao: Request, origem: "hotmart" | 
   }
 
   try {
-    const email = extraido.acao === "revogar" ? removerEmail(extraido.email) : adicionarEmail(extraido.email);
+    const email =
+      extraido.acao === "revogar"
+        ? await removerEmail(extraido.email, origem)
+        : await adicionarEmail(extraido.email, origem);
     return Response.json({
       recebido: true,
       email,
       acao: extraido.acao,
       persistido: true,
-      loja: "arquivo-local",
+      loja: "acessos",
       aviso:
-        "A lista em data/allowlist.runtime.json só permanece no next dev. Na Netlify, troque a loja por Netlify Blobs ou um banco. A revogação não mexe na allowlist versionada nem na variável de ambiente.",
+        "Gravado na loja de acessos (Netlify Blobs). A revogação não mexe na allowlist versionada nem na variável de ambiente.",
     });
   } catch {
     return Response.json(

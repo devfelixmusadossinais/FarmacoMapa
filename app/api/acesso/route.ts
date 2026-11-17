@@ -13,9 +13,9 @@ export async function POST(requisicao: Request) {
   if (!email.includes("@") || email.length > 180) {
     return Response.json({ erro: "Informe um e-mail válido." }, { status: 400 });
   }
-  if (!emailAutorizado(email)) {
+  if (!(await emailAutorizado(email))) {
     return Response.json(
-      { erro: "Não encontramos uma compra com este e-mail. Confira se é o mesmo da Hotmart ou da Kiwify." },
+      { erro: "Não encontramos uma compra com este e-mail. Confira se é o mesmo e-mail que você usou na compra." },
       { status: 401 },
     );
   }

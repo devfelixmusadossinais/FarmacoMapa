@@ -1,0 +1,2424 @@
+{
+  "areas": [
+    {
+      "id": "coleta-de-amostras",
+      "slug": "coleta-de-amostras",
+      "nome": "Coleta de amostras",
+      "icone": "syringe",
+      "linha": "Identificação, ordem e o que acontece antes do tubo chegar na bancada."
+    },
+    {
+      "id": "tubos-de-coleta",
+      "slug": "tubos-de-coleta",
+      "nome": "Tubos de coleta",
+      "icone": "test-tube",
+      "linha": "Aditivos, cores de tampa e qual ensaio cada tubo aguenta."
+    },
+    {
+      "id": "hematologia",
+      "slug": "hematologia",
+      "nome": "Hematologia",
+      "icone": "droplet",
+      "linha": "Série vermelha, leucócitos e plaquetas em uma leitura só."
+    },
+    {
+      "id": "coagulacao",
+      "slug": "coagulacao",
+      "nome": "Coagulação",
+      "icone": "activity",
+      "linha": "Hemostasia, tempos e o que desloca cada resultado."
+    },
+    {
+      "id": "urinalise",
+      "slug": "urinalise",
+      "nome": "Urinálise",
+      "icone": "flask-conical",
+      "linha": "Aspecto, tira e sedimento, camada por camada."
+    },
+    {
+      "id": "bioquimica-clinica",
+      "slug": "bioquimica-clinica",
+      "nome": "Bioquímica clínica",
+      "icone": "beaker",
+      "linha": "Analitos, interferentes e a lógica dos perfis."
+    },
+    {
+      "id": "microbiologia",
+      "slug": "microbiologia",
+      "nome": "Microbiologia",
+      "icone": "microscope",
+      "linha": "Coleta, coloração, meio de cultura e o caminho do laudo."
+    },
+    {
+      "id": "parasitologia",
+      "slug": "parasitologia",
+      "nome": "Parasitologia",
+      "icone": "bug",
+      "linha": "Formas evolutivas e o que procurar na lâmina."
+    },
+    {
+      "id": "imunologia",
+      "slug": "imunologia",
+      "nome": "Imunologia",
+      "icone": "shield",
+      "linha": "Reação, sorologia e como não misturar método com diagnóstico."
+    },
+    {
+      "id": "biosseguranca",
+      "slug": "biosseguranca",
+      "nome": "Biossegurança",
+      "icone": "shield-alert",
+      "linha": "Barreira, descarte e o hábito que protege quem analisa."
+    },
+    {
+      "id": "controle-de-qualidade",
+      "slug": "controle-de-qualidade",
+      "nome": "Controle de qualidade",
+      "icone": "clipboard-check",
+      "linha": "Controle interno, desvio e quando o resultado pode sair."
+    },
+    {
+      "id": "endocrinologia",
+      "slug": "endocrinologia",
+      "nome": "Endocrinologia",
+      "icone": "gauge",
+      "linha": "Eixos, horário de coleta e a leitura do painel hormonal."
+    },
+    {
+      "id": "liquidos-biologicos",
+      "slug": "liquidos-biologicos",
+      "nome": "Líquidos biológicos",
+      "icone": "droplets",
+      "linha": "Líquor e líquidos de cavidade, fora do sangue habitual."
+    },
+    {
+      "id": "banco-de-sangue",
+      "slug": "banco-de-sangue",
+      "nome": "Banco de sangue",
+      "icone": "heart-pulse",
+      "linha": "Tipagem, compatibilidade e a rotina do banco de sangue."
+    }
+  ],
+  "mapas": [
+    {
+      "id": "amostra-adequada-vs-amostra-rejeitada",
+      "slug": "amostra-adequada-vs-amostra-rejeitada",
+      "titulo": "Amostra adequada vs amostra rejeitada",
+      "area": "coleta-de-amostras",
+      "keywords": [
+        "amostra",
+        "adequada",
+        "rejeitada"
+      ],
+      "image": "amostra-adequada-vs-amostra-rejeitada.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemolise-vs-lipemia-vs-ictericia",
+      "slug": "hemolise-vs-lipemia-vs-ictericia",
+      "titulo": "Hemólise vs Lipemia vs Icterícia",
+      "area": "coleta-de-amostras",
+      "keywords": [
+        "hemolise",
+        "lipemia",
+        "ictericia"
+      ],
+      "image": "hemolise-vs-lipemia-vs-ictericia.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "preparo-do-paciente",
+      "slug": "preparo-do-paciente",
+      "titulo": "Preparo do paciente",
+      "area": "coleta-de-amostras",
+      "keywords": [
+        "preparo",
+        "paciente"
+      ],
+      "image": "preparo-do-paciente.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "puncao-capilar-vs-puncao-venosa",
+      "slug": "puncao-capilar-vs-puncao-venosa",
+      "titulo": "Punção capilar vs punção venosa",
+      "area": "coleta-de-amostras",
+      "keywords": [
+        "puncao",
+        "capilar",
+        "venosa"
+      ],
+      "image": "puncao-capilar-vs-puncao-venosa.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sangue-total-vs-plasma-vs-soro",
+      "slug": "sangue-total-vs-plasma-vs-soro",
+      "titulo": "Sangue total vs plasma vs soro",
+      "area": "coleta-de-amostras",
+      "keywords": [
+        "sangue",
+        "total",
+        "plasma",
+        "soro"
+      ],
+      "image": "sangue-total-vs-plasma-vs-soro.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "selecao-da-veia",
+      "slug": "selecao-da-veia",
+      "titulo": "Seleção da veia",
+      "area": "coleta-de-amostras",
+      "keywords": [
+        "selecao",
+        "veia"
+      ],
+      "image": "selecao-da-veia.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "tipos-de-amostras-biologicas",
+      "slug": "tipos-de-amostras-biologicas",
+      "titulo": "Tipos de amostras biológicas",
+      "area": "coleta-de-amostras",
+      "keywords": [
+        "tipos",
+        "amostras",
+        "biologicas"
+      ],
+      "image": "tipos-de-amostras-biologicas.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "aditivos-dos-tubos",
+      "slug": "aditivos-dos-tubos",
+      "titulo": "Aditivos dos tubos",
+      "area": "tubos-de-coleta",
+      "keywords": [
+        "aditivos",
+        "tubos"
+      ],
+      "image": "aditivos-dos-tubos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "anticoagulantes",
+      "slug": "anticoagulantes",
+      "titulo": "Anticoagulantes",
+      "area": "tubos-de-coleta",
+      "keywords": [
+        "anticoagulantes"
+      ],
+      "image": "anticoagulantes.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ordem-dos-tubos",
+      "slug": "ordem-dos-tubos",
+      "titulo": "Ordem dos tubos",
+      "area": "tubos-de-coleta",
+      "keywords": [
+        "ordem",
+        "tubos"
+      ],
+      "image": "ordem-dos-tubos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "alteracoes-do-leucograma",
+      "slug": "alteracoes-do-leucograma",
+      "titulo": "Alterações do leucograma",
+      "area": "hematologia",
+      "keywords": [
+        "alteracoes",
+        "leucograma"
+      ],
+      "image": "alteracoes-do-leucograma.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "anemias",
+      "slug": "anemias",
+      "titulo": "Anemias",
+      "area": "hematologia",
+      "keywords": [
+        "anemias"
+      ],
+      "image": "anemias.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "carboxiemoglobina-vs-metemoglobina",
+      "slug": "carboxiemoglobina-vs-metemoglobina",
+      "titulo": "Carboxiemoglobina vs Metemoglobina",
+      "area": "hematologia",
+      "keywords": [
+        "carboxiemoglobina",
+        "metemoglobina"
+      ],
+      "image": "carboxiemoglobina-vs-metemoglobina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "contagem-diferencial-de-leucocitos",
+      "slug": "contagem-diferencial-de-leucocitos",
+      "titulo": "Contagem diferencial de leucócitos",
+      "area": "hematologia",
+      "keywords": [
+        "contagem",
+        "diferencial",
+        "leucocitos"
+      ],
+      "image": "contagem-diferencial-de-leucocitos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "eritrocitos",
+      "slug": "eritrocitos",
+      "titulo": "Eritrócitos",
+      "area": "hematologia",
+      "keywords": [
+        "eritrocitos"
+      ],
+      "image": "eritrocitos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "esfregaco-de-sangue-periferico",
+      "slug": "esfregaco-de-sangue-periferico",
+      "titulo": "Esfregaço de sangue periférico",
+      "area": "hematologia",
+      "keywords": [
+        "esfregaco",
+        "sangue",
+        "periferico"
+      ],
+      "image": "esfregaco-de-sangue-periferico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ferritina-serica",
+      "slug": "ferritina-serica",
+      "titulo": "Ferritina sérica",
+      "area": "hematologia",
+      "keywords": [
+        "ferritina",
+        "serica"
+      ],
+      "image": "ferritina-serica.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ferritina-transferrina-e-saturacao",
+      "slug": "ferritina-transferrina-e-saturacao",
+      "titulo": "Ferritina, transferrina e saturação",
+      "area": "hematologia",
+      "keywords": [
+        "ferritina",
+        "transferrina",
+        "saturacao"
+      ],
+      "image": "ferritina-transferrina-e-saturacao.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ferro-serico-vs-ferritina-vs-tibc",
+      "slug": "ferro-serico-vs-ferritina-vs-tibc",
+      "titulo": "Ferro sérico vs Ferritina vs TIBC",
+      "area": "hematologia",
+      "keywords": [
+        "ferro",
+        "serico",
+        "ferritina",
+        "tibc"
+      ],
+      "image": "ferro-serico-vs-ferritina-vs-tibc.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "granulocitos-vs-agranulocitos",
+      "slug": "granulocitos-vs-agranulocitos",
+      "titulo": "Granulócitos vs agranulócitos",
+      "area": "hematologia",
+      "keywords": [
+        "granulocitos",
+        "agranulocitos"
+      ],
+      "image": "granulocitos-vs-agranulocitos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hematologia-visao-geral",
+      "slug": "hematologia-visao-geral",
+      "titulo": "Hematologia - visão geral",
+      "area": "hematologia",
+      "keywords": [
+        "hematologia"
+      ],
+      "image": "hematologia-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemograma-visao-geral",
+      "slug": "hemograma-visao-geral",
+      "titulo": "Hemograma - visão geral",
+      "area": "hematologia",
+      "keywords": [
+        "hemograma"
+      ],
+      "image": "hemograma-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "leucocitos",
+      "slug": "leucocitos",
+      "titulo": "Leucócitos",
+      "area": "hematologia",
+      "keywords": [
+        "leucocitos"
+      ],
+      "image": "leucocitos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "monocito-ou-linfocito",
+      "slug": "monocito-ou-linfocito",
+      "titulo": "Monócito ou linfócito",
+      "area": "hematologia",
+      "keywords": [
+        "monocito",
+        "linfocito"
+      ],
+      "image": "monocito-ou-linfocito.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "morfologia-eritrocitaria",
+      "slug": "morfologia-eritrocitaria",
+      "titulo": "Morfologia eritrocitária",
+      "area": "hematologia",
+      "keywords": [
+        "morfologia",
+        "eritrocitaria"
+      ],
+      "image": "morfologia-eritrocitaria.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "plaquetas",
+      "slug": "plaquetas",
+      "titulo": "Plaquetas",
+      "area": "hematologia",
+      "keywords": [
+        "plaquetas"
+      ],
+      "image": "plaquetas.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "reticulocitos",
+      "slug": "reticulocitos",
+      "titulo": "Reticulócitos",
+      "area": "hematologia",
+      "keywords": [
+        "reticulocitos"
+      ],
+      "image": "reticulocitos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "talassemias-vs-anemia-falciforme",
+      "slug": "talassemias-vs-anemia-falciforme",
+      "titulo": "Talassemias vs anemia falciforme",
+      "area": "hematologia",
+      "keywords": [
+        "talassemias",
+        "anemia",
+        "falciforme"
+      ],
+      "image": "talassemias-vs-anemia-falciforme.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "transferrina-e-saturacao-de-transferrina",
+      "slug": "transferrina-e-saturacao-de-transferrina",
+      "titulo": "Transferrina e saturação de transferrina",
+      "area": "hematologia",
+      "keywords": [
+        "transferrina",
+        "saturacao"
+      ],
+      "image": "transferrina-e-saturacao-de-transferrina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "velocidade-de-hemossedimentacao-vhs",
+      "slug": "velocidade-de-hemossedimentacao-vhs",
+      "titulo": "Velocidade de hemossedimentação (VHS)",
+      "area": "hematologia",
+      "keywords": [
+        "velocidade",
+        "hemossedimentacao",
+        "vhs"
+      ],
+      "image": "velocidade-de-hemossedimentacao-vhs.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "vitamina-b12-vs-acido-folico",
+      "slug": "vitamina-b12-vs-acido-folico",
+      "titulo": "Vitamina B12 vs Ácido fólico",
+      "area": "hematologia",
+      "keywords": [
+        "vitamina",
+        "b12",
+        "acido",
+        "folico"
+      ],
+      "image": "vitamina-b12-vs-acido-folico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "indices-hematimetricos",
+      "slug": "indices-hematimetricos",
+      "titulo": "Índices hematimétricos",
+      "area": "hematologia",
+      "keywords": [
+        "indices",
+        "hematimetricos"
+      ],
+      "image": "indices-hematimetricos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "cascata-da-coagulacao",
+      "slug": "cascata-da-coagulacao",
+      "titulo": "Cascata da coagulação",
+      "area": "coagulacao",
+      "keywords": [
+        "cascata",
+        "coagulacao"
+      ],
+      "image": "cascata-da-coagulacao.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "d-dimero",
+      "slug": "d-dimero",
+      "titulo": "D-dímero",
+      "area": "coagulacao",
+      "keywords": [
+        "d-dimero"
+      ],
+      "image": "d-dimero.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemostasia-visao-geral",
+      "slug": "hemostasia-visao-geral",
+      "titulo": "Hemostasia - visão geral",
+      "area": "coagulacao",
+      "keywords": [
+        "hemostasia"
+      ],
+      "image": "hemostasia-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "perfil-de-von-willebrand",
+      "slug": "perfil-de-von-willebrand",
+      "titulo": "Perfil de von Willebrand",
+      "area": "coagulacao",
+      "keywords": [
+        "perfil",
+        "von",
+        "willebrand"
+      ],
+      "image": "perfil-de-von-willebrand.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "tp-e-inr",
+      "slug": "tp-e-inr",
+      "titulo": "TP e INR",
+      "area": "coagulacao",
+      "keywords": [
+        "tp",
+        "inr"
+      ],
+      "image": "tp-e-inr.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "tp-vs-ttpa",
+      "slug": "tp-vs-ttpa",
+      "titulo": "TP vs TTPa",
+      "area": "coagulacao",
+      "keywords": [
+        "tp",
+        "ttpa"
+      ],
+      "image": "tp-vs-ttpa.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ttpa",
+      "slug": "ttpa",
+      "titulo": "TTPa",
+      "area": "coagulacao",
+      "keywords": [
+        "ttpa"
+      ],
+      "image": "ttpa.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "tempo-de-trombina-vs-tempo-de-reptilase",
+      "slug": "tempo-de-trombina-vs-tempo-de-reptilase",
+      "titulo": "Tempo de trombina vs Tempo de reptilase",
+      "area": "coagulacao",
+      "keywords": [
+        "tempo",
+        "trombina",
+        "reptilase"
+      ],
+      "image": "tempo-de-trombina-vs-tempo-de-reptilase.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "teste-de-mistura-1-1",
+      "slug": "teste-de-mistura-1-1",
+      "titulo": "Teste de mistura 1-1",
+      "area": "coagulacao",
+      "keywords": [
+        "teste",
+        "mistura",
+        "1-1"
+      ],
+      "image": "teste-de-mistura-1-1.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "cilindros-urinarios-visao-geral",
+      "slug": "cilindros-urinarios-visao-geral",
+      "titulo": "Cilindros urinários - visão geral",
+      "area": "urinalise",
+      "keywords": [
+        "cilindros",
+        "urinarios"
+      ],
+      "image": "cilindros-urinarios-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "coleta-de-urina",
+      "slug": "coleta-de-urina",
+      "titulo": "Coleta de urina",
+      "area": "urinalise",
+      "keywords": [
+        "coleta",
+        "urina"
+      ],
+      "image": "coleta-de-urina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "cristais-urinarios-visao-geral",
+      "slug": "cristais-urinarios-visao-geral",
+      "titulo": "Cristais urinários - visão geral",
+      "area": "urinalise",
+      "keywords": [
+        "cristais",
+        "urinarios"
+      ],
+      "image": "cristais-urinarios-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "exame-fisico-e-quimico-da-urina",
+      "slug": "exame-fisico-e-quimico-da-urina",
+      "titulo": "Exame físico e químico da urina",
+      "area": "urinalise",
+      "keywords": [
+        "exame",
+        "fisico",
+        "quimico",
+        "urina"
+      ],
+      "image": "exame-fisico-e-quimico-da-urina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "glicose-e-cetonas-na-urina",
+      "slug": "glicose-e-cetonas-na-urina",
+      "titulo": "Glicose e cetonas na urina",
+      "area": "urinalise",
+      "keywords": [
+        "glicose",
+        "cetonas",
+        "urina"
+      ],
+      "image": "glicose-e-cetonas-na-urina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "microalbuminuria-e-relacao-albumina-creatinina",
+      "slug": "microalbuminuria-e-relacao-albumina-creatinina",
+      "titulo": "Microalbuminúria e relação albumina-creatinina",
+      "area": "urinalise",
+      "keywords": [
+        "microalbuminuria",
+        "relacao",
+        "albumina-creatinina"
+      ],
+      "image": "microalbuminuria-e-relacao-albumina-creatinina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "proteinuria-de-24-horas-vs-rac",
+      "slug": "proteinuria-de-24-horas-vs-rac",
+      "titulo": "Proteinúria de 24 horas vs RAC",
+      "area": "urinalise",
+      "keywords": [
+        "proteinuria",
+        "horas",
+        "rac"
+      ],
+      "image": "proteinuria-de-24-horas-vs-rac.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "proteinas-na-urina",
+      "slug": "proteinas-na-urina",
+      "titulo": "Proteínas na urina",
+      "area": "urinalise",
+      "keywords": [
+        "proteinas",
+        "urina"
+      ],
+      "image": "proteinas-na-urina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sedimento-urinario",
+      "slug": "sedimento-urinario",
+      "titulo": "Sedimento urinário",
+      "area": "urinalise",
+      "keywords": [
+        "sedimento",
+        "urinario"
+      ],
+      "image": "sedimento-urinario.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "tipos-de-amostras-de-urina",
+      "slug": "tipos-de-amostras-de-urina",
+      "titulo": "Tipos de amostras de urina",
+      "area": "urinalise",
+      "keywords": [
+        "tipos",
+        "amostras",
+        "urina"
+      ],
+      "image": "tipos-de-amostras-de-urina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "tira-reagente-de-urina",
+      "slug": "tira-reagente-de-urina",
+      "titulo": "Tira reagente de urina",
+      "area": "urinalise",
+      "keywords": [
+        "tira",
+        "reagente",
+        "urina"
+      ],
+      "image": "tira-reagente-de-urina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "alt-tgp-vs-ast-tgo",
+      "slug": "alt-tgp-vs-ast-tgo",
+      "titulo": "ALT-TGP vs AST-TGO",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "alt-tgp",
+        "ast-tgo"
+      ],
+      "image": "alt-tgp-vs-ast-tgo.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "albumina-serica",
+      "slug": "albumina-serica",
+      "titulo": "Albumina sérica",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "albumina",
+        "serica"
+      ],
+      "image": "albumina-serica.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "amilase-vs-lipase",
+      "slug": "amilase-vs-lipase",
+      "titulo": "Amilase vs Lipase",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "amilase",
+        "lipase"
+      ],
+      "image": "amilase-vs-lipase.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bnp-vs-nt-probnp",
+      "slug": "bnp-vs-nt-probnp",
+      "titulo": "BNP vs NT-proBNP",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "bnp",
+        "nt-probnp"
+      ],
+      "image": "bnp-vs-nt-probnp.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bilirrubina",
+      "slug": "bilirrubina",
+      "titulo": "Bilirrubina",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "bilirrubina"
+      ],
+      "image": "bilirrubina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bilirrubina-total-direta-e-indireta",
+      "slug": "bilirrubina-total-direta-e-indireta",
+      "titulo": "Bilirrubina total, direta e indireta",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "bilirrubina",
+        "total",
+        "direta",
+        "indireta"
+      ],
+      "image": "bilirrubina-total-direta-e-indireta.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bioquimica-clinica-visao-geral",
+      "slug": "bioquimica-clinica-visao-geral",
+      "titulo": "Bioquímica clínica - visão geral",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "bioquimica",
+        "clinica"
+      ],
+      "image": "bioquimica-clinica-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ck-total",
+      "slug": "ck-total",
+      "titulo": "CK total",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "ck",
+        "total"
+      ],
+      "image": "ck-total.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ck-mb-vs-troponina",
+      "slug": "ck-mb-vs-troponina",
+      "titulo": "CK-MB vs Troponina",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "ck-mb",
+        "troponina"
+      ],
+      "image": "ck-mb-vs-troponina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "calprotectina-fecal",
+      "slug": "calprotectina-fecal",
+      "titulo": "Calprotectina fecal",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "calprotectina",
+        "fecal"
+      ],
+      "image": "calprotectina-fecal.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "cistatina-c-vs-creatinina",
+      "slug": "cistatina-c-vs-creatinina",
+      "titulo": "Cistatina C vs Creatinina",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "cistatina",
+        "c",
+        "creatinina"
+      ],
+      "image": "cistatina-c-vs-creatinina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "calcio-total-vs-calcio-ionizado",
+      "slug": "calcio-total-vs-calcio-ionizado",
+      "titulo": "Cálcio total vs cálcio ionizado",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "calcio",
+        "total",
+        "ionizado"
+      ],
+      "image": "calcio-total-vs-calcio-ionizado.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "calcio-vs-fosforo",
+      "slug": "calcio-vs-fosforo",
+      "titulo": "Cálcio vs Fósforo",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "calcio",
+        "fosforo"
+      ],
+      "image": "calcio-vs-fosforo.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "depuracao-de-creatinina",
+      "slug": "depuracao-de-creatinina",
+      "titulo": "Depuração de creatinina",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "depuracao",
+        "creatinina"
+      ],
+      "image": "depuracao-de-creatinina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "eletroforese-de-proteinas-sericas",
+      "slug": "eletroforese-de-proteinas-sericas",
+      "titulo": "Eletroforese de proteínas séricas",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "eletroforese",
+        "proteinas",
+        "sericas"
+      ],
+      "image": "eletroforese-de-proteinas-sericas.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "eletrolitos-sodio-potassio-e-cloro",
+      "slug": "eletrolitos-sodio-potassio-e-cloro",
+      "titulo": "Eletrólitos - Sódio, Potássio e Cloro",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "eletrolitos",
+        "sodio",
+        "potassio",
+        "cloro"
+      ],
+      "image": "eletrolitos-sodio-potassio-e-cloro.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "eletrolitos-visao-geral",
+      "slug": "eletrolitos-visao-geral",
+      "titulo": "Eletrólitos - visão geral",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "eletrolitos"
+      ],
+      "image": "eletrolitos-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "enzimas-clinicas",
+      "slug": "enzimas-clinicas",
+      "titulo": "Enzimas clínicas",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "enzimas",
+        "clinicas"
+      ],
+      "image": "enzimas-clinicas.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "equilibrio-acido-base-visao-geral",
+      "slug": "equilibrio-acido-base-visao-geral",
+      "titulo": "Equilíbrio ácido-base - visão geral",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "equilibrio",
+        "acido-base"
+      ],
+      "image": "equilibrio-acido-base-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "fosfatase-alcalina-vs-ggt",
+      "slug": "fosfatase-alcalina-vs-ggt",
+      "titulo": "Fosfatase alcalina vs GGT",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "fosfatase",
+        "alcalina",
+        "ggt"
+      ],
+      "image": "fosfatase-alcalina-vs-ggt.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "funcao-renal-ureia-e-creatinina-2",
+      "slug": "funcao-renal-ureia-e-creatinina-2",
+      "titulo": "Função renal - Ureia e Creatinina (2)",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "funcao",
+        "renal",
+        "ureia",
+        "creatinina"
+      ],
+      "image": "funcao-renal-ureia-e-creatinina-2.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "funcao-renal-ureia-e-creatinina",
+      "slug": "funcao-renal-ureia-e-creatinina",
+      "titulo": "Função renal - ureia e creatinina",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "funcao",
+        "renal",
+        "ureia",
+        "creatinina"
+      ],
+      "image": "funcao-renal-ureia-e-creatinina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "fosforo-serico",
+      "slug": "fosforo-serico",
+      "titulo": "Fósforo sérico",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "fosforo",
+        "serico"
+      ],
+      "image": "fosforo-serico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "gasometria-arterial",
+      "slug": "gasometria-arterial",
+      "titulo": "Gasometria arterial",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "gasometria",
+        "arterial"
+      ],
+      "image": "gasometria-arterial.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "glicose",
+      "slug": "glicose",
+      "titulo": "Glicose",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "glicose"
+      ],
+      "image": "glicose.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "glicose-interpretacao-basica",
+      "slug": "glicose-interpretacao-basica",
+      "titulo": "Glicose - Interpretação básica",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "glicose",
+        "interpretacao",
+        "basica"
+      ],
+      "image": "glicose-interpretacao-basica.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemoglobina-glicada-hba1c",
+      "slug": "hemoglobina-glicada-hba1c",
+      "titulo": "Hemoglobina glicada (HbA1c)",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "hemoglobina",
+        "glicada",
+        "hba1c"
+      ],
+      "image": "hemoglobina-glicada-hba1c.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ldh",
+      "slug": "ldh",
+      "titulo": "LDH",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "ldh"
+      ],
+      "image": "ldh.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "magnesio-serico",
+      "slug": "magnesio-serico",
+      "titulo": "Magnésio sérico",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "magnesio",
+        "serico"
+      ],
+      "image": "magnesio-serico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "marcadores-cardiacos",
+      "slug": "marcadores-cardiacos",
+      "titulo": "Marcadores cardíacos",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "marcadores",
+        "cardiacos"
+      ],
+      "image": "marcadores-cardiacos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "osmolalidade-serica-vs-osmolalidade-urinaria",
+      "slug": "osmolalidade-serica-vs-osmolalidade-urinaria",
+      "titulo": "Osmolalidade sérica vs osmolalidade urinária",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "osmolalidade",
+        "serica",
+        "urinaria"
+      ],
+      "image": "osmolalidade-serica-vs-osmolalidade-urinaria.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "perfil-hepatico",
+      "slug": "perfil-hepatico",
+      "titulo": "Perfil hepático",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "perfil",
+        "hepatico"
+      ],
+      "image": "perfil-hepatico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "perfil-lipidico",
+      "slug": "perfil-lipidico",
+      "titulo": "Perfil lipídico",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "perfil",
+        "lipidico"
+      ],
+      "image": "perfil-lipidico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "perfil-renal",
+      "slug": "perfil-renal",
+      "titulo": "Perfil renal",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "perfil",
+        "renal"
+      ],
+      "image": "perfil-renal.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "proteinas-totais-e-albumina",
+      "slug": "proteinas-totais-e-albumina",
+      "titulo": "Proteínas totais e albumina",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "proteinas",
+        "totais",
+        "albumina"
+      ],
+      "image": "proteinas-totais-e-albumina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "proteinas-totais-e-relacao-a-g",
+      "slug": "proteinas-totais-e-relacao-a-g",
+      "titulo": "Proteínas totais e relação A-G",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "proteinas",
+        "totais",
+        "relacao",
+        "a-g"
+      ],
+      "image": "proteinas-totais-e-relacao-a-g.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sodio-vs-potassio",
+      "slug": "sodio-vs-potassio",
+      "titulo": "Sódio vs potássio",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "sodio",
+        "potassio"
+      ],
+      "image": "sodio-vs-potassio.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sodio-potassio-e-cloro",
+      "slug": "sodio-potassio-e-cloro",
+      "titulo": "Sódio, potássio e cloro",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "sodio",
+        "potassio",
+        "cloro"
+      ],
+      "image": "sodio-potassio-e-cloro.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "troponina-i-vs-troponina-t",
+      "slug": "troponina-i-vs-troponina-t",
+      "titulo": "Troponina I vs Troponina T",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "troponina",
+        "i",
+        "t"
+      ],
+      "image": "troponina-i-vs-troponina-t.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ureia-vs-creatinina",
+      "slug": "ureia-vs-creatinina",
+      "titulo": "Ureia vs Creatinina",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "ureia",
+        "creatinina"
+      ],
+      "image": "ureia-vs-creatinina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "acido-urico-serico",
+      "slug": "acido-urico-serico",
+      "titulo": "Ácido úrico sérico",
+      "area": "bioquimica-clinica",
+      "keywords": [
+        "acido",
+        "urico",
+        "serico"
+      ],
+      "image": "acido-urico-serico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "antibiograma-visao-geral",
+      "slug": "antibiograma-visao-geral",
+      "titulo": "Antibiograma - visão geral",
+      "area": "microbiologia",
+      "keywords": [
+        "antibiograma"
+      ],
+      "image": "antibiograma-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bacilos-gram-positivos-vs-gram-negativos",
+      "slug": "bacilos-gram-positivos-vs-gram-negativos",
+      "titulo": "Bacilos Gram-positivos vs Gram-negativos",
+      "area": "microbiologia",
+      "keywords": [
+        "bacilos",
+        "gram-positivos",
+        "gram-negativos"
+      ],
+      "image": "bacilos-gram-positivos-vs-gram-negativos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "baciloscopia-e-coloracao-de-ziehl-neelsen",
+      "slug": "baciloscopia-e-coloracao-de-ziehl-neelsen",
+      "titulo": "Baciloscopia e coloração de Ziehl-Neelsen",
+      "area": "microbiologia",
+      "keywords": [
+        "baciloscopia",
+        "coloracao",
+        "ziehl-neelsen"
+      ],
+      "image": "baciloscopia-e-coloracao-de-ziehl-neelsen.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bacterias-gram-negativas-parede-celular",
+      "slug": "bacterias-gram-negativas-parede-celular",
+      "titulo": "Bactérias Gram-negativas - Parede celular",
+      "area": "microbiologia",
+      "keywords": [
+        "bacterias",
+        "gram-negativas",
+        "parede",
+        "celular"
+      ],
+      "image": "bacterias-gram-negativas-parede-celular.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bacterias-gram-positivas-parede-celular",
+      "slug": "bacterias-gram-positivas-parede-celular",
+      "titulo": "Bactérias Gram-positivas - Parede celular",
+      "area": "microbiologia",
+      "keywords": [
+        "bacterias",
+        "gram-positivas",
+        "parede",
+        "celular"
+      ],
+      "image": "bacterias-gram-positivas-parede-celular.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "cocos-gram-positivos-vs-gram-negativos",
+      "slug": "cocos-gram-positivos-vs-gram-negativos",
+      "titulo": "Cocos Gram-positivos vs Gram-negativos",
+      "area": "microbiologia",
+      "keywords": [
+        "cocos",
+        "gram-positivos",
+        "gram-negativos"
+      ],
+      "image": "cocos-gram-positivos-vs-gram-negativos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "coprocultura",
+      "slug": "coprocultura",
+      "titulo": "Coprocultura",
+      "area": "microbiologia",
+      "keywords": [
+        "coprocultura"
+      ],
+      "image": "coprocultura.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "cultura-microbiologica",
+      "slug": "cultura-microbiologica",
+      "titulo": "Cultura microbiológica",
+      "area": "microbiologia",
+      "keywords": [
+        "cultura",
+        "microbiologica"
+      ],
+      "image": "cultura-microbiologica.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "escore-de-nugent",
+      "slug": "escore-de-nugent",
+      "titulo": "Escore de Nugent",
+      "area": "microbiologia",
+      "keywords": [
+        "escore",
+        "nugent"
+      ],
+      "image": "escore-de-nugent.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemocultura",
+      "slug": "hemocultura",
+      "titulo": "Hemocultura",
+      "area": "microbiologia",
+      "keywords": [
+        "hemocultura"
+      ],
+      "image": "hemocultura.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemolise-em-agar-sangue",
+      "slug": "hemolise-em-agar-sangue",
+      "titulo": "Hemólise em ágar sangue",
+      "area": "microbiologia",
+      "keywords": [
+        "hemolise",
+        "agar",
+        "sangue"
+      ],
+      "image": "hemolise-em-agar-sangue.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "meios-de-cultura",
+      "slug": "meios-de-cultura",
+      "titulo": "Meios de cultura",
+      "area": "microbiologia",
+      "keywords": [
+        "meios",
+        "cultura"
+      ],
+      "image": "meios-de-cultura.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "microbiologia-visao-geral",
+      "slug": "microbiologia-visao-geral",
+      "titulo": "Microbiologia - visão geral",
+      "area": "microbiologia",
+      "keywords": [
+        "microbiologia"
+      ],
+      "image": "microbiologia-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "urocultura",
+      "slug": "urocultura",
+      "titulo": "Urocultura",
+      "area": "microbiologia",
+      "keywords": [
+        "urocultura"
+      ],
+      "image": "urocultura.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ciclo-de-vida-dos-parasitas",
+      "slug": "ciclo-de-vida-dos-parasitas",
+      "titulo": "Ciclo de vida dos parasitas",
+      "area": "parasitologia",
+      "keywords": [
+        "ciclo",
+        "vida",
+        "parasitas"
+      ],
+      "image": "ciclo-de-vida-dos-parasitas.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "doenca-de-chagas",
+      "slug": "doenca-de-chagas",
+      "titulo": "Doença de Chagas",
+      "area": "parasitologia",
+      "keywords": [
+        "doenca",
+        "chagas"
+      ],
+      "image": "doenca-de-chagas.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "exame-geral-de-fezes",
+      "slug": "exame-geral-de-fezes",
+      "titulo": "Exame geral de fezes",
+      "area": "parasitologia",
+      "keywords": [
+        "exame",
+        "fezes"
+      ],
+      "image": "exame-geral-de-fezes.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "gota-espessa-vs-esfregaco-delgado",
+      "slug": "gota-espessa-vs-esfregaco-delgado",
+      "titulo": "Gota espessa vs Esfregaço delgado",
+      "area": "parasitologia",
+      "keywords": [
+        "gota",
+        "espessa",
+        "esfregaco",
+        "delgado"
+      ],
+      "image": "gota-espessa-vs-esfregaco-delgado.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "nematodeos-vs-cestodeos-vs-trematodeos",
+      "slug": "nematodeos-vs-cestodeos-vs-trematodeos",
+      "titulo": "Nematódeos vs Cestódeos vs Trematódeos",
+      "area": "parasitologia",
+      "keywords": [
+        "nematodeos",
+        "cestodeos",
+        "trematodeos"
+      ],
+      "image": "nematodeos-vs-cestodeos-vs-trematodeos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "parasitas-intestinais-visao-geral",
+      "slug": "parasitas-intestinais-visao-geral",
+      "titulo": "Parasitas intestinais - visão geral",
+      "area": "parasitologia",
+      "keywords": [
+        "parasitas",
+        "intestinais"
+      ],
+      "image": "parasitas-intestinais-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "parasitologia-visao-geral",
+      "slug": "parasitologia-visao-geral",
+      "titulo": "Parasitologia - visão geral",
+      "area": "parasitologia",
+      "keywords": [
+        "parasitologia"
+      ],
+      "image": "parasitologia-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "protozoarios-intestinais",
+      "slug": "protozoarios-intestinais",
+      "titulo": "Protozoários intestinais",
+      "area": "parasitologia",
+      "keywords": [
+        "protozoarios",
+        "intestinais"
+      ],
+      "image": "protozoarios-intestinais.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "aso-vs-anti-dnase-b",
+      "slug": "aso-vs-anti-dnase-b",
+      "titulo": "ASO vs Anti-DNase B",
+      "area": "imunologia",
+      "keywords": [
+        "aso",
+        "anti-dnase",
+        "b"
+      ],
+      "image": "aso-vs-anti-dnase-b.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "antigeno-vs-anticorpo",
+      "slug": "antigeno-vs-anticorpo",
+      "titulo": "Antígeno vs Anticorpo",
+      "area": "imunologia",
+      "keywords": [
+        "antigeno",
+        "anticorpo"
+      ],
+      "image": "antigeno-vs-anticorpo.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "autoanticorpos-visao-geral",
+      "slug": "autoanticorpos-visao-geral",
+      "titulo": "Autoanticorpos - visão geral",
+      "area": "imunologia",
+      "keywords": [
+        "autoanticorpos"
+      ],
+      "image": "autoanticorpos-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "ca-125",
+      "slug": "ca-125",
+      "titulo": "CA-125",
+      "area": "imunologia",
+      "keywords": [
+        "ca-125"
+      ],
+      "image": "ca-125.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "complemento-c3-vs-c4",
+      "slug": "complemento-c3-vs-c4",
+      "titulo": "Complemento C3 vs C4",
+      "area": "imunologia",
+      "keywords": [
+        "complemento",
+        "c3",
+        "c4"
+      ],
+      "image": "complemento-c3-vs-c4.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "elisa-visao-geral",
+      "slug": "elisa-visao-geral",
+      "titulo": "ELISA - visão geral",
+      "area": "imunologia",
+      "keywords": [
+        "elisa"
+      ],
+      "image": "elisa-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "fator-reumatoide-vs-anti-ccp",
+      "slug": "fator-reumatoide-vs-anti-ccp",
+      "titulo": "Fator reumatoide vs Anti-CCP",
+      "area": "imunologia",
+      "keywords": [
+        "fator",
+        "reumatoide",
+        "anti-ccp"
+      ],
+      "image": "fator-reumatoide-vs-anti-ccp.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hiv-triagem-e-confirmacao",
+      "slug": "hiv-triagem-e-confirmacao",
+      "titulo": "HIV - triagem e confirmação",
+      "area": "imunologia",
+      "keywords": [
+        "hiv",
+        "triagem",
+        "confirmacao"
+      ],
+      "image": "hiv-triagem-e-confirmacao.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hepatite-b-marcadores-sorologicos",
+      "slug": "hepatite-b-marcadores-sorologicos",
+      "titulo": "Hepatite B - marcadores sorológicos",
+      "area": "imunologia",
+      "keywords": [
+        "hepatite",
+        "b",
+        "marcadores",
+        "sorologicos"
+      ],
+      "image": "hepatite-b-marcadores-sorologicos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hipersensibilidade-tipos-i-ii-iii-e-iv",
+      "slug": "hipersensibilidade-tipos-i-ii-iii-e-iv",
+      "titulo": "Hipersensibilidade - Tipos I, II, III e IV",
+      "area": "imunologia",
+      "keywords": [
+        "hipersensibilidade",
+        "tipos",
+        "i",
+        "ii",
+        "iii",
+        "iv"
+      ],
+      "image": "hipersensibilidade-tipos-i-ii-iii-e-iv.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "igg-vs-igm",
+      "slug": "igg-vs-igm",
+      "titulo": "IgG vs IgM",
+      "area": "imunologia",
+      "keywords": [
+        "igg",
+        "igm"
+      ],
+      "image": "igg-vs-igm.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "imunidade-inata-vs-adaptativa",
+      "slug": "imunidade-inata-vs-adaptativa",
+      "titulo": "Imunidade inata vs adaptativa",
+      "area": "imunologia",
+      "keywords": [
+        "imunidade",
+        "inata",
+        "adaptativa"
+      ],
+      "image": "imunidade-inata-vs-adaptativa.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "imunoglobulinas-visao-geral",
+      "slug": "imunoglobulinas-visao-geral",
+      "titulo": "Imunoglobulinas - visão geral",
+      "area": "imunologia",
+      "keywords": [
+        "imunoglobulinas"
+      ],
+      "image": "imunoglobulinas-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "imunologia-visao-geral",
+      "slug": "imunologia-visao-geral",
+      "titulo": "Imunologia - visão geral",
+      "area": "imunologia",
+      "keywords": [
+        "imunologia"
+      ],
+      "image": "imunologia-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "latex-vs-elisa-vs-quimioluminescencia",
+      "slug": "latex-vs-elisa-vs-quimioluminescencia",
+      "titulo": "Látex vs ELISA vs Quimioluminescência",
+      "area": "imunologia",
+      "keywords": [
+        "latex",
+        "elisa",
+        "quimioluminescencia"
+      ],
+      "image": "latex-vs-elisa-vs-quimioluminescencia.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "proteina-c-reativa-vs-procalcitonina",
+      "slug": "proteina-c-reativa-vs-procalcitonina",
+      "titulo": "Proteína C reativa vs Procalcitonina",
+      "area": "imunologia",
+      "keywords": [
+        "proteina",
+        "c",
+        "reativa",
+        "procalcitonina"
+      ],
+      "image": "proteina-c-reativa-vs-procalcitonina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sistema-complemento",
+      "slug": "sistema-complemento",
+      "titulo": "Sistema complemento",
+      "area": "imunologia",
+      "keywords": [
+        "sistema",
+        "complemento"
+      ],
+      "image": "sistema-complemento.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sorologia-visao-geral",
+      "slug": "sorologia-visao-geral",
+      "titulo": "Sorologia - visão geral",
+      "area": "imunologia",
+      "keywords": [
+        "sorologia"
+      ],
+      "image": "sorologia-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "testes-rapidos-imunocromatografia",
+      "slug": "testes-rapidos-imunocromatografia",
+      "titulo": "Testes rápidos - Imunocromatografia",
+      "area": "imunologia",
+      "keywords": [
+        "testes",
+        "rapidos",
+        "imunocromatografia"
+      ],
+      "image": "testes-rapidos-imunocromatografia.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "vdrl-vs-testes-treponemicos",
+      "slug": "vdrl-vs-testes-treponemicos",
+      "titulo": "VDRL vs testes treponêmicos",
+      "area": "imunologia",
+      "keywords": [
+        "vdrl",
+        "testes",
+        "treponemicos"
+      ],
+      "image": "vdrl-vs-testes-treponemicos.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "residuos-laboratoriais",
+      "slug": "residuos-laboratoriais",
+      "titulo": "Resíduos laboratoriais",
+      "area": "biosseguranca",
+      "keywords": [
+        "residuos",
+        "laboratoriais"
+      ],
+      "image": "residuos-laboratoriais.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "calibracao-vs-controle-de-qualidade",
+      "slug": "calibracao-vs-controle-de-qualidade",
+      "titulo": "Calibração vs Controle de qualidade",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "calibracao",
+        "controle",
+        "qualidade"
+      ],
+      "image": "calibracao-vs-controle-de-qualidade.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "controle-de-qualidade-no-laboratorio",
+      "slug": "controle-de-qualidade-no-laboratorio",
+      "titulo": "Controle de qualidade no laboratório",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "controle",
+        "qualidade",
+        "laboratorio"
+      ],
+      "image": "controle-de-qualidade-no-laboratorio.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "controle-interno-vs-controle-externo-de-qualidade",
+      "slug": "controle-interno-vs-controle-externo-de-qualidade",
+      "titulo": "Controle interno vs Controle externo de qualidade",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "controle",
+        "interno",
+        "externo",
+        "qualidade"
+      ],
+      "image": "controle-interno-vs-controle-externo-de-qualidade.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "erro-aleatorio-vs-erro-sistematico",
+      "slug": "erro-aleatorio-vs-erro-sistematico",
+      "titulo": "Erro aleatório vs erro sistemático",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "erro",
+        "aleatorio",
+        "sistematico"
+      ],
+      "image": "erro-aleatorio-vs-erro-sistematico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "grafico-de-levey-jennings",
+      "slug": "grafico-de-levey-jennings",
+      "titulo": "Gráfico de Levey-Jennings",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "grafico",
+        "levey-jennings"
+      ],
+      "image": "grafico-de-levey-jennings.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "intervalo-de-referencia-vs-ponto-de-corte",
+      "slug": "intervalo-de-referencia-vs-ponto-de-corte",
+      "titulo": "Intervalo de referência vs Ponto de corte",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "intervalo",
+        "referencia",
+        "ponto",
+        "corte"
+      ],
+      "image": "intervalo-de-referencia-vs-ponto-de-corte.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "precisao-vs-exatidao",
+      "slug": "precisao-vs-exatidao",
+      "titulo": "Precisão vs exatidão",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "precisao",
+        "exatidao"
+      ],
+      "image": "precisao-vs-exatidao.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "regras-de-westgard",
+      "slug": "regras-de-westgard",
+      "titulo": "Regras de Westgard",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "regras",
+        "westgard"
+      ],
+      "image": "regras-de-westgard.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sensibilidade-vs-especificidade",
+      "slug": "sensibilidade-vs-especificidade",
+      "titulo": "Sensibilidade vs Especificidade",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "sensibilidade",
+        "especificidade"
+      ],
+      "image": "sensibilidade-vs-especificidade.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "vpp-vs-vpn",
+      "slug": "vpp-vs-vpn",
+      "titulo": "VPP vs VPN",
+      "area": "controle-de-qualidade",
+      "keywords": [
+        "vpp",
+        "vpn"
+      ],
+      "image": "vpp-vs-vpn.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "acth",
+      "slug": "acth",
+      "titulo": "ACTH",
+      "area": "endocrinologia",
+      "keywords": [
+        "acth"
+      ],
+      "image": "acth.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "calcitonina",
+      "slug": "calcitonina",
+      "titulo": "Calcitonina",
+      "area": "endocrinologia",
+      "keywords": [
+        "calcitonina"
+      ],
+      "image": "calcitonina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "cortisol-serico",
+      "slug": "cortisol-serico",
+      "titulo": "Cortisol sérico",
+      "area": "endocrinologia",
+      "keywords": [
+        "cortisol",
+        "serico"
+      ],
+      "image": "cortisol-serico.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "curva-de-tolerancia-oral-a-glicose",
+      "slug": "curva-de-tolerancia-oral-a-glicose",
+      "titulo": "Curva de tolerância oral à glicose",
+      "area": "endocrinologia",
+      "keywords": [
+        "curva",
+        "tolerancia",
+        "oral",
+        "glicose"
+      ],
+      "image": "curva-de-tolerancia-oral-a-glicose.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "estradiol-vs-progesterona",
+      "slug": "estradiol-vs-progesterona",
+      "titulo": "Estradiol vs Progesterona",
+      "area": "endocrinologia",
+      "keywords": [
+        "estradiol",
+        "progesterona"
+      ],
+      "image": "estradiol-vs-progesterona.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "fsh-vs-lh",
+      "slug": "fsh-vs-lh",
+      "titulo": "FSH vs LH",
+      "area": "endocrinologia",
+      "keywords": [
+        "fsh",
+        "lh"
+      ],
+      "image": "fsh-vs-lh.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "homa-ir",
+      "slug": "homa-ir",
+      "titulo": "HOMA-IR",
+      "area": "endocrinologia",
+      "keywords": [
+        "homa-ir"
+      ],
+      "image": "homa-ir.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemoglobina-glicada-hba1c-endocrinologia",
+      "slug": "hemoglobina-glicada-hba1c-endocrinologia",
+      "titulo": "Hemoglobina glicada (HbA1c)",
+      "area": "endocrinologia",
+      "keywords": [
+        "hemoglobina",
+        "glicada",
+        "hba1c"
+      ],
+      "image": "hemoglobina-glicada-hba1c-endocrinologia.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "insulina-vs-peptideo-c",
+      "slug": "insulina-vs-peptideo-c",
+      "titulo": "Insulina vs Peptídeo C",
+      "area": "endocrinologia",
+      "keywords": [
+        "insulina",
+        "peptideo",
+        "c"
+      ],
+      "image": "insulina-vs-peptideo-c.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "paratormonio-pth",
+      "slug": "paratormonio-pth",
+      "titulo": "Paratormônio (PTH)",
+      "area": "endocrinologia",
+      "keywords": [
+        "paratormonio",
+        "pth"
+      ],
+      "image": "paratormonio-pth.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "perfil-tireoidiano",
+      "slug": "perfil-tireoidiano",
+      "titulo": "Perfil tireoidiano",
+      "area": "endocrinologia",
+      "keywords": [
+        "perfil",
+        "tireoidiano"
+      ],
+      "image": "perfil-tireoidiano.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "prolactina",
+      "slug": "prolactina",
+      "titulo": "Prolactina",
+      "area": "endocrinologia",
+      "keywords": [
+        "prolactina"
+      ],
+      "image": "prolactina.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "renina-vs-aldosterona",
+      "slug": "renina-vs-aldosterona",
+      "titulo": "Renina vs Aldosterona",
+      "area": "endocrinologia",
+      "keywords": [
+        "renina",
+        "aldosterona"
+      ],
+      "image": "renina-vs-aldosterona.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "testosterona-total-vs-livre",
+      "slug": "testosterona-total-vs-livre",
+      "titulo": "Testosterona total vs livre",
+      "area": "endocrinologia",
+      "keywords": [
+        "testosterona",
+        "total",
+        "livre"
+      ],
+      "image": "testosterona-total-vs-livre.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "vitamina-d-25-oh-vitamina-d",
+      "slug": "vitamina-d-25-oh-vitamina-d",
+      "titulo": "Vitamina D (25-OH vitamina D)",
+      "area": "endocrinologia",
+      "keywords": [
+        "vitamina",
+        "d",
+        "25-oh"
+      ],
+      "image": "vitamina-d-25-oh-vitamina-d.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hcg-qualitativo-vs-quantitativo",
+      "slug": "hcg-qualitativo-vs-quantitativo",
+      "titulo": "hCG qualitativo vs quantitativo",
+      "area": "endocrinologia",
+      "keywords": [
+        "hcg",
+        "qualitativo",
+        "quantitativo"
+      ],
+      "image": "hcg-qualitativo-vs-quantitativo.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "espermograma-visao-geral",
+      "slug": "espermograma-visao-geral",
+      "titulo": "Espermograma - visão geral",
+      "area": "liquidos-biologicos",
+      "keywords": [
+        "espermograma"
+      ],
+      "image": "espermograma-visao-geral.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "liquido-cefalorraquidiano-lcr",
+      "slug": "liquido-cefalorraquidiano-lcr",
+      "titulo": "Líquido cefalorraquidiano (LCR)",
+      "area": "liquidos-biologicos",
+      "keywords": [
+        "liquido",
+        "cefalorraquidiano",
+        "lcr"
+      ],
+      "image": "liquido-cefalorraquidiano-lcr.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "liquido-pleural",
+      "slug": "liquido-pleural",
+      "titulo": "Líquido pleural",
+      "area": "liquidos-biologicos",
+      "keywords": [
+        "liquido",
+        "pleural"
+      ],
+      "image": "liquido-pleural.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "liquido-sinovial",
+      "slug": "liquido-sinovial",
+      "titulo": "Líquido sinovial",
+      "area": "liquidos-biologicos",
+      "keywords": [
+        "liquido",
+        "sinovial"
+      ],
+      "image": "liquido-sinovial.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "coombs-direto-vs-coombs-indireto",
+      "slug": "coombs-direto-vs-coombs-indireto",
+      "titulo": "Coombs direto vs Coombs indireto",
+      "area": "banco-de-sangue",
+      "keywords": [
+        "coombs",
+        "direto",
+        "indireto"
+      ],
+      "image": "coombs-direto-vs-coombs-indireto.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "hemocomponentes",
+      "slug": "hemocomponentes",
+      "titulo": "Hemocomponentes",
+      "area": "banco-de-sangue",
+      "keywords": [
+        "hemocomponentes"
+      ],
+      "image": "hemocomponentes.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "provas-cruzadas",
+      "slug": "provas-cruzadas",
+      "titulo": "Provas cruzadas",
+      "area": "banco-de-sangue",
+      "keywords": [
+        "provas",
+        "cruzadas"
+      ],
+      "image": "provas-cruzadas.jpg",
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "sistema-abo-e-fator-rh",
+      "slug": "sistema-abo-e-fator-rh",
+      "titulo": "Sistema ABO e fator Rh",
+      "area": "banco-de-sangue",
+      "keywords": [
+        "sistema",
+        "abo",
+        "fator"
+      ],
+      "image": "sistema-abo-e-fator-rh.jpg",
+      "resumo": "",
+      "pontosChave": []
+    }
+  ],
+  "bonus": [
+    {
+      "id": "bonus-01",
+      "slug": "bonus-01",
+      "titulo": "Bônus 01 — em breve",
+      "area": null,
+      "keywords": [],
+      "image": null,
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bonus-02",
+      "slug": "bonus-02",
+      "titulo": "Bônus 02 — em breve",
+      "area": null,
+      "keywords": [],
+      "image": null,
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bonus-03",
+      "slug": "bonus-03",
+      "titulo": "Bônus 03 — em breve",
+      "area": null,
+      "keywords": [],
+      "image": null,
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bonus-04",
+      "slug": "bonus-04",
+      "titulo": "Bônus 04 — em breve",
+      "area": null,
+      "keywords": [],
+      "image": null,
+      "resumo": "",
+      "pontosChave": []
+    },
+    {
+      "id": "bonus-05",
+      "slug": "bonus-05",
+      "titulo": "Bônus 05 — em breve",
+      "area": null,
+      "keywords": [],
+      "image": null,
+      "resumo": "",
+      "pontosChave": []
+    }
+  ]
+}

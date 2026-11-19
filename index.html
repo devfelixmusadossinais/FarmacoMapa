@@ -932,6 +932,11 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
 .bonus-d .bc .bv{white-space:nowrap;font-size:12.5px}
 .bonus-d .bc .bv b{font-size:13px}
 
+/* ordem: Premium em cima, Basico embaixo */
+.kit.top{margin-top:18px}
+.kit.basic{margin-top:18px}
+@media(min-width:900px){.kit-grid{grid-template-columns:1.12fr 1fr}.kit.basic{margin-top:0}}
+
 </style>
 </head>
 <body>
@@ -1206,22 +1211,6 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
       <p class="hoje-plano">Promoção válida só hoje, até as <b class="tm" data-ate>00:00</b></p>
     </div>
     <div class="kit-grid">
-      <div class="kit basic rv">
-        <div class="plano">Básico</div>
-        <h3>80 mapas visuais</h3>
-        <div class="slot pimg"><img src="img/web/mockup-essencial-400.webp" srcset="img/web/mockup-essencial-400.webp 400w, img/web/mockup-essencial-700.webp 700w" sizes="340px" width="1448" height="1086" loading="lazy" decoding="async" alt="Plano Básico: 80 mapas visuais"></div>
-        <ul>
-          <li class="main"><svg class="ic"><use href="#i-check"/></svg>80 mapas visuais de análises clínicas</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>PDF pra baixar e imprimir</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Celular, tablet ou notebook</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Acesso vitalício, sem mensalidade</li>
-          <li class="no"><span class="xx">✕</span>Sem os +90 mapas extras</li>
-          <li class="no"><span class="xx">✕</span>Sem os 5 bônus</li>
-        </ul>
-        <div class="price-box"><span class="de">De <s>R$47</s><br>por apenas</span><span class="val"><small>R$</small>10</span><span class="un">pagamento único<br>acesso vitalício</span></div>
-        <a href="#" id="checkout-basico" class="btn block ghost" data-open-up>Comprar o Básico</a>
-              <div class="nudge"><b>Quer mais que o dobro de mapas e os 5 bônus?</b><span>Veja o Premium logo abaixo</span><a href="#kit-premium" aria-label="Ver o Premium">↓</a></div>
-      </div>
       <div class="kit top rv" id="kit-premium">
         <div class="badge">★ MAIS POPULAR</div>
         <div class="plano">Premium</div>
@@ -1244,7 +1233,21 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
         <a href="#" id="checkout-premium" class="btn block pulse" data-checkout="premium">Quero o Premium Na Promoção <span class="ar">→</span></a>
         <div class="pay"><span>Compra segura</span>·<span>Garantia de 30 dias</span></div>
       </div>
-      <p class="diff rv">Selos: <b>compra segura</b> · <b>garantia de 30 dias</b> · <b>acesso vitalício</b> · pagamento processado por CaktoPay</p>
+      <div class="kit basic rv">
+        <div class="plano">Básico</div>
+        <h3>80 mapas visuais</h3>
+        <div class="slot pimg"><img src="img/web/mockup-essencial-400.webp" srcset="img/web/mockup-essencial-400.webp 400w, img/web/mockup-essencial-700.webp 700w" sizes="340px" width="1448" height="1086" loading="lazy" decoding="async" alt="Plano Básico: 80 mapas visuais"></div>
+        <ul>
+          <li class="main"><svg class="ic"><use href="#i-check"/></svg>80 mapas visuais de análises clínicas</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>PDF pra baixar e imprimir</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Celular, tablet ou notebook</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Acesso vitalício, sem mensalidade</li>
+          <li class="no"><span class="xx">✕</span>Sem os +90 mapas extras</li>
+          <li class="no"><span class="xx">✕</span>Sem os 5 bônus</li>
+        </ul>
+        <div class="price-box"><span class="de">De <s>R$47</s><br>por apenas</span><span class="val"><small>R$</small>10</span><span class="un">pagamento único<br>acesso vitalício</span></div>
+        <a href="#" id="checkout-basico" class="btn block ghost" data-open-up>Comprar o Básico</a>
+      </div>      <p class="diff rv">Selos: <b>compra segura</b> · <b>garantia de 30 dias</b> · <b>acesso vitalício</b> · pagamento processado por CaktoPay</p>
     </div>
   </div>
 </section>

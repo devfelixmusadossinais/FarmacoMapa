@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atlas Visual de Análises Clínicas | 80 mapas visuais pra nunca mais dar branco</title>
+<title>Atlas Visual de Análises Clínicas | Mais de 80 mapas visuais pra nunca mais dar branco</title>
 <meta name="description" content="80 mapas visuais de análises clínicas: 1 assunto por página, desenhado, pra você reconhecer cada célula e acertar na prova. No celular ou impresso. A partir de R$10.">
 <meta name="theme-color" content="#1B0F4D">
-<link rel="preload" href="img/web/mockup-premium-700.webp" as="image">
+<link rel="preload" href="img/web/hero-kit-640.webp" as="image">
 <!-- Clarity e scripts de rastreamento fornecidos pelo Lucas -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -691,6 +691,247 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
 .bento .bx{flex:0 0 calc(50% - 7px)}
 .bento .bx.wide{flex:0 0 100%}
 @media(min-width:720px){.bento .bx{flex-basis:calc(33.333% - 10px)}.bento .bx.wide{flex-basis:100%}}
+/* ===== HIBRIDO: estrutura do modelo "dinamicas" + identidade do Atlas ===== */
+h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;background:var(--ice-d);margin:14px auto 0}
+.cta-row{margin-top:26px;display:flex;justify-content:center}
+.cta-sec{padding:6px 0 26px;background:var(--bg)}
+/* hero claro com grade sutil */
+.hero.hero-l{background-color:#fff;background-image:linear-gradient(rgba(124,92,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(124,92,255,.07) 1px,transparent 1px),linear-gradient(180deg,#fff 0%,#F1ECFF 100%);background-size:30px 30px,30px 30px,auto;color:var(--ink);padding:28px 0 36px}
+.hero.hero-l:before{display:none}
+.hero-l .eyebrow{background:#fff;border:1.5px solid rgba(91,63,214,.28);color:var(--ice-d)}
+.hero-l .eyebrow .ic{color:var(--ice-d)}
+.hero-l h1{color:var(--ink)}
+.hero-l h1 .hl,.hero-l h1 .hn{color:var(--ice-d);background:none;text-shadow:none;padding:0}
+.hero-l h1 .mut{color:var(--ink2)}
+.hero-l .sub{color:var(--ink2)}
+.hero-l .sub b{color:var(--ink)}
+.hero-l .hero-fig{box-shadow:0 30px 60px -28px rgba(27,19,71,.45),0 0 0 3px #fff}
+.hero-note{margin:10px 0 0;text-align:center;font-weight:600;color:var(--ink2);font-size:15px}
+.hero-l .trust{color:var(--ink);justify-content:center}
+.hero-l .trust svg{color:var(--cta)}
+/* o que voce vai receber */
+.wyg-sec{padding:44px 0 36px;background:var(--bg)}
+.wyg{display:grid;gap:16px;margin-top:26px}
+@media(min-width:760px){.wyg{grid-template-columns:repeat(3,1fr)}}
+.wcard{background:#fff;border:2px solid var(--ice);border-radius:22px;padding:24px 18px;text-align:center;box-shadow:var(--shadow)}
+.wcard .wi{display:flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--noite2),var(--ice));margin:0 auto 14px;box-shadow:0 10px 20px -8px rgba(91,63,214,.6)}
+.wcard .wi svg{width:30px;height:30px;color:#fff;stroke:#fff}
+.wcard h3{font-size:19px;margin:0 0 8px;letter-spacing:-.02em}
+.wcard p{margin:0;font-size:15px;line-height:1.5;color:var(--ink2)}
+/* grade: areas em cards */
+.grade{padding:44px 0 36px;background:var(--alt)}
+.mods{margin-top:22px}
+.mod{background:#fff;border:1.5px solid var(--line);border-radius:20px;margin-bottom:12px;box-shadow:var(--shadow);overflow:hidden}
+.mod summary{display:grid;gap:6px;padding:16px 18px;list-style:none;cursor:pointer;text-align:left}
+.mod summary::-webkit-details-marker{display:none}
+.mod .mn{justify-self:start;background:var(--ceu);color:var(--ceu-t);font:800 11px var(--body);letter-spacing:.07em;padding:4px 10px;border-radius:999px}
+.mod summary b{font:800 18px/1.25 var(--head);letter-spacing:-.02em}
+.mod .vc{color:var(--ice-d);font:700 14px var(--body);display:inline-flex;align-items:center;gap:6px}
+.mod .vc i{display:inline-block;width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .25s}
+.mod[open] .vc i{transform:rotate(-135deg) translateY(-2px)}
+.mod p{margin:0;padding:0 18px 18px;text-align:left;font-size:15.5px;line-height:1.55;color:var(--ink2)}
+/* planos no fim */
+.hoje-plano{display:inline-block;margin-top:10px;background:var(--heat);color:#fff;font-weight:800;font-size:14px;padding:8px 16px;border-radius:999px}
+.hoje-plano b{background:rgba(255,255,255,.2);padding:2px 8px;border-radius:8px}
+.kit-grid{grid-template-columns:1fr}
+@media(min-width:900px){.kit-grid{grid-template-columns:1fr 1.12fr;align-items:start}}
+.kit.basic{background:#fff;border:1.5px solid var(--line);margin-top:0;padding-top:24px}
+.kit.basic .price-box .val{color:var(--ink2)}
+.kit li.no{color:#9A96B0;font-weight:500}
+.kit li .xx{flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-weight:900;color:#B9B4CC}
+.nudge{margin-top:16px;background:var(--ceu);border:1.5px solid rgba(47,91,208,.25);border-radius:16px;padding:14px;text-align:center;display:grid;gap:4px;color:var(--ceu-t)}
+.nudge span{font-size:14px;font-weight:600}
+.nudge a{justify-self:center;margin-top:6px;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--cta);color:#fff;font:900 24px/1 var(--head);box-shadow:0 8px 18px -6px var(--cta-sh)}
+.kit.top{margin-top:18px}
+@media(min-width:900px){.kit.top{margin-top:0}}
+.mod .mn{white-space:nowrap}
+.mod summary:after,.mod summary::after{display:none!important;content:none!important}
+
+/* ===== HIBRIDO v2 ===== */
+/* hero: imagem do kit com animacao (flutua e pulsa) */
+.hero-fig.hero-kit{aspect-ratio:auto;background:none;box-shadow:none;border-radius:0;overflow:visible;max-width:min(520px,96%)}
+.hero-kit img{display:block;width:100%;height:auto;object-fit:contain;animation:kitFloat 4.8s ease-in-out infinite,kitGlow 4.8s ease-in-out infinite;will-change:transform}
+@keyframes kitFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.025)}}
+@keyframes kitGlow{0%,100%{filter:drop-shadow(0 18px 22px rgba(91,63,214,.28))}50%{filter:drop-shadow(0 30px 34px rgba(91,63,214,.5))}}
+.hero-l h1 .plus{color:var(--cta)}
+.hcard{background:#fff;border:2px solid rgba(91,63,214,.2);border-radius:26px;padding:18px 16px 16px;box-shadow:0 26px 50px -26px rgba(27,19,71,.5)}
+.hcard .price{justify-content:center;color:var(--ink)}
+.hcard .price .de,.hcard .price .un{color:var(--ink2)}
+.hcard .price .val{color:var(--ink)}
+.hcard .hero-note{margin:10px 0 0}
+.hcard .trust{margin-top:10px;color:var(--ink)}
+/* mapas: duas fileiras, todos do mesmo tamanho, sem legenda */
+.rails2{display:grid;gap:14px;margin-top:26px;overflow:hidden}
+.mrail{padding:2px 0}
+.mrail .mcard{flex:0 0 min(70%,300px);margin:0;aspect-ratio:3/2;border-radius:18px;overflow:hidden;background:#fff;border:1.5px solid var(--line);box-shadow:var(--shadow)}
+.mrail .mcard button{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.mrail .mcard img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.mrail .mcard{flex-basis:340px}}
+/* grade: cards com imagem */
+.agrid{display:grid;gap:16px;margin-top:26px;align-items:start}
+@media(min-width:760px){.agrid{grid-template-columns:1fr 1fr}}
+@media(min-width:1080px){.agrid{grid-template-columns:repeat(3,1fr)}}
+.acard{background:#fff;border:1.5px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);text-align:left}
+.acard .aimg{display:block;position:relative;width:100%;padding:0;border:0;background:var(--alt);cursor:zoom-in;aspect-ratio:3/2}
+.acard .aimg img{display:block;width:100%;height:100%;object-fit:cover}
+.acard .at{padding:14px 16px 16px}
+.acard .mn{display:inline-block;white-space:nowrap;background:var(--ceu);color:var(--ceu-t);font:800 11px var(--body);letter-spacing:.07em;padding:4px 10px;border-radius:999px}
+.acard h3{font:800 20px/1.2 var(--head);letter-spacing:-.02em;margin:10px 0 6px}
+.acard .at>p{margin:0 0 10px;font-size:15px;line-height:1.5;color:var(--ink2)}
+.acard details{border:0;background:none;box-shadow:none;margin:0;padding:0}
+.acard summary{list-style:none;cursor:pointer;color:var(--ice-d);font:800 14px var(--body);display:inline-flex;align-items:center;gap:6px;padding:4px 0}
+.acard summary::-webkit-details-marker{display:none}
+.acard summary:after,.acard summary::after{display:none!important;content:none!important}
+.acard summary i{display:inline-block;width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .25s}
+.acard details[open] summary i{transform:rotate(-135deg) translateY(-2px)}
+.acard ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;max-height:260px;overflow:auto}
+.acard li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.35;color:var(--ink)}
+.acard li:before{content:"";position:absolute;left:2px;top:.45em;width:8px;height:8px;border-radius:50%;background:var(--ice)}
+/* bonus em fundo escuro, capas em destaque */
+.bonus-d{padding:46px 0 40px;background:linear-gradient(180deg,#1B0F4D 0%,#2C1470 100%);color:#fff}
+.bonus-d h2{color:#fff}
+.bonus-d .kicker{color:#C9BDFF}
+.bonus-d .bcards{margin-top:28px}
+.bonus-d .bc{border:0;border-radius:20px;background:#fff;box-shadow:0 24px 44px -20px rgba(0,0,0,.7)}
+.bonus-d .bc img{background:#0d0630}
+.bonus-d .bonus-fin{color:#7CF0A3}
+.cta-row{margin-top:26px}
+
+/* grade em cards compactos (sem imagem), "Ver conteudo" abre a lista */
+.mods{display:grid;gap:12px;margin-top:24px;max-width:760px;margin-left:auto;margin-right:auto}
+.mods .mod{background:#fff;border:1.5px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;margin:0}
+.mods .mod[open]{border-color:rgba(91,63,214,.4)}
+.mods .mod summary{display:flex;align-items:flex-start;gap:14px;padding:16px;list-style:none;cursor:pointer;text-align:left}
+.mods .mod summary::-webkit-details-marker{display:none}
+.mods .mod summary:after,.mods .mod summary::after{display:none!important;content:none!important}
+.mod .mi{flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:var(--lil);color:var(--lil-t)}
+.mod .mi svg{width:24px;height:24px}
+.mod .mt{display:grid;gap:5px;min-width:0}
+.mod .mn{justify-self:start;white-space:nowrap;background:var(--ceu);color:var(--ceu-t);font:800 11px var(--body);letter-spacing:.07em;padding:4px 10px;border-radius:999px}
+.mod .mt b{font:800 18px/1.25 var(--head);letter-spacing:-.02em}
+.mod .md{font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.mod .vc{color:var(--ice-d);font:800 14px var(--body);display:inline-flex;align-items:center;gap:6px;margin-top:2px}
+.mod .vc i{display:inline-block;width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .25s}
+.mod[open] .vc i{transform:rotate(-135deg) translateY(-2px)}
+.mods .mod ul{list-style:none;margin:0;padding:2px 18px 18px 78px;display:grid;gap:7px;text-align:left}
+.mods .mod li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.4;color:var(--ink)}
+.mods .mod li:before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--ice)}
+@media(max-width:420px){.mods .mod ul{padding-left:18px}}
+.mods .mod .mn{width:auto;height:auto;display:inline-block;border-radius:999px;background:var(--ceu);padding:4px 10px;line-height:1.2}
+.mods .mod .md{font-weight:500}
+.mods .mod li{border:0;padding-top:0;padding-bottom:0;font-weight:500;margin:0}
+.mods .mod ul{border:0}
+.mods .mod p{display:none}
+
+/* grade compacta: ate 3 por linha, card em coluna */
+.mods{grid-template-columns:repeat(2,1fr);gap:10px;max-width:1000px;align-items:start}
+@media(min-width:820px){.mods{grid-template-columns:repeat(3,1fr);gap:14px}}
+.mods .mod summary{flex-direction:column;align-items:flex-start;gap:10px;padding:14px}
+.mods .mod .mt{gap:6px;width:100%}
+.mods .mod .mt b{font-size:16px}
+.mods .mod .md{font-size:13.5px;line-height:1.4}
+@media(max-width:560px){.mods .mod .md{display:none}.mods .mod .mi{width:42px;height:42px}}
+.mods .mod ul{padding:0 14px 16px 14px}
+.mods .mod li{font-size:13.5px}
+/* colunas independentes: abrir um card nao cria buraco nas outras linhas */
+.mods{display:block;column-count:2;column-gap:10px}
+@media(min-width:820px){.mods{column-count:3;column-gap:14px}}
+.mods .mod{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 10px;display:block}
+@media(min-width:820px){.mods .mod{margin-bottom:14px}}
+
+.mods{display:flex;gap:10px;column-count:auto;align-items:flex-start}
+@media(min-width:820px){.mods{gap:14px}}
+.mods .mcol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:10px}
+@media(min-width:820px){.mods .mcol{gap:14px}}
+.mods .mod{margin:0}
+
+/* prova rapida no hero */
+.proof-pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid rgba(91,63,214,.25);border-radius:999px;padding:7px 16px 7px 14px;box-shadow:0 10px 24px -14px rgba(27,19,71,.5);justify-self:center;margin:0 auto}
+.proof-pill .stars{color:#F5B301;letter-spacing:1px;font-size:16px}
+.proof-pill .avs{display:inline-flex}
+.proof-pill .avs img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-8px;box-shadow:0 2px 6px rgba(0,0,0,.18)}
+.proof-pill .avs img:first-child{margin-left:0}
+.proof-pill b{font:800 14px var(--head);color:var(--ice-d);letter-spacing:.01em}
+/* bonus: nomes visiveis e cards iguais */
+.bonus-d .bc{color:var(--ink);display:flex;flex-direction:column}
+.bonus-d .bc b{color:var(--ink);min-height:2.4em}
+.bonus-d .bc p{color:var(--ink2);font-size:13px;line-height:1.35}
+.bonus-d .bc .t{flex:1;padding:12px 12px 14px}
+.bonus-d .bc img{aspect-ratio:1122/1402;object-fit:cover;width:100%}
+/* garantia acima da professora: selo em cima, texto embaixo */
+.garantia-top .gar-box{grid-template-columns:1fr;justify-items:center;text-align:center;gap:14px}
+.garantia-top .gar-wrap{margin:0 auto}
+.garantia-top .garl{justify-content:center}
+/* professora compacta */
+.prof2{margin-top:22px;background:#fff;border:1.5px solid var(--line);border-radius:26px;padding:18px;box-shadow:var(--shadow);text-align:left;max-width:860px;margin-left:auto;margin-right:auto}
+.p2top{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start}
+@media(min-width:700px){.p2top{grid-template-columns:170px 1fr;gap:22px}}
+.p2top>img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:16px}
+.p2txt h3{font-size:22px;margin:0 0 2px}
+.p2txt .pcargo{font-weight:800;color:var(--ice-d);margin:0 0 8px;font-size:14px}
+.p2txt p{font-size:14.5px;line-height:1.5;color:var(--ink2);margin:0 0 8px}
+.p2txt blockquote{margin:8px 0 0;padding:10px 12px;background:var(--alt);border-left:4px solid var(--cta);border-radius:10px;font-weight:600;font-size:14px;line-height:1.45}
+.p2dl{display:grid;gap:10px;margin:16px 0 0;border-top:1px solid var(--line);padding-top:14px}
+@media(min-width:700px){.p2dl{grid-template-columns:1fr 1fr}}
+.p2dl dt{font:800 12px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--ice-d)}
+.p2dl dd{margin:2px 0 0;font-size:14.5px;line-height:1.45}
+.prof2 .ptags{margin-top:14px}
+/* barra inferior com respiro */
+.sticky{padding:12px 16px calc(14px + env(safe-area-inset-bottom))}
+.sticky-in{gap:16px}
+.sticky-in p.stk{display:grid;gap:3px;margin:0}
+.sticky-in p.stk b{font:800 18px/1.1 var(--head);letter-spacing:-.02em}
+.sticky-in p.stk small{font-size:13px;font-weight:700;color:var(--ink2);line-height:1.2}
+.sticky-in p.stk .tm{font-size:13px;padding:1px 7px;margin-left:2px}
+.sticky .btn{min-height:52px;padding:0 22px;white-space:nowrap}
+
+/* professora: foto maior, texto maior, o que nao cabe vai abaixo */
+.prof2{padding:20px}
+.p2top{grid-template-columns:150px 1fr;gap:16px}
+@media(min-width:700px){.p2top{grid-template-columns:230px 1fr;gap:26px}}
+.p2top>img{aspect-ratio:3/4}
+.p2txt h3{font-size:24px;line-height:1.15}
+.p2txt .pcargo{font-size:15px}
+.p2txt p{font-size:16px;line-height:1.5}
+.p2q{margin:16px 0 0;padding:14px 16px;background:var(--alt);border-left:4px solid var(--cta);border-radius:12px;font-weight:600;font-size:16px;line-height:1.5}
+.p2dl dt{font-size:13px}
+.p2dl dd{font-size:16px;line-height:1.5}
+.prof2 .ptags li{font-size:13px}
+
+/* professora: foto do tamanho do bloco de texto, sem vao */
+.p2top{align-items:stretch}
+.p2top>img{height:100%;min-height:190px;aspect-ratio:auto;object-position:center top}
+.p2bio{margin:16px 0 0;font-size:16px;line-height:1.55;color:var(--ink2)}
+.p2q{margin-top:12px}
+/* bonus: valor e gratis */
+.bonus-d .bc .bv{display:block;margin-top:8px;font-size:13px;font-weight:700;color:var(--ink2)}
+.bonus-d .bc .bv s{color:#C81E4B;font-weight:800}
+.bonus-d .bc .bg{display:inline-block;margin-top:6px;background:var(--cta);color:#fff;font:800 12px var(--body);letter-spacing:.04em;padding:5px 10px;border-radius:999px;text-transform:uppercase}
+
+/* pilula de prova no lugar do eyebrow, acima da headline */
+.hero-tx .proof-pill{display:flex;width:max-content;max-width:100%;margin:0 auto 14px}
+@media(min-width:900px){.hero-tx .proof-pill{margin-left:0}}
+/* areas alinhadas: todos os cards fechados com a mesma altura */
+.mods .mod summary{min-height:158px;box-sizing:border-box;justify-content:flex-start}
+.mods .mod .mt b{display:block;min-height:2.5em}
+@media(max-width:560px){.mods .mod summary{min-height:150px}}
+@media(min-width:820px){.mods .mod summary{min-height:222px}}
+/* barra inferior: nao quebra o preco */
+.sticky-in p.stk b{white-space:nowrap;font-size:17px}
+.sticky-in p.stk small{white-space:nowrap}
+
+/* bonus: de/por */
+.bonus-d .bc .bv b{color:#16A34A;font-weight:800}
+/* barra de baixo com respiro */
+.sticky{padding:14px 18px calc(18px + env(safe-area-inset-bottom))}
+.sticky-in{gap:18px}
+.sticky-in p.stk{gap:5px}
+.sticky-in p.stk b{font-size:18px}
+.sticky-in p.stk small{font-size:13.5px}
+.sticky .btn{min-height:54px;padding:0 20px;font-size:14.5px}
+.bonus-d .bc .bv{white-space:nowrap;font-size:12.5px}
+.bonus-d .bc .bv b{font-size:13px}
+
 </style>
 </head>
 <body>
@@ -724,35 +965,63 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
   <symbol id="i-flake" viewBox="-12 -12 24 24"><path d="M0-10V10M-8.700-5 8.700 5M-8.700 5 8.700-5" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/></symbol>
 </svg>
 
-<!-- FAIXA DE URGENCIA (REGRA-URGENCIA: sem timer; "até as HH:MM" = hora do acesso + 2h, horario fechado) -->
-<div class="topbar">Acesso por R$10<span class="sep">·</span>promoção válida só hoje<span class="sep">·</span><b class="hojeData">00/00/0000</b><span class="sep">·</span>até as <span class="tm" data-ate>00:00</span></div>
+<div class="topbar">⚠ Oferta válida somente hoje<span class="sep">·</span><b class="hojeData">00/00/0000</b><span class="sep">·</span>até as <span class="tm" data-ate>00:00</span></div>
 
 <!-- HERO -->
-<header class="hero">
+<header class="hero hero-l">
   <div class="wrap hero-grid">
     <div class="hero-tx">
-      <div class="eyebrow"><svg class="ic"><use href="#i-flake"/></svg>Pra quem estuda biomedicina, farmácia ou análises clínicas</div>
-      <h1><span class="hl hn">80 Mapas Visuais</span> de Análises Clínicas Pra Você Nunca Mais Dar Branco na Prova ou no Microscópio, <span class="mut">mesmo que até hoje toda célula pareça a mesma bolinha roxa pra você.</span></h1>
-      <br>
-      <p class="sub">O Atlas Visual de Análises Clínicas tem cada assunto numa página só, desenhado, com as células comparadas lado a lado. <b>Bateu o olho, entendeu.</b> No celular ou impresso.</p>
+      <div class="proof-pill"><span class="stars">★★★★★</span><span class="avs"><img src="img/web/av-valeria.webp" width="96" height="96" alt=""><img src="img/web/av-nicolas.webp" width="96" height="96" alt=""><img src="img/web/av-martina.webp" width="96" height="96" alt=""></span><b>+700 ALUNOS!</b></div>
+      <h1><span class="hl hn">Mais de 80 Mapas Visuais</span> de Análises Clínicas Pra Você Nunca Mais Dar Branco na Prova <span class="plus">+ Bônus</span></h1>
+      <p class="sub">O Atlas Visual de Análises Clínicas tem cada assunto numa página só, lado a lado, pra você comparar e entender de olhar. No celular ou impresso.</p>
     </div>
-    <figure class="hero-fig">
-      <img src="img/web/mockup-premium-700.webp" srcset="img/web/mockup-premium-400.webp 400w, img/web/mockup-premium-700.webp 700w, img/web/mockup-premium.webp 1000w" sizes="(min-width:900px) 430px, 92vw" width="1199" height="1312" fetchpriority="high" alt="Atlas Visual de Análises Clínicas: mapas visuais no notebook e no tablet">
+    <figure class="hero-fig hero-kit">
+      <img src="img/web/hero-kit-640.webp" srcset="img/web/hero-kit-640.webp 640w, img/web/hero-kit.webp 1000w" sizes="(min-width:900px) 520px, 94vw" width="1000" height="914" fetchpriority="high" alt="Atlas Visual de Análises Clínicas: mapas no notebook e no tablet e os 5 bônus">
     </figure>
     <div class="hero-buy">
-      <div class="price"><span class="de">De <s>R$47</s><br>por apenas</span><span class="val"><small>R$</small>10</span><span class="un">pagamento único<br>acesso vitalício</span></div>
-      <a href="#planos" class="btn pulse block caps">Quero meus 80 mapas agora <span class="ar">→</span></a>
-      <div class="trust"><span><svg class="ic"><use href="#i-check"/></svg>80 mapas</span><span><svg class="ic"><use href="#i-check"/></svg>10 áreas do laboratório</span><span><svg class="ic"><use href="#i-check"/></svg>1 assunto por página</span><span><svg class="ic"><use href="#i-shield"/></svg>30 dias de garantia</span></div>
+      <div class="hcard">
+        <div class="price"><span class="de">De <s>R$47</s><br>por apenas</span><span class="val"><small>R$</small>10</span><span class="un">pagamento único<br>acesso vitalício</span></div>
+        <a href="#planos" class="btn pulse block caps">Quero os mapas <span class="ar">→</span></a>
+        <p class="hero-note">Você recebe tudo na hora, direto no seu e-mail.</p>
+        <div class="trust"><span><svg class="ic"><use href="#i-check"/></svg>Mais de 80 mapas</span><span><svg class="ic"><use href="#i-check"/></svg>14 áreas</span><span><svg class="ic"><use href="#i-shield"/></svg>30 dias de garantia</span></div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- FAIXA: AREAS -->
 <div class="ribbon" aria-hidden="true"><div class="mq"><div class="mq-track" id="ribbonTrack" style="--dur:40s">
-<span>Fundamentos do Laboratório</span><span>Coleta e Fase Pré-analítica</span><span>Hematologia</span><span>Hemostasia e Coagulação</span><span>Microbiologia</span><span>Parasitologia</span><span>Bioquímica Clínica</span><span>Imunologia</span><span>Urinálise</span><span>Controle de Qualidade</span>
+<span>Coleta de amostras</span><span>Tubos de coleta</span><span>Hematologia</span><span>Coagulação</span><span>Urinálise</span><span>Bioquímica clínica</span><span>Microbiologia</span><span>Parasitologia</span><span>Imunologia</span><span>Endocrinologia</span><span>Banco de sangue</span>
 </div></div></div>
 
-<!-- DOR -->
+<!-- MAPAS POR DENTRO: duas fileiras, uma pra cada lado -->
+<section class="recebe cv" id="demo">
+  <div class="wrap center">
+    <div class="rv">
+      <h2 class="ul">Veja Como São Os <span class="hl">Mapas Por Dentro</span></h2>
+      <p class="lead">Cada assunto desenhado numa página só, com passo a passo claro pra você bater o olho e entender. Toque num mapa pra ampliar.</p>
+    </div>
+  </div>
+  <div class="rails2">
+    <div class="rail mrail" data-rail><figure class="mcard"><button type="button" data-zoom="img/web/maps/ordem-dos-tubos.md.webp" data-alt="Ordem dos tubos"><img src="img/web/maps/ordem-dos-tubos.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Ordem dos tubos"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/sangue-total-vs-plasma-vs-soro.md.webp" data-alt="Sangue total vs plasma vs soro"><img src="img/web/maps/sangue-total-vs-plasma-vs-soro.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Sangue total vs plasma vs soro"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/contagem-diferencial-de-leucocitos.md.webp" data-alt="Contagem diferencial de leucócitos"><img src="img/web/maps/contagem-diferencial-de-leucocitos.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Contagem diferencial de leucócitos"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/esfregaco-de-sangue-periferico.md.webp" data-alt="Esfregaço de sangue periférico"><img src="img/web/maps/esfregaco-de-sangue-periferico.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Esfregaço de sangue periférico"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/anemias.md.webp" data-alt="Anemias"><img src="img/web/maps/anemias.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Anemias"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/cascata-da-coagulacao.md.webp" data-alt="Cascata da coagulação"><img src="img/web/maps/cascata-da-coagulacao.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Cascata da coagulação"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/tp-vs-ttpa.md.webp" data-alt="TP vs TTPa"><img src="img/web/maps/tp-vs-ttpa.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: TP vs TTPa"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/hemolise-vs-lipemia-vs-ictericia.md.webp" data-alt="Hemólise vs Lipemia vs Icterícia"><img src="img/web/maps/hemolise-vs-lipemia-vs-ictericia.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Hemólise vs Lipemia vs Icterícia"></button></figure></div>
+    <div class="rail mrail" data-rail data-dir="right"><figure class="mcard"><button type="button" data-zoom="img/web/maps/cilindros-urinarios-visao-geral.md.webp" data-alt="Cilindros urinários - visão geral"><img src="img/web/maps/cilindros-urinarios-visao-geral.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Cilindros urinários - visão geral"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/cristais-urinarios-visao-geral.md.webp" data-alt="Cristais urinários - visão geral"><img src="img/web/maps/cristais-urinarios-visao-geral.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Cristais urinários - visão geral"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/bacilos-gram-positivos-vs-gram-negativos.md.webp" data-alt="Bacilos Gram-positivos vs Gram-negativos"><img src="img/web/maps/bacilos-gram-positivos-vs-gram-negativos.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Bacilos Gram-positivos vs Gram-negativos"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/antibiograma-visao-geral.md.webp" data-alt="Antibiograma - visão geral"><img src="img/web/maps/antibiograma-visao-geral.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Antibiograma - visão geral"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/ciclo-de-vida-dos-parasitas.md.webp" data-alt="Ciclo de vida dos parasitas"><img src="img/web/maps/ciclo-de-vida-dos-parasitas.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Ciclo de vida dos parasitas"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/elisa-visao-geral.md.webp" data-alt="ELISA - visão geral"><img src="img/web/maps/elisa-visao-geral.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: ELISA - visão geral"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/grafico-de-levey-jennings.md.webp" data-alt="Gráfico de Levey-Jennings"><img src="img/web/maps/grafico-de-levey-jennings.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Gráfico de Levey-Jennings"></button></figure><figure class="mcard"><button type="button" data-zoom="img/web/maps/sistema-abo-e-fator-rh.md.webp" data-alt="Sistema ABO e fator Rh"><img src="img/web/maps/sistema-abo-e-fator-rh.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa: Sistema ABO e fator Rh"></button></figure></div>
+  </div>
+  <div class="wrap center"><div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero ter acesso agora <span class="ar">→</span></a></div></div>
+</section>
+
+<!-- O QUE VOCE VAI RECEBER -->
+<section class="wyg-sec cv">
+  <div class="wrap center">
+    <h2 class="ul rv">O Que Você Vai <span class="hl">Receber</span></h2>
+    <div class="wyg">
+      <div class="wcard rv"><span class="wi"><svg class="ic"><use href="#i-file"/></svg></span><h3>Mais de 80 mapas visuais</h3><p>1 assunto por página, desenhado, lado a lado. Só escolher o tema e revisar. No Premium são 170 mapas em 14 áreas.</p></div>
+      <div class="wcard rv"><span class="wi"><svg class="ic"><use href="#i-phone"/></svg></span><h3>Acesso digital completo</h3><p>Abre no celular, tablet ou notebook, a qualquer hora, direto no aplicativo. Imprima quando quiser.</p></div>
+      <div class="wcard rv"><span class="wi"><svg class="ic"><use href="#i-inf"/></svg></span><h3>Acesso vitalício</h3><p>Paga uma vez e usa do 1º semestre ao estágio. Sem mensalidade, sem assinatura.</p></div>
+    </div>
+    <div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero agora! <span class="ar">→</span></a></div>
+  </div>
+</section>
+
+<!-- DOR (enxuta) -->
 <section class="dor cv">
   <div class="wrap center">
     <div class="rv">
@@ -760,155 +1029,136 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
       <h2>Você estudou. Leu a apostila inteira. E na hora H <span class="hl">deu branco do mesmo jeito.</span></h2>
     </div>
     <div class="dor-grid">
-      <div class="dcard rv" style="--c1:var(--lil);--c2:var(--lil-t)"><svg class="ic"><use href="#i-users"/></svg><h3>O professor aponta pro microscópio</h3><p>"Que célula é essa?" Você olha e é tudo bolinha roxa. Monócito ou linfócito? Bastonete ou segmentado? A sala inteira esperando.</p></div>
-      <div class="dcard rv" style="--c1:var(--coral);--c2:var(--coral-t)"><svg class="ic"><use href="#i-clock"/></svg><h3>Véspera de prova de hemato, 23h</h3><p>Apostila sem um desenho, o slide que você não acha mais e <b>três resumos que nem você entende</b>.</p></div>
-      <div class="dcard rv" style="--c1:var(--ceu);--c2:var(--ceu-t)"><svg class="ic"><use href="#i-drop"/></svg><h3>A ordem dos tubos some da cabeça</h3><p>Você decora na sexta e esquece na segunda. Azul, vermelho, verde, lilás... ou era o lilás antes do verde?</p></div>
-      <div class="dcard rv" style="--c1:var(--solp);--c2:var(--solp-t)"><svg class="ic"><use href="#i-inf"/></svg><h3>Plasma ou soro? Cristal ou cilindro?</h3><p>Na prova parece a mesma coisa. No sedimento urinário, cristal e cilindro viram a mesma coisa.</p></div>
-      <div class="dcard rv" style="--c1:var(--menta);--c2:var(--menta-t)"><svg class="ic"><use href="#i-gauge"/></svg><h3>Valores de referência embolados</h3><p>Glicose, ureia, creatinina, TGO, TGP: um embola no outro.</p></div>
-      <div class="dcard rv" style="--c1:var(--lil);--c2:var(--lil-t)"><svg class="ic"><use href="#i-lock"/></svg><h3>Travado na bancada no estágio</h3><p>Com <b>medo de perguntar e mostrar que não sabe</b>.</p></div>
+      <div class="dcard rv" style="--c1:var(--lil);--c2:var(--lil-t)"><svg class="ic"><use href="#i-users"/></svg><h3>O professor aponta pro microscópio</h3><p>"Que célula é essa?" Você olha e é tudo bolinha roxa. A sala inteira esperando.</p></div>
+      <div class="dcard rv" style="--c1:var(--coral);--c2:var(--coral-t)"><svg class="ic"><use href="#i-clock"/></svg><h3>Véspera de prova, 23h</h3><p>Apostila sem um desenho, o slide que sumiu e <b>três resumos que nem você entende</b>.</p></div>
+      <div class="dcard rv" style="--c1:var(--ceu);--c2:var(--ceu-t)"><svg class="ic"><use href="#i-drop"/></svg><h3>A ordem dos tubos some da cabeça</h3><p>Você decora na sexta e esquece na segunda. Plasma ou soro? Na prova parece a mesma coisa.</p></div>
+      <div class="dcard rv" style="--c1:var(--solp);--c2:var(--solp-t)"><svg class="ic"><use href="#i-lock"/></svg><h3>Travado na bancada no estágio</h3><p>Com <b>medo de perguntar e mostrar que não sabe</b>.</p></div>
     </div>
-    <p class="ponte rv">E cada branco desses cobra caro: nota baixa, DP de hemato, <em>mais um semestre pagando a mesma matéria</em>, a vergonha na frente da turma e a insegurança no primeiro plantão. <b>O problema nunca foi falta de esforço.</b></p>
+    <p class="ponte rv">O problema nunca foi falta de esforço. <em>Matéria visual se aprende vendo.</em></p>
   </div>
 </section>
 
-<!-- CAUSA -->
-<section class="conta cv">
-  <div class="wrap narrow center">
-    <div class="rv">
-      <span class="kicker">A causa</span>
-      <h2>O problema não é você. É tentar aprender uma matéria <span class="hl">VISUAL lendo texto.</span></h2>
+<!-- GRADE: 14 AREAS DO ATLAS -->
+<section class="grade cv">
+  <div class="wrap">
+    <div class="center rv">
+      <h2 class="ul">Toda a Grade de <span class="hl">Análises Clínicas Coberta</span></h2>
+      <p class="lead">14 áreas e 170 mapas no Premium. Toque em "Ver conteúdo" pra ver o que tem em cada área e achar a matéria do seu semestre.</p>
     </div>
+    <div class="mods">
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-drop"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 01</span><b>Coleta de amostras</b><span class="md">Identificação, ordem e o que acontece antes do tubo chegar na bancada.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Amostra adequada vs amostra rejeitada</li><li>Hemólise vs Lipemia vs Icterícia</li><li>Preparo do paciente</li><li>Punção capilar vs punção venosa</li><li>Sangue total vs plasma vs soro</li><li>Seleção da veia</li><li>Tipos de amostras biológicas</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-tool"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 02</span><b>Tubos de coleta</b><span class="md">Aditivos, cores de tampa e qual ensaio cada tubo aguenta.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Aditivos dos tubos</li><li>Anticoagulantes</li><li>Ordem dos tubos</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-drop"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 03</span><b>Hematologia</b><span class="md">Série vermelha, leucócitos e plaquetas em uma leitura só.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Alterações do leucograma</li><li>Anemias</li><li>Carboxiemoglobina vs Metemoglobina</li><li>Contagem diferencial de leucócitos</li><li>Eritrócitos</li><li>Esfregaço de sangue periférico</li><li>Ferritina sérica</li><li>Ferritina, transferrina e saturação</li><li>Ferro sérico vs Ferritina vs TIBC</li><li>Granulócitos vs agranulócitos</li><li>Hematologia - visão geral</li><li>Hemograma - visão geral</li><li>Leucócitos</li><li>Monócito ou linfócito</li><li>Morfologia eritrocitária</li><li>Plaquetas</li><li>Reticulócitos</li><li>Talassemias vs anemia falciforme</li><li>Transferrina e saturação de transferrina</li><li>Velocidade de hemossedimentação (VHS)</li><li>Vitamina B12 vs Ácido fólico</li><li>Índices hematimétricos</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-zap"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 04</span><b>Coagulação</b><span class="md">Hemostasia, tempos e o que desloca cada resultado.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Cascata da coagulação</li><li>D-dímero</li><li>Hemostasia - visão geral</li><li>Perfil de von Willebrand</li><li>TP e INR</li><li>TP vs TTPa</li><li>TTPa</li><li>Tempo de trombina vs Tempo de reptilase</li><li>Teste de mistura 1-1</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-flake"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 05</span><b>Urinálise</b><span class="md">Aspecto, tira e sedimento, camada por camada.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Cilindros urinários - visão geral</li><li>Coleta de urina</li><li>Cristais urinários - visão geral</li><li>Exame físico e químico da urina</li><li>Glicose e cetonas na urina</li><li>Microalbuminúria e relação albumina-creatinina</li><li>Proteinúria de 24 horas vs RAC</li><li>Proteínas na urina</li><li>Sedimento urinário</li><li>Tipos de amostras de urina</li><li>Tira reagente de urina</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-gauge"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 06</span><b>Bioquímica clínica</b><span class="md">Analitos, interferentes e a lógica dos perfis.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>ALT-TGP vs AST-TGO</li><li>Albumina sérica</li><li>Amilase vs Lipase</li><li>BNP vs NT-proBNP</li><li>Bilirrubina</li><li>Bilirrubina total, direta e indireta</li><li>Bioquímica clínica - visão geral</li><li>CK total</li><li>CK-MB vs Troponina</li><li>Calprotectina fecal</li><li>Cistatina C vs Creatinina</li><li>Cálcio total vs cálcio ionizado</li><li>Cálcio vs Fósforo</li><li>Depuração de creatinina</li><li>Eletroforese de proteínas séricas</li><li>Eletrólitos - Sódio, Potássio e Cloro</li><li>Eletrólitos - visão geral</li><li>Enzimas clínicas</li><li>Equilíbrio ácido-base - visão geral</li><li>Fosfatase alcalina vs GGT</li><li>Função renal - Ureia e Creatinina (2)</li><li>Função renal - ureia e creatinina</li><li>Fósforo sérico</li><li>Gasometria arterial</li><li>Glicose</li><li>Glicose - Interpretação básica</li><li>Hemoglobina glicada (HbA1c)</li><li>LDH</li><li>Magnésio sérico</li><li>Marcadores cardíacos</li><li>Osmolalidade sérica vs osmolalidade urinária</li><li>Perfil hepático</li><li>Perfil lipídico</li><li>Perfil renal</li><li>Proteínas totais e albumina</li><li>Proteínas totais e relação A-G</li><li>Sódio vs potássio</li><li>Sódio, potássio e cloro</li><li>Troponina I vs Troponina T</li><li>Ureia vs Creatinina</li><li>Ácido úrico sérico</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-users"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 07</span><b>Microbiologia</b><span class="md">Coleta, coloração, meio de cultura e o caminho do laudo.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Antibiograma - visão geral</li><li>Bacilos Gram-positivos vs Gram-negativos</li><li>Baciloscopia e coloração de Ziehl-Neelsen</li><li>Bactérias Gram-negativas - Parede celular</li><li>Bactérias Gram-positivas - Parede celular</li><li>Cocos Gram-positivos vs Gram-negativos</li><li>Coprocultura</li><li>Cultura microbiológica</li><li>Escore de Nugent</li><li>Hemocultura</li><li>Hemólise em ágar sangue</li><li>Meios de cultura</li><li>Microbiologia - visão geral</li><li>Urocultura</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-star"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 08</span><b>Parasitologia</b><span class="md">Formas evolutivas e o que procurar na lâmina.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Ciclo de vida dos parasitas</li><li>Doença de Chagas</li><li>Exame geral de fezes</li><li>Gota espessa vs Esfregaço delgado</li><li>Nematódeos vs Cestódeos vs Trematódeos</li><li>Parasitas intestinais - visão geral</li><li>Parasitologia - visão geral</li><li>Protozoários intestinais</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-shield"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 09</span><b>Imunologia</b><span class="md">Reação, sorologia e como não misturar método com diagnóstico.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>ASO vs Anti-DNase B</li><li>Antígeno vs Anticorpo</li><li>Autoanticorpos - visão geral</li><li>CA-125</li><li>Complemento C3 vs C4</li><li>ELISA - visão geral</li><li>Fator reumatoide vs Anti-CCP</li><li>HIV - triagem e confirmação</li><li>Hepatite B - marcadores sorológicos</li><li>Hipersensibilidade - Tipos I, II, III e IV</li><li>IgG vs IgM</li><li>Imunidade inata vs adaptativa</li><li>Imunoglobulinas - visão geral</li><li>Imunologia - visão geral</li><li>Látex vs ELISA vs Quimioluminescência</li><li>Proteína C reativa vs Procalcitonina</li><li>Sistema complemento</li><li>Sorologia - visão geral</li><li>Testes rápidos - Imunocromatografia</li><li>VDRL vs testes treponêmicos</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-lock"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 10</span><b>Biossegurança</b><span class="md">Barreira, descarte e o hábito que protege quem analisa.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Resíduos laboratoriais</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-check"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 11</span><b>Controle de qualidade</b><span class="md">Controle interno, desvio e quando o resultado pode sair.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Calibração vs Controle de qualidade</li><li>Controle de qualidade no laboratório</li><li>Controle interno vs Controle externo de qualidade</li><li>Erro aleatório vs erro sistemático</li><li>Gráfico de Levey-Jennings</li><li>Intervalo de referência vs Ponto de corte</li><li>Precisão vs exatidão</li><li>Regras de Westgard</li><li>Sensibilidade vs Especificidade</li><li>VPP vs VPN</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-gauge"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 12</span><b>Endocrinologia</b><span class="md">Eixos, horário de coleta e a leitura do painel hormonal.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>ACTH</li><li>Calcitonina</li><li>Cortisol sérico</li><li>Curva de tolerância oral à glicose</li><li>Estradiol vs Progesterona</li><li>FSH vs LH</li><li>HOMA-IR</li><li>Hemoglobina glicada (HbA1c)</li><li>Insulina vs Peptídeo C</li><li>Paratormônio (PTH)</li><li>Perfil tireoidiano</li><li>Prolactina</li><li>Renina vs Aldosterona</li><li>Testosterona total vs livre</li><li>Vitamina D (25-OH vitamina D)</li><li>hCG qualitativo vs quantitativo</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-drop"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 13</span><b>Líquidos biológicos</b><span class="md">Líquor e líquidos de cavidade, fora do sangue habitual.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Espermograma - visão geral</li><li>Líquido cefalorraquidiano (LCR)</li><li>Líquido pleural</li><li>Líquido sinovial</li></ul>
+      </details>
+      <details class="mod rv">
+        <summary>
+          <span class="mi"><svg class="ic"><use href="#i-award"/></svg></span>
+          <span class="mt"><span class="mn">ÁREA 14</span><b>Banco de sangue</b><span class="md">Tipagem, compatibilidade e a rotina do banco de sangue.</span><span class="vc">Ver conteúdo <i></i></span></span>
+        </summary>
+        <ul><li>Coombs direto vs Coombs indireto</li><li>Hemocomponentes</li><li>Provas cruzadas</li><li>Sistema ABO e fator Rh</li></ul>
+      </details>
+    </div>
+    <div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero agora! <span class="ar">→</span></a></div>
   </div>
 </section>
 
-<!-- MECANISMO -->
-<section class="dor cv">
-  <div class="wrap center">
-    <div class="rv">
-      <span class="kicker">O método</span>
-      <h2>O Método 1 Página: <span class="hl">1 assunto, 1 página, desenhado.</span></h2>
-      <p class="lead">É assim que o Atlas Visual de Análises Clínicas foi montado. Cada tema do laboratório virou uma página que você entende só de olhar.</p>
-    </div>
-    <div class="dor-grid">
-      <div class="dcard rv" style="--c1:var(--lil);--c2:var(--lil-t)"><svg class="ic"><use href="#i-users"/></svg><h3>Célula do lado de célula</h3><p>Monócito ao lado do linfócito, os 5 leucócitos lado a lado. Você <b>vê</b> a diferença em vez de ler sobre ela.</p></div>
-      <div class="dcard rv" style="--c1:var(--ceu);--c2:var(--ceu-t)"><svg class="ic"><use href="#i-file"/></svg><h3>Tudo do assunto num lugar só</h3><p>Aditivo, uso principal, cuidados, erros frequentes e o "para memorizar" na mesma página. Sem pular capítulo, sem caçar em 5 PDFs.</p></div>
-      <div class="dcard rv" style="--c1:var(--solp);--c2:var(--solp-t)"><svg class="ic"><use href="#i-zap"/></svg><h3>A lógica, não a decoreba</h3><p>O mapa mostra o porquê de cada coisa. Entendeu a lógica, não precisa mais decorar.</p></div>
-      <div class="dcard rv" style="--c1:var(--menta);--c2:var(--menta-t)"><svg class="ic"><use href="#i-phone"/></svg><h3>Feito pra revisar em minutos</h3><p>Uma passada de olho na véspera, no intervalo, no ônibus ou na fila do RU. Em vez de reabrir 40 páginas.</p></div>
-    </div>
-    <p class="ponte rv">O que na apostila te toma uma tarde, <em>no mapa você revisa numa olhada.</em></p>
-  </div>
-</section>
-
-<!-- DEMONSTRACAO + O QUE VOCE RECEBE -->
-<section class="recebe cv" id="demo">
-  <div class="wrap center">
-    <div class="rv">
-      <span class="kicker">Tire a prova</span>
-      <h2>Olha os mapas <span class="hl">por dentro</span></h2>
-    </div>
-    <div class="rail maps" data-rail>
-      <article class="mapa rv">
-        <button type="button" data-zoom="img/web/mapa-05-monocito-linfocito.webp" data-alt="Mapa: Monócito ou linfócito?"><img src="img/web/mapa-05-monocito-linfocito-700.webp" srcset="img/web/mapa-05-monocito-linfocito-400.webp 400w, img/web/mapa-05-monocito-linfocito-700.webp 700w" sizes="(min-width:760px) 440px, 92vw" width="1448" height="1086" loading="lazy" decoding="async" alt="Mapa: Monócito ou linfócito?"></button>
-        <div class="t"><h3>Monócito ou linfócito?</h3></div>
-      </article>
-      <article class="mapa rv">
-        <button type="button" data-zoom="img/web/mapa-06-leucocitos.webp" data-alt="Mapa: Leucócitos"><img src="img/web/mapa-06-leucocitos-700.webp" srcset="img/web/mapa-06-leucocitos-400.webp 400w, img/web/mapa-06-leucocitos-700.webp 700w" sizes="(min-width:760px) 440px, 92vw" width="1448" height="1086" loading="lazy" decoding="async" alt="Mapa: Leucócitos"></button>
-        <div class="t"><h3>Leucócitos e suas variações</h3></div>
-      </article>
-      <article class="mapa rv">
-        <button type="button" data-zoom="img/web/mapa-03-hemograma.webp" data-alt="Mapa: Hemograma, visão geral"><img src="img/web/mapa-03-hemograma-700.webp" srcset="img/web/mapa-03-hemograma-400.webp 400w, img/web/mapa-03-hemograma-700.webp 700w" sizes="(min-width:760px) 440px, 92vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Mapa: Hemograma, visão geral"></button>
-        <div class="t"><h3>Hemograma, visão geral</h3></div>
-      </article>
-      <article class="mapa rv">
-        <button type="button" data-zoom="img/web/mapa-01-preparacao-paciente.webp" data-alt="Mapa: Preparação do paciente"><img src="img/web/mapa-01-preparacao-paciente-700.webp" srcset="img/web/mapa-01-preparacao-paciente-400.webp 400w, img/web/mapa-01-preparacao-paciente-700.webp 700w" sizes="(min-width:760px) 440px, 92vw" width="1536" height="1024" loading="lazy" decoding="async" alt="Mapa: Preparação do paciente"></button>
-        <div class="t"><h3>Preparação do paciente</h3></div>
-      </article>
-    </div>
-
-    <p class="lead rv leva"><b>E esses são só 4 dos 80 mapas.</b> Olha o que você leva:</p>
-    <div class="bento">
-      <div class="bx wide rv" style="--p:var(--ceu);--t:var(--ceu-t)"><svg class="ic"><use href="#i-file"/></svg>80 mapas visuais<small>Os principais temas de análises clínicas, 1 assunto por página</small></div>
-      <div class="bx rv" style="--p:var(--menta);--t:var(--menta-t)"><svg class="ic"><use href="#i-award"/></svg>10 áreas do laboratório<small>Da coleta ao controle de qualidade, organizadas como você estuda</small></div>
-      <div class="bx rv" style="--p:var(--solp);--t:var(--solp-t)"><svg class="ic"><use href="#i-phone"/></svg>PDF pra celular e impressão<small>Revisa no celular, tablet ou notebook, ou imprime e encaderna o seu caderno</small></div>
-      <div class="bx rv" style="--p:var(--lil);--t:var(--lil-t)"><svg class="ic"><use href="#i-inf"/></svg>Acesso vitalício<small>Paga uma vez, é seu pra sempre, do 1º semestre ao estágio</small></div>
-    </div>
-  </div>
-</section>
-
-<!-- AREAS (acordeao) -->
-<section class="faq areas cv">
-  <div class="wrap narrow">
-    <h2 class="center rv">As 10 áreas que mais derrubam aluno em análises clínicas. <span class="hl">Todas mapeadas.</span></h2>
-    <p class="lead center rv">Toque em cada área e veja os temas. Ache a matéria do seu semestre.</p>
-    <div class="rv">
-      <details><summary><span class="n">01</span>Fundamentos do Laboratório</summary><p>Biossegurança · vidrarias · equipamentos · organização do laboratório · boas práticas</p></details>
-      <details><summary><span class="n">02</span>Coleta e Fase Pré-analítica</summary><p>Preparação do paciente · tipos de amostra · sangue total, plasma e soro · tubos de coleta · anticoagulantes · ordem de coleta · conservação e transporte · erros pré-analíticos</p></details>
-      <details><summary><span class="n">03</span>Hematologia</summary><p>Componentes do sangue · células sanguíneas · hemograma · eritrócitos · leucócitos · plaquetas · índices hematimétricos</p></details>
-      <details><summary><span class="n">04</span>Hemostasia e Coagulação</summary><p>Hemostasia · cascata de coagulação · fatores de coagulação · provas de coagulação (TP, TTPa) · principais alterações</p></details>
-      <details><summary><span class="n">05</span>Microbiologia</summary><p>Bactérias · fungos · meios de cultura · coloração de Gram · técnicas de identificação</p></details>
-      <details><summary><span class="n">06</span>Parasitologia</summary><p>Protozoários · helmintos · ciclos biológicos · formas evolutivas · métodos de identificação (EPF)</p></details>
-      <details><summary><span class="n">07</span>Bioquímica Clínica</summary><p>Glicose · função renal · função hepática · perfil lipídico · enzimas · marcadores laboratoriais</p></details>
-      <details><summary><span class="n">08</span>Imunologia</summary><p>Antígenos · anticorpos · resposta imune · imunoglobulinas · testes imunológicos</p></details>
-      <details><summary><span class="n">09</span>Urinálise</summary><p>Exame físico · exame químico · sedimentoscopia · cristais · cilindros · células no sedimento</p></details>
-      <details><summary><span class="n">10</span>Controle de Qualidade</summary><p>Erros laboratoriais · controle interno · controle externo · calibração · boas práticas · confiabilidade dos resultados</p></details>
-    </div>
-    <div class="cta-row rv" style="margin-top:26px;text-align:center"><a href="#planos" class="btn pulse caps">Quero os 80 mapas por R$10 <span class="ar">→</span></a></div>
-  </div>
-</section>
-
-<!-- PRA QUEM -->
+<!-- PRA QUEM E -->
 <section class="quem cv">
   <div class="wrap center">
-    <div class="rv">
-      <span class="kicker">Pra quem é</span>
-      <h2>Feito pra quem estuda (ou trabalha) <span class="hl">em laboratório no Brasil</span></h2>
-    </div>
+    <div class="rv"><span class="kicker">Pra quem é</span><h2>Feito pra quem estuda <span class="hl">ou trabalha em laboratório</span></h2></div>
     <div class="quem-grid">
-      <div class="qx rv" style="--p:#fff;--t:var(--cta)"><svg class="ic"><use href="#i-award"/></svg>Biomedicina, farmácia, análises clínicas, enfermagem ou biologia<small>ou qualquer curso com disciplina de laboratório</small></div>
-      <div class="qx rv" style="--p:#fff;--t:var(--ice-d)"><svg class="ic"><use href="#i-star"/></svg>Calouro<small>que quer chegar na 1ª prova de hemato já sabendo o básico</small></div>
-      <div class="qx rv" style="--p:#fff;--t:var(--menta-t)"><svg class="ic"><use href="#i-tool"/></svg>No estágio ou no 1º emprego de bancada<small>e quer revisar antes do plantão</small></div>
-      <div class="qx rv" style="--p:#fff;--t:var(--lil-t)"><svg class="ic"><use href="#i-clock"/></svg>Trabalha e estuda<small>e não tem tempo de reler apostila</small></div>
-      <div class="qx rv" style="--p:#fff;--t:var(--cta)"><svg class="ic"><use href="#i-zap"/></svg>Prova chegando<small>e precisa revisar muita matéria em pouco tempo</small></div>
-      <div class="qx rv" style="--p:#fff;--t:var(--ice-d)"><svg class="ic"><use href="#i-drop"/></svg>Aprende melhor vendo do que lendo</div>
+      <div class="qx rv" style="--p:#fff;--t:var(--cta)"><svg class="ic"><use href="#i-award"/></svg>Biomedicina, farmácia, análises clínicas ou enfermagem<small>qualquer curso com disciplina de laboratório</small></div>
+      <div class="qx rv" style="--p:#fff;--t:var(--ice-d)"><svg class="ic"><use href="#i-star"/></svg>Calouro<small>que quer chegar na 1ª prova já sabendo o básico</small></div>
+      <div class="qx rv" style="--p:#fff;--t:var(--menta-t)"><svg class="ic"><use href="#i-tool"/></svg>Estágio ou 1º emprego de bancada<small>pra revisar antes do plantão</small></div>
+      <div class="qx rv" style="--p:#fff;--t:var(--lil-t)"><svg class="ic"><use href="#i-clock"/></svg>Trabalha e estuda<small>sem tempo de reler apostila</small></div>
     </div>
-    <div class="nao rv"><span>Não é pra você se:</span><span><s>quer curso em vídeo com aulas (o Atlas é material visual pra estudar, revisar e consultar)</s></span><span><s>quer continuar estudando do jeito que já te deu branco</s></span></div>
-  </div>
-</section>
-
-<!-- FORMATO E ACESSO -->
-<section class="recebe cv">
-  <div class="wrap narrow center">
-    <div class="rv">
-      <span class="kicker">Formato e acesso</span>
-      <h2>Abre no celular, imprime se quiser e <span class="hl">é seu pra sempre</span></h2>
-    </div>
-    <div class="mockup rv"><img src="img/web/mockup-essencial-700.webp" srcset="img/web/mockup-essencial-400.webp 400w, img/web/mockup-essencial-700.webp 700w" sizes="(min-width:600px) 560px, 92vw" width="1448" height="1086" loading="lazy" decoding="async" alt="Atlas Visual de Análises Clínicas no notebook, no tablet e impresso" style="display:block;width:100%;height:100%;object-fit:cover"></div>
-    <div class="mini rv">
-      <div><svg class="ic"><use href="#i-phone"/></svg>Celular, tablet ou notebook</div>
-      <div><svg class="ic"><use href="#i-file"/></svg>PDF pra imprimir</div>
-      <div><svg class="ic"><use href="#i-inf"/></svg>Acesso vitalício</div>
-      <div><svg class="ic"><use href="#i-coin"/></svg>Pagamento único a partir de R$10</div>
-    </div>
-    <p class="lead rv" style="margin-top:18px">Revisa no intervalo, no ônibus, na fila do RU, 5 minutos antes da prova. Imprime só os mapas que mais usa, ou todos, e encaderna o seu caderno de análises clínicas. Sem mensalidade, sem assinatura, sem surpresa no cartão.</p>
-  </div>
-</section>
-
-<!-- BONUS -->
-<section class="quem cv" id="bonus">
-  <div class="wrap center">
-    <div class="rv">
-      <span class="kicker">Bônus do Premium</span>
-      <h2>Escolhendo o Premium, você leva <span class="hl">5 bônus exclusivos +  80 Mapas extras</span></h2>
-    </div>
-    <div class="bcards">
-      <div class="bc rv"><span class="tg">BÔNUS 01</span><img src="img/web/bonus-01-guia-tubos-coleta-400.webp" srcset="img/web/bonus-01-guia-tubos-coleta-400.webp 400w, img/web/bonus-01-guia-tubos-coleta-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Guia Avançado de Tubos de Coleta"><div class="t"><b>Guia Avançado de Tubos de Coleta</b><p>Cores e aditivos, ordem de coleta e cuidados com as amostras: os erros que mais estragam amostra, antes que você cometa.</p></div></div>
-      <div class="bc rv"><span class="tg">BÔNUS 02</span><img src="img/web/bonus-03-atlas-hematologia-400.webp" srcset="img/web/bonus-03-atlas-hematologia-400.webp 400w, img/web/bonus-03-atlas-hematologia-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Atlas Visual de Hematologia"><div class="t"><b>Atlas Visual de Hematologia</b><p>Mais células sanguíneas, hemograma e alterações hematológicas pra você não errar nenhuma lâmina.</p></div></div>
-      <div class="bc rv"><span class="tg">BÔNUS 03</span><img src="img/web/bonus-02-guia-parasitologia-400.webp" srcset="img/web/bonus-02-guia-parasitologia-400.webp 400w, img/web/bonus-02-guia-parasitologia-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Guia Visual de Parasitologia"><div class="t"><b>Guia Visual de Parasitologia</b><p>Principais protozoários e helmintos, formas evolutivas e ciclos, e as características que diferenciam cada um na identificação.</p></div></div>
-      <div class="bc rv"><span class="tg">BÔNUS 04</span><img src="img/web/bonus-04-checklist-praticas-400.webp" srcset="img/web/bonus-04-checklist-praticas-400.webp 400w, img/web/bonus-04-checklist-praticas-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Checklist para Práticas de Laboratório"><div class="t"><b>Checklist para Práticas de Laboratório</b><p>Materiais, procedimentos, biossegurança, registro de resultados, limpeza e descarte. Chega na aula prática sabendo o que fazer e em que ordem.</p></div></div>
-      <div class="bc rv"><span class="tg">BÔNUS 05</span><img src="img/web/bonus-05-caderno-revisao-400.webp" srcset="img/web/bonus-05-caderno-revisao-400.webp 400w, img/web/bonus-05-caderno-revisao-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Caderno de Revisão para Provas"><div class="t"><b>Caderno de Revisão para Provas</b><p>Resumos, perguntas, casos clínicos, tabelas e revisão final pra revisar na véspera e entrar na prova seguro.</p></div></div>
-    </div>
-    <p class="bonus-fin rv">Tudo isso sai DE GRAÇA escolhendo o Premium</p>
-
   </div>
 </section>
 
@@ -927,22 +1177,59 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
   </div>
 </section>
 
+<!-- BONUS -->
+<section class="bonus-d cv" id="bonus">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="kicker">Bônus do Premium</span>
+      <h2>Escolhendo o Premium, você leva <span class="hl">5 bônus exclusivos + 90 Mapas extras</span></h2>
+    </div>
+    <div class="bcards">
+      <div class="bc rv"><span class="tg">BÔNUS 01</span><img src="img/web/bonus-01-guia-tubos-coleta-400.webp" srcset="img/web/bonus-01-guia-tubos-coleta-400.webp 400w, img/web/bonus-01-guia-tubos-coleta-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Guia Avançado de Tubos de Coleta"><div class="t"><b>Guia Avançado de Tubos de Coleta</b><p>Cores, aditivos e ordem de coleta, sem errar a amostra.</p><span class="bv">De <s>R$37</s> por <b>R$0,00</b></span><span class="bg">GRÁTIS</span></div></div>
+      <div class="bc rv"><span class="tg">BÔNUS 02</span><img src="img/web/bonus-03-atlas-hematologia-400.webp" srcset="img/web/bonus-03-atlas-hematologia-400.webp 400w, img/web/bonus-03-atlas-hematologia-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Atlas Visual de Hematologia"><div class="t"><b>Atlas Visual de Hematologia</b><p>Células sanguíneas e alterações pra não errar nenhuma lâmina.</p><span class="bv">De <s>R$47</s> por <b>R$0,00</b></span><span class="bg">GRÁTIS</span></div></div>
+      <div class="bc rv"><span class="tg">BÔNUS 03</span><img src="img/web/bonus-02-guia-parasitologia-400.webp" srcset="img/web/bonus-02-guia-parasitologia-400.webp 400w, img/web/bonus-02-guia-parasitologia-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Guia Visual de Parasitologia"><div class="t"><b>Guia Visual de Parasitologia</b><p>Protozoários e helmintos, formas e ciclos.</p><span class="bv">De <s>R$37</s> por <b>R$0,00</b></span><span class="bg">GRÁTIS</span></div></div>
+      <div class="bc rv"><span class="tg">BÔNUS 04</span><img src="img/web/bonus-04-checklist-praticas-400.webp" srcset="img/web/bonus-04-checklist-praticas-400.webp 400w, img/web/bonus-04-checklist-praticas-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Checklist para Práticas de Laboratório"><div class="t"><b>Checklist para Práticas de Laboratório</b><p>O que fazer, e em que ordem, na aula prática.</p><span class="bv">De <s>R$27</s> por <b>R$0,00</b></span><span class="bg">GRÁTIS</span></div></div>
+      <div class="bc rv"><span class="tg">BÔNUS 05</span><img src="img/web/bonus-05-caderno-revisao-400.webp" srcset="img/web/bonus-05-caderno-revisao-400.webp 400w, img/web/bonus-05-caderno-revisao-700.webp 700w" sizes="(min-width:820px) 200px, 45vw" width="1122" height="1402" loading="lazy" decoding="async" alt="Capa: Caderno de Revisão para Provas"><div class="t"><b>Caderno de Revisão para Provas</b><p>Resumos, casos e revisão final pra véspera da prova.</p><span class="bv">De <s>R$27</s> por <b>R$0,00</b></span><span class="bg">GRÁTIS</span></div></div>
+    </div>
+    <p class="bonus-fin rv">Tudo isso vem DE GRAÇA no Kit Premium</p>
+
+  </div>
+  <div class="wrap center"><div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero meus bônus! <span class="ar">→</span></a></div></div>
+</section>
+
 <!-- PLANOS -->
 <section class="kits" id="planos">
   <div class="wrap">
     <div class="center rv">
-      <h2>Escolha seu plano e comece a revisar hoje</h2>
-      <p class="lead">Pagamento único. Sem mensalidade. A partir de 12 centavos por mapa.</p>
+      <h2 class="ul">Garanta Seu <span class="hl">Acesso</span></h2>
+      <p class="lead">Escolha o kit ideal pra você. Pagamento único, sem mensalidade.</p>
+      <p class="hoje-plano">Promoção válida só hoje, até as <b class="tm" data-ate>00:00</b></p>
     </div>
     <div class="kit-grid">
-      <div class="kit top rv">
-        <div class="badge">★ RECOMENDADO · O DOBRO DE MAPAS</div>
-        <div class="plano">Premium</div>
-        <h3>160 mapas + 5 bônus</h3>
-        <div class="slot pimg"><img src="img/web/mockup-premium-400.webp" srcset="img/web/mockup-premium-400.webp 400w, img/web/mockup-premium-700.webp 700w" sizes="340px" width="1199" height="1312" loading="lazy" decoding="async" alt="Plano Premium: 160 mapas visuais e 5 bônus"></div>
+      <div class="kit basic rv">
+        <div class="plano">Básico</div>
+        <h3>80 mapas visuais</h3>
+        <div class="slot pimg"><img src="img/web/mockup-essencial-400.webp" srcset="img/web/mockup-essencial-400.webp 400w, img/web/mockup-essencial-700.webp 700w" sizes="340px" width="1448" height="1086" loading="lazy" decoding="async" alt="Plano Básico: 80 mapas visuais"></div>
         <ul>
-          <li class="main"><svg class="ic"><use href="#i-check"/></svg>160 mapas visuais (o dobro do Básico)</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Tudo do Básico + 80 mapas extras</li>
+          <li class="main"><svg class="ic"><use href="#i-check"/></svg>80 mapas visuais de análises clínicas</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>PDF pra baixar e imprimir</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Celular, tablet ou notebook</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Acesso vitalício, sem mensalidade</li>
+          <li class="no"><span class="xx">✕</span>Sem os +90 mapas extras</li>
+          <li class="no"><span class="xx">✕</span>Sem os 5 bônus</li>
+        </ul>
+        <div class="price-box"><span class="de">De <s>R$47</s><br>por apenas</span><span class="val"><small>R$</small>10</span><span class="un">pagamento único<br>acesso vitalício</span></div>
+        <a href="#" id="checkout-basico" class="btn block ghost" data-open-up>Comprar o Básico</a>
+              <div class="nudge"><b>Quer mais que o dobro de mapas e os 5 bônus?</b><span>Veja o Premium logo abaixo</span><a href="#kit-premium" aria-label="Ver o Premium">↓</a></div>
+      </div>
+      <div class="kit top rv" id="kit-premium">
+        <div class="badge">★ MAIS POPULAR</div>
+        <div class="plano">Premium</div>
+        <h3>170 mapas + 5 bônus</h3>
+        <div class="slot pimg"><img src="img/web/mockup-premium-400.webp" srcset="img/web/mockup-premium-400.webp 400w, img/web/mockup-premium-700.webp 700w" sizes="340px" width="1199" height="1312" loading="lazy" decoding="async" alt="Plano Premium: 170 mapas visuais e 5 bônus"></div>
+        <ul>
+          <li class="main"><svg class="ic"><use href="#i-check"/></svg>170 mapas visuais (mais que o dobro do Básico)</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Tudo do Básico + 90 mapas extras</li>
           <li class="bt">+ 5 bônus incluídos</li>
           <li class="gift"><svg class="ic"><use href="#i-gift"/></svg>Guia Avançado de Tubos de Coleta</li>
           <li class="gift"><svg class="ic"><use href="#i-gift"/></svg>Atlas Visual de Hematologia</li>
@@ -953,61 +1240,17 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
           <li><svg class="ic"><use href="#i-check"/></svg>Celular, tablet ou notebook</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Acesso vitalício, sem mensalidade</li>
         </ul>
-        <p class="diff-t">O dobro de mapas e os 5 bônus num pagamento só. É o kit completo, do 1º semestre ao estágio.</p>
         <div class="price-box"><span class="de">De <s>R$97</s><br>por apenas</span><span class="val"><small>R$</small>37</span><span class="un">pagamento único<br>acesso vitalício</span></div>
         <a href="#" id="checkout-premium" class="btn block pulse" data-checkout="premium">Quero o Premium Na Promoção <span class="ar">→</span></a>
         <div class="pay"><span>Compra segura</span>·<span>Garantia de 30 dias</span></div>
-      </div>
-      <div class="kit basic rv">
-        <div class="plano">Básico</div>
-        <h3>80 mapas visuais</h3>
-        <div class="slot pimg"><img src="img/web/mockup-essencial-400.webp" srcset="img/web/mockup-essencial-400.webp 400w, img/web/mockup-essencial-700.webp 700w" sizes="340px" width="1448" height="1086" loading="lazy" decoding="async" alt="Plano Básico: 80 mapas visuais"></div>
-        <ul>
-          <li class="main"><svg class="ic"><use href="#i-check"/></svg>80 mapas visuais de análises clínicas</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>10 áreas do laboratório</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>1 assunto por página, dividido por tema</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Celular, tablet ou notebook</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>PDF pra baixar e imprimir</li>
-          <li><svg class="ic"><use href="#i-check"/></svg>Acesso vitalício, sem mensalidade</li>
-        </ul>
-        <div class="price-box"><span class="de">De <s>R$47</s><br>por apenas</span><span class="val"><small>R$</small>10</span><span class="un">pagamento único<br>acesso vitalício</span></div>
-        <a href="#" id="checkout-basico" class="btn block ghost" data-open-up>Quero o Básico</a>
       </div>
       <p class="diff rv">Selos: <b>compra segura</b> · <b>garantia de 30 dias</b> · <b>acesso vitalício</b> · pagamento processado por CaktoPay</p>
     </div>
   </div>
 </section>
 
-<!-- AUTORIDADE -->
-<section class="recebe cv">
-  <div class="wrap center">
-    <div class="rv">
-      <span class="kicker">Quem revisou</span>
-      <h2>Conteúdo revisado <span class="hl">por quem é do laboratório</span></h2>
-    </div>
-    <article class="prof rv">
-      <img src="img/web/professora-laura-mendoza-400.webp" srcset="img/web/professora-laura-mendoza-400.webp 400w, img/web/professora-laura-mendoza.webp 640w" sizes="(min-width:700px) 300px, 80vw" width="640" height="854" loading="lazy" decoding="async" alt="Profa. Laura Mendoza, especialista em Análises Clínicas">
-      <div class="pt">
-        <h3>Profa. Laura Mendoza</h3>
-        <p class="pcargo">Professora e especialista em Análises Clínicas</p>
-        <p>A Profa. Laura Mendoza atua na área de Análises Clínicas e contribuiu para que os conteúdos do Atlas Visual fossem apresentados de forma clara, organizada e didática.</p>
-        <p>Sua revisão editorial ajuda a transformar conceitos de hematologia, coleta de amostras, uroanálise, microbiologia, bioquímica e demais áreas do laboratório em mapas visuais mais simples de consultar, revisar e compreender.</p>
-        <p>O objetivo é oferecer aos estudantes um material complementar que combine organização, recursos visuais e uma linguagem educativa acessível, facilitando o estudo dos principais temas de Análises Clínicas.</p>
-        <dl>
-          <dt>Formação</dt><dd>Biomedicina e Ciências Biológicas</dd>
-          <dt>Experiência</dt><dd>Ensino, organização e apresentação educativa de conteúdos ligados às rotinas e aos fundamentos do laboratório.</dd>
-          <dt>Área de atuação</dt><dd>Análises Clínicas e educação laboratorial. Material desenvolvido para estudantes de Biomedicina, Farmácia, Análises Clínicas e Tecnologia Médica.</dd>
-          <dt>Revisão do material</dt><dd>Acompanhamento da clareza, da organização visual, da linguagem educativa e da apresentação dos conteúdos de laboratório.</dd>
-        </dl>
-        <blockquote>“Nosso objetivo é transformar temas de laboratório que muitas vezes parecem complexos em conteúdos mais visuais, organizados e fáceis de revisar.”<cite>Profa. Laura Mendoza, Especialista em Análises Clínicas</cite></blockquote>
-        <ul class="ptags"><li>Conteúdo educativo</li><li>Organização por temas</li><li>Revisão visual e textual</li><li>Material complementar de estudo</li></ul>
-      </div>
-    </article>
-  </div>
-</section>
-
 <!-- GARANTIA -->
-<section class="garantia cv">
+<section class="garantia garantia-top cv">
   <div class="wrap narrow">
     <div class="gar-box rv">
       <div class="gar-wrap"><svg class="gar-selo" viewBox="0 0 120 120" role="img" aria-label="Selo de garantia de 30 dias">
@@ -1026,20 +1269,43 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
   </div>
 </section>
 
+<!-- AUTORIDADE -->
+<section class="recebe cv">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="kicker">Quem revisou</span>
+      <h2>Conteúdo revisado <span class="hl">por quem é do laboratório</span></h2>
+    </div>
+    <article class="prof2 rv">
+      <div class="p2top">
+        <img src="img/web/professora-laura-mendoza-400.webp" width="400" height="534" loading="lazy" decoding="async" alt="Profa. Laura Mendoza, especialista em Análises Clínicas">
+        <div class="p2txt">
+          <h3>Profa. Laura Mendoza</h3>
+          <p class="pcargo">Professora e especialista em Análises Clínicas</p>
+        </div>
+      </div>
+      <p class="p2bio">Atua em Análises Clínicas e fez a revisão editorial do Atlas, pra os mapas ficarem claros, organizados e fáceis de consultar e revisar.</p>
+      <blockquote class="p2q">“Nosso objetivo é transformar temas de laboratório que parecem complexos em conteúdos mais visuais e fáceis de revisar.”</blockquote>
+      <dl class="p2dl">
+        <div><dt>Formação</dt><dd>Biomedicina e Ciências Biológicas</dd></div>
+        <div><dt>Experiência</dt><dd>Ensino, organização e apresentação educativa de conteúdos de rotina e fundamentos de laboratório.</dd></div>
+        <div><dt>Área de atuação</dt><dd>Análises Clínicas e educação laboratorial, para estudantes de Biomedicina, Farmácia e áreas afins.</dd></div>
+        <div><dt>Revisão do material</dt><dd>Clareza, organização visual e linguagem educativa dos conteúdos.</dd></div>
+      </dl>
+      <ul class="ptags"><li>Conteúdo educativo</li><li>Organização por temas</li><li>Revisão visual e textual</li><li>Material complementar de estudo</li></ul>
+    </article>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="faq cv">
   <div class="wrap narrow">
     <h2 class="center rv">Perguntas <span class="hl">que todo mundo faz</span></h2>
     <div class="rv">
-      <details><summary>É só mais um PDF cheio de texto?</summary><p>Não. Cada mapa é 1 assunto numa página, desenhado, com as células comparadas lado a lado. É feito pra entender de olhar, não pra ler parágrafo.</p></details>
       <details><summary>Como eu recebo o acesso?</summary><p>Pagou, recebeu. Depois da confirmação do pagamento, o material chega no seu WhatsApp e as instruções vão pro e-mail da compra. No Pix e no cartão é rápido. No boleto, sai após a compensação.</p></details>
       <details><summary>É físico ou digital?</summary><p>Digital, em PDF. Você abre no celular, no tablet ou no notebook, ou imprime. Nada vai pelos Correios.</p></details>
-      <details><summary>Consigo estudar pelo celular?</summary><p>Sim. Os mapas abrem no celular, no tablet e no notebook.</p></details>
       <details><summary>Serve pro meu curso?</summary><p>Se o seu curso tem disciplina de laboratório, serve: biomedicina, farmácia, análises clínicas (técnico e tecnólogo), enfermagem, biologia. Também serve pra quem já trabalha em bancada e quer revisar.</p></details>
-      <details><summary>Posso imprimir só alguns mapas?</summary><p>Pode. O PDF é seu: imprime só os que mais usa, ou todos, e encaderna do seu jeito.</p></details>
-      <details><summary>Tem mensalidade?</summary><p>Não. Pagamento único de R$10 (Básico) ou R$37 (Premium). Sem assinatura.</p></details>
-      <details><summary>Qual a diferença entre o Básico e o Premium?</summary><p>O Básico tem 80 mapas. O Premium tem 160, o dobro, e mais os 5 bônus: Guia Avançado de Tubos de Coleta, Atlas Visual de Hematologia, Guia Visual de Parasitologia, Checklist para Práticas de Laboratório e Caderno de Revisão para Provas.</p></details>
-      <details><summary>O acesso é vitalício?</summary><p>É. Paga uma vez e usa do 1º semestre ao estágio, quantas vezes quiser.</p></details>
+      <details><summary>Qual a diferença entre o Básico e o Premium?</summary><p>O Básico tem 80 mapas. O Premium tem 170 mapas, mais que o dobro, e mais os 5 bônus: Guia Avançado de Tubos de Coleta, Atlas Visual de Hematologia, Guia Visual de Parasitologia, Checklist para Práticas de Laboratório e Caderno de Revisão para Provas.</p></details>
       <details><summary>E se eu não gostar?</summary><p>Você tem 30 dias de garantia. Pede o reembolso e recebe 100% de volta.</p></details>
     </div>
   </div>
@@ -1066,18 +1332,18 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
     <button class="upx" type="button" data-up-close aria-label="Fechar">×</button>
     <span class="uptag">ESPERA! CONDIÇÃO ESPECIAL LIBERADA</span>
     <h3 id="upT">Você ia levar 80 mapas por R$10. Por R$27, leva TUDO.</h3>
-    <p class="upsub">O Premium completo, com 160 mapas e 5 bônus, sai de R$37 por R$27. Só aqui, só agora.</p>
-    <img class="upmk" src="img/web/mockup-premium-400.webp" width="400" height="438" alt="Premium: 160 mapas e 5 bônus" loading="lazy">
+    <p class="upsub">O Premium completo, com 170 mapas e 5 bônus, sai de R$37 por R$27. Só aqui, só agora.</p>
+    <img class="upmk" src="img/web/mockup-premium-400.webp" width="400" height="438" alt="Premium: 170 mapas e 5 bônus" loading="lazy">
     <div class="upde">De <s>R$37</s> por</div>
     <div class="upval"><small>R$</small>27</div>
     <div class="upun">PREMIUM PROMOCIONAL</div>
     <ul>
-      <li>160 mapas visuais (o dobro)</li>
-      <li>+80 mapas que não vêm no Básico</li>
+      <li>170 mapas visuais (mais que o dobro)</li>
+      <li>+90 mapas que não vêm no Básico</li>
       <li>5 bônus exclusivos</li>
       <li>Acesso vitalício</li>
     </ul>
-    <p class="upsub"><b>R$10 de desconto no Premium. Com R$17 a mais que o Básico, você leva o dobro de mapas e os 5 bônus.</b></p>
+    <p class="upsub"><b>R$10 de desconto no Premium. Com R$17 a mais que o Básico, você leva mais que o dobro de mapas e os 5 bônus.</b></p>
     <a href="#" id="checkout-downsell" class="btn pulse caps" data-checkout="promo">Sim, quero tudo por R$27 <span class="ar">→</span></a>
     <a href="#" id="downsell-decline" class="upno" data-checkout="basico">Não, quero só os 80 mapas por R$10</a>
   </div>
@@ -1087,7 +1353,7 @@ footer{text-align:center;font-size:13px;color:var(--ink2);padding:0 20px 110px}
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Mapa ampliado"><button type="button" data-lb-close aria-label="Fechar">×</button><img alt=""></div>
 
 <!-- barra fixa de vidro -->
-<div class="sticky" id="sticky"><div class="sticky-in"><p>Acesso por <b>R$10</b><br>promoção válida só hoje, até as <span class="tm" data-ate>00:00</span></p><a href="#planos" class="btn caps">Começar <span class="ar">→</span></a></div></div>
+<div class="sticky" id="sticky"><div class="sticky-in"><p class="stk"><b>Acesso por R$10</b><small>Oferta válida só até <span class="dm">hoje</span></small></p><a href="#planos" class="btn caps">Quero os mapas <span class="ar">→</span></a></div></div>
 
 <script>
 /* CHECKOUTS: colar os links aqui (Hotmart ou Cakto). Vazio = o botão não navega (placeholder). */
@@ -1140,7 +1406,7 @@ document.addEventListener("DOMContentLoaded",function(){
 /* carrosseis: andam sozinhos (da direita pra esquerda), arrastam com dedo/mouse e voltam a andar depois */
 (function(){
 function initRail(r){
-  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;var dir=r.getAttribute("data-dir")==="right"?-1:1;
   var kids=[].slice.call(r.children),n=kids.length;if(!n)return;
   for(var c=0;c<3;c++){kids.forEach(function(k){var x=k.cloneNode(true);x.setAttribute("aria-hidden","true");x.classList.remove("rv");r.appendChild(x)})}
   var W=0,pos=0,last=0,hold=0,drag=false,vis=false,raf=0,moved=0,sx=0,sl=0,speed=reduce?22:38;
@@ -1149,7 +1415,7 @@ function initRail(r){
   function wrap(){if(W<=0)return;if(r.scrollLeft>=W*2){r.scrollLeft-=W}else if(r.scrollLeft<=1){r.scrollLeft+=W}}
   function step(ts){
     var dt=last?Math.min(ts-last,64):16;last=ts;
-    if(!drag&&speed&&Date.now()>hold){pos+=speed*dt/1000;if(W>0&&pos>=W*2)pos-=W;r.scrollLeft=pos}else{pos=r.scrollLeft}
+    if(!drag&&speed&&Date.now()>hold){pos+=dir*speed*dt/1000;if(W>0){if(pos>=W*2)pos-=W;else if(pos<=1)pos+=W}r.scrollLeft=pos}else{pos=r.scrollLeft}
     raf=vis?requestAnimationFrame(step):0}
   function go(){if(!raf){last=0;raf=requestAnimationFrame(step)}}
   function pause(ms){hold=Date.now()+(ms||4000)}
@@ -1169,6 +1435,18 @@ function initRail(r){
 function init(){[].forEach.call(document.querySelectorAll("[data-rail]"),initRail)}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
 })();
+</script>
+<script>
+/* grade: colunas independentes (2 no celular, 3 no desktop), ordem de leitura da esquerda pra direita */
+(function(){var box=document.querySelector(".mods");if(!box)return;var items=[].slice.call(box.querySelectorAll(".mod"));var cur=0;
+function build(){var n=window.innerWidth>=820?3:2;if(n===cur)return;cur=n;var openIdx=items.map(function(m){return m.open});
+ box.innerHTML="";var cols=[];for(var i=0;i<n;i++){var c=document.createElement("div");c.className="mcol";box.appendChild(c);cols.push(c)}
+ items.forEach(function(m,i){cols[i%n].appendChild(m)})}
+build();addEventListener("resize",build)})();
+</script>
+<script>
+/* data de hoje (dd/mm) nos textos da oferta */
+(function(){var d=new Date(),s=String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0");[].forEach.call(document.querySelectorAll(".dm"),function(n){n.textContent=s})})();
 </script>
 </body>
 </html>

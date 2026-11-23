@@ -50,6 +50,7 @@ try {
   delete process.env.NETLIFY;
   delete process.env.NETLIFY_BLOBS_CONTEXT;
   process.env.ALLOWLIST_EMAILS = "";
+  process.env.ALLOWLIST_BASICO = "";
   process.env.ACCESS_SECRET = "segredo-sintetico-do-teste";
   process.env.CAKTO_WEBHOOK_SECRET = "webhook-sintetico-do-teste";
   delete process.env.CAKTO_PRODUCT_ID_BASICO;
@@ -117,6 +118,25 @@ try {
       assert.equal(store.planoDoRegistro({ pedidos: { [id]: { status: "pago" } } }), "premium");
     }
     assert.equal(store.planoDoRegistro(null), null);
+  });
+  await test("Allowlist Básico de arquivo/ambiente e e-mail sem pedido", async () => {
+    const allowlist = JSON.parse(readFileSync(path.join(raiz, "data/allowlist.json"), "utf8"));
+    assert.equal(await store.planoDoEmail(allowlist.basico[0]), "basico");
+    try {
+      process.env.ALLOWLIST_BASICO = " BASICO-AMBIENTE@EXEMPLO.INVALID ";
+      assert.equal(await store.planoDoEmail("basico-ambiente@exemplo.invalid"), "basico");
+      assert.equal(await store.planoDoEmail("sem-pedido@exemplo.invalid"), null);
+    } finally {
+      process.env.ALLOWLIST_BASICO = "";
+    }
+  });
+  await test("Premium vence quando o e-mail está nas duas listas", async () => {
+    try {
+      process.env.ALLOWLIST_BASICO = "premium.teste.atlas@example.com";
+      assert.equal(await store.planoDoEmail("premium.teste.atlas@example.com"), "premium");
+    } finally {
+      process.env.ALLOWLIST_BASICO = "";
+    }
   });
   const enviar = (event, data) => webhook.POST(new Request("https://teste.invalid/api/webhooks/cakto", {
     method: "POST", body: JSON.stringify({ secret: process.env.CAKTO_WEBHOOK_SECRET, event, data }),

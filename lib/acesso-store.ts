@@ -88,7 +88,12 @@ function abrirLoja(): Loja {
 function listaFixa() {
   const doArquivo = (allowlist.emails ?? []).map(normalizar).filter(Boolean);
   const doAmbiente = (process.env.ALLOWLIST_EMAILS ?? "").split(",").map(normalizar).filter(Boolean);
-  return new Set([...doArquivo, ...doAmbiente]);
+  const basicoDoArquivo = ((allowlist as { basico?: string[] }).basico ?? []).map(normalizar).filter(Boolean);
+  const basicoDoAmbiente = (process.env.ALLOWLIST_BASICO ?? "").split(",").map(normalizar).filter(Boolean);
+  return {
+    premium: new Set([...doArquivo, ...doAmbiente]),
+    basico: new Set([...basicoDoArquivo, ...basicoDoAmbiente]),
+  };
 }
 
 export function temPedidoPago(registro: RegistroAcesso | null) {
@@ -108,7 +113,9 @@ export function planoDoRegistro(registro: RegistroAcesso | null): Plano | null {
 
 export async function planoDoEmail(email: string): Promise<Plano | null> {
   const limpo = normalizar(email);
-  if (listaFixa().has(limpo)) return "premium";
+  const listas = listaFixa();
+  if (listas.premium.has(limpo)) return "premium";
+  if (listas.basico.has(limpo)) return "basico";
   try {
     return planoDoRegistro(await abrirLoja().ler(limpo));
   } catch (erro) {

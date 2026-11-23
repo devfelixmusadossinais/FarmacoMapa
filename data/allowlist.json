@@ -1,3 +1,4 @@
 {
-  "emails": ["lk.lucaskaue@gmail.com"]
+  "emails": ["lk.lucaskaue@gmail.com", "premium.teste.atlas@example.com"],
+  "basico": ["basico.teste.atlas@example.com"]
 }

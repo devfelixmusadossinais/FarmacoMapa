@@ -75,6 +75,7 @@ A pessoa digita o e-mail da compra. O servidor compara com:
 1. `data/allowlist.json` — lista versionada
 2. `data/allowlist.runtime.json` — gravada pelo webhook no `next dev` (não vai para o git)
 3. `ALLOWLIST_EMAILS` — e-mails separados por vírgula
+4. `ALLOWLIST_BASICO` — e-mails de teste com plano Básico fixo, separados por vírgula; são contas de teste a remover depois.
 
 Se o e-mail existe, a resposta grava o cookie httpOnly `mmb_acesso`, assinado com `ACCESS_SECRET` (180 dias). Sem a variável, o desenvolvimento usa um segredo fixo e inseguro. Defina `ACCESS_SECRET` antes de qualquer deploy. O modelo está em `.env.example`.
 

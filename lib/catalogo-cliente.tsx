@@ -7,7 +7,9 @@ export type ItemPublico = Pick<ItemCatalogo, "slug" | "titulo" | "area" | "image
 export type ItemAluno = ItemPublico & Partial<Pick<ItemCatalogo, "resumo" | "pontosChave" | "keywords">>;
 export type CatalogoPublico = { areas: Area[]; itens: ItemPublico[] };
 const Contexto = createContext<CatalogoPublico>({ areas: [], itens: [] });
-export const CatalogoProvider = Contexto.Provider;
+export function CatalogoProvider({ value, children }: { value: CatalogoPublico; children: React.ReactNode }) {
+  return <Contexto.Provider value={value}>{children}</Contexto.Provider>;
+}
 export function useCatalogo() {
   const { areas, itens } = useContext(Contexto);
   return {

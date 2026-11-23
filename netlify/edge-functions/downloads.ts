@@ -1,7 +1,7 @@
 /**
  * Protege /downloads/* (o ZIP com todos os mapas, servido estático pela CDN).
  * Confere o mesmo cookie de sessão do app (mmb_acesso, HMAC-SHA256 com ACCESS_SECRET).
- * Com sessão válida, devolve undefined e a Netlify entrega o arquivo da CDN (sem limite
+ * Com sessão válida e plano Premium, devolve undefined e a Netlify entrega o arquivo da CDN (sem limite
  * de tamanho de função). Sem sessão: 401.
  */
 declare const Netlify: { env: { get(nome: string): string | undefined } };
@@ -39,9 +39,9 @@ export default async (requisicao: Request) => {
   if (!segredo) return negar();
   const m = (requisicao.headers.get("cookie") ?? "").match(/(?:^|;\s*)mmb_acesso=([^;]+)/);
   if (!m) return negar();
-  const [payload, assinatura] = decodeURIComponent(m[1]).split(".");
-  if (!payload || !assinatura) return negar();
   try {
+    const [payload, assinatura] = decodeURIComponent(m[1]).split(".");
+    if (!payload || !assinatura) return negar();
     const chave = await crypto.subtle.importKey("raw", enc.encode(segredo), { name: "HMAC", hash: "SHA-256" }, false, [
       "sign",
     ]);
@@ -49,6 +49,25 @@ export default async (requisicao: Request) => {
     if (!iguais(b64url(mac), assinatura)) return negar();
     const dados = JSON.parse(deB64url(payload)) as { email?: unknown; exp?: unknown };
     if (typeof dados.email !== "string" || typeof dados.exp !== "number" || dados.exp < Date.now()) return negar();
+  } catch {
+    return negar();
+  }
+  // A API valida o mesmo cookie e consulta a loja a cada requisição.
+  try {
+    const resposta = await fetch(new URL("/api/acesso", requisicao.url), {
+      headers: { cookie: requisicao.headers.get("cookie") ?? "" },
+      cache: "no-store",
+      redirect: "error",
+    });
+    if (!resposta.ok) return negar();
+    const acesso = await resposta.json() as { autenticado?: boolean; plano?: string | null };
+    if (!acesso.autenticado) return negar();
+    if (acesso.plano !== "premium") {
+      return new Response("Conteúdo fora do seu plano", {
+        status: 403,
+        headers: { "Cache-Control": "private, no-store", "Content-Type": "text/plain; charset=utf-8" },
+      });
+    }
   } catch {
     return negar();
   }

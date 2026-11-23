@@ -1,3 +1,4 @@
+import { decidirPlanoProduto } from "@/lib/cakto-plano";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { mascarar, registrarPedido, type StatusPedido } from "@/lib/acesso-store";
 
@@ -67,22 +68,35 @@ export async function POST(requisicao: Request) {
     (p): p is Record<string, unknown> => !!p && typeof p === "object",
   );
   const resultados = [];
+  let desconhecidos = 0;
   for (const pedido of pedidos) {
     const cliente = pedido.customer as { email?: unknown } | undefined;
     const email = typeof cliente?.email === "string" ? cliente.email : "";
+    const { produtoId, plano } = decidirPlanoProduto(pedido, {
+      premium: process.env.CAKTO_PRODUCT_ID_PREMIUM,
+      basico: process.env.CAKTO_PRODUCT_ID_BASICO,
+    });
+    if (!plano) {
+      console.log(`[cakto] produto desconhecido: ${produtoId ?? "ausente"} ${mascarar(email)}`);
+      desconhecidos++;
+      continue;
+    }
     const pedidoId = typeof pedido.id === "string" && pedido.id ? pedido.id : String(pedido.refId ?? "sem-id");
     if (!email.includes("@")) {
       console.warn(`[cakto] ${evento} pedido ${pedidoId} sem e-mail do comprador.`);
       continue;
     }
     try {
-      const r = await registrarPedido({ email, pedidoId: `cakto:${pedidoId}`, status, origem: "cakto", evento });
+      const r = await registrarPedido({ email, pedidoId: `cakto:${pedidoId}`, status, plano, origem: "cakto", evento });
       console.log(`[cakto] ${evento} pedido ${pedidoId} ${mascarar(email)} -> acesso=${r.autorizado} (${r.loja})`);
       resultados.push({ pedido: pedidoId, acesso: r.autorizado, mudou: r.mudou });
     } catch (erro) {
       console.error(`[cakto] falha ao gravar pedido ${pedidoId}:`, erro instanceof Error ? erro.message : "erro");
       return Response.json({ erro: "Falha ao gravar. Reenvie o evento pela Cakto." }, { status: 500 });
     }
+  }
+  if (desconhecidos > 0 && resultados.length === 0) {
+    return Response.json({ recebido: true, ignorado: true, motivo: "produto desconhecido" });
   }
   return Response.json({ recebido: true, evento, resultados });
 }

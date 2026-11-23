@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { CHAVES } from "@/lib/chaves";
-import { listarAreas } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import type { Sugestao } from "@/lib/types";
 
 function lerSugestoes(): Sugestao[] {
@@ -28,6 +28,7 @@ function lerSugestoes(): Sugestao[] {
 }
 
 export function FormularioSugestao() {
+  const { listarAreas } = useCatalogo();
   const areas = listarAreas();
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");

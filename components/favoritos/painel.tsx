@@ -4,12 +4,12 @@ import Link from "next/link";
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CartaoMapa } from "@/components/mapas/cartao-mapa";
-import { obterItem } from "@/lib/catalog";
+import type { ItemAluno } from "@/lib/catalogo-cliente";
 import { useStudy } from "@/lib/study-store";
 
-export function PainelFavoritos() {
+export function PainelFavoritos({ itens: catalogo }: { itens: ItemAluno[] }) {
   const { favoritos } = useStudy();
-  const itens = favoritos.map((slug) => obterItem(slug)).filter((item) => item !== undefined);
+  const itens = favoritos.map((slug) => catalogo.find(item => item.slug === slug)).filter((item) => item !== undefined);
 
   return (
     <div>

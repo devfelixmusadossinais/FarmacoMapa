@@ -1,5 +1,6 @@
 "use client";
 
+import { SeloPlano } from "@/components/plano/selo";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Pencil, Target } from "lucide-react";
@@ -14,23 +15,24 @@ import {
 import { AreaIcon } from "@/components/brand/area-icon";
 import { PerfilForm } from "@/components/estudo/perfil-form";
 import { QuadroMapa } from "@/components/mapas/quadro";
-import { areaPorId, listarMapas, obterItem, TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { primeiroNome, pluralMapas } from "@/lib/text";
 import { useStudy } from "@/lib/study-store";
-import type { ItemCatalogo } from "@/lib/types";
+import type { ItemAluno } from "@/lib/catalogo-cliente";
 
-function mapaParaContinuar(foco: string, ultimoSlug: string | null, revisados: string[]): ItemCatalogo | undefined {
+function mapaParaContinuar(itens: ItemAluno[], foco: string, ultimoSlug: string | null, revisados: string[]): ItemAluno | undefined {
   if (ultimoSlug) {
-    const aberto = obterItem(ultimoSlug);
-    if (aberto) return aberto;
+    const aberto = itens.find(item => item.slug === ultimoSlug);
+    if (aberto?.tipo === "mapa") return aberto;
   }
-  const daArea = listarMapas().filter((mapa) => mapa.area === foco);
-  const escolhido = daArea.find((mapa) => !revisados.includes(mapa.slug)) ?? daArea[0] ?? listarMapas()[0];
+  const daArea = itens.filter(item => item.tipo === "mapa").filter((mapa) => mapa.area === foco);
+  const escolhido = daArea.find((mapa) => !revisados.includes(mapa.slug)) ?? daArea[0] ?? itens.filter(item => item.tipo === "mapa")[0];
   return escolhido ? { ...escolhido, tipo: "mapa" } : undefined;
 }
 
-export function Dashboard() {
-  const { perfil, salvarPerfil, progresso, revisadosMapas, revisadosHojeMapas } = useStudy();
+export function Dashboard({ itens }: { itens: ItemAluno[] }) {
+  const { areaPorId, TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } = useCatalogo();
+  const { plano, mapasLiberados, liberado, perfil, salvarPerfil, progresso, revisadosMapas, revisadosHojeMapas } = useStudy();
   const [editando, setEditando] = useState(false);
   if (!perfil) return null;
 
@@ -38,8 +40,8 @@ export function Dashboard() {
   const feitosHoje = revisadosHojeMapas.length;
   const faltam = Math.max(0, perfil.metaDiaria - feitosHoje);
   const percentualMeta = Math.min(100, Math.round((feitosHoje / perfil.metaDiaria) * 100));
-  const percentualGeral = Math.round((revisadosMapas.length / TOTAL_MAPAS) * 100);
-  const continuar = mapaParaContinuar(perfil.areaFoco, progresso.ultimoSlug, revisadosMapas);
+  const percentualGeral = Math.round((revisadosMapas.length / Math.max(1, mapasLiberados)) * 100);
+  const continuar = mapaParaContinuar(itens.filter(item => liberado(item.slug)), perfil.areaFoco, progresso.ultimoSlug, revisadosMapas);
   const nome = primeiroNome(perfil.nome);
 
   const textoMeta =
@@ -56,7 +58,7 @@ export function Dashboard() {
         <div className="relative flex items-start justify-between gap-3">
           <p className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em] text-teal-bright">
             <span className="size-1.5 rounded-full bg-teal-bright" />
-            ACESSO LIBERADO
+            <SeloPlano />
           </p>
           <Button
             type="button"
@@ -74,9 +76,9 @@ export function Dashboard() {
 
         <dl className="relative mt-6 flex flex-wrap gap-x-6 gap-y-3">
           {[
-            [TOTAL_MAPAS, "mapas"],
+            [`${mapasLiberados} de ${TOTAL_MAPAS}`, "mapas liberados"],
             [TOTAL_AREAS, "áreas"],
-            [TOTAL_BONUS, "bônus"],
+            [plano === "premium" ? "5 de 5" : `0 de ${TOTAL_BONUS}`, plano === "premium" ? "bônus" : "bônus liberados"],
           ].map(([valor, rotulo]) => (
             <div key={rotulo}>
               <dt className="font-heading text-3xl text-teal-bright">{valor}</dt>
@@ -111,7 +113,7 @@ export function Dashboard() {
               <span className="min-w-0 flex-1">
                 <span className="block text-[10px] font-semibold tracking-[0.14em] text-white/55">SEU FOCO</span>
                 <span className="block truncate font-heading text-2xl leading-tight">{area.nome}</span>
-                <span className="block text-xs text-white/60">{pluralMapas(areaContagem(area.id))}</span>
+                <span className="block text-xs text-white/60">{pluralMapas(itens.filter(item => item.area === area.id && liberado(item.slug)).length)}</span>
               </span>
               <ArrowRight className="size-4 text-white/70" />
             </Link>
@@ -131,7 +133,7 @@ export function Dashboard() {
               <p className="mt-1 text-sm text-ink/60">{areaPorId(continuar.area)?.nome ?? "Bônus"}</p>
               <div className="mt-4 flex items-center justify-between text-sm text-ink/70">
                 <span>
-                  {revisadosMapas.length} de {TOTAL_MAPAS} mapas revisados
+                  {revisadosMapas.length} de {mapasLiberados} mapas revisados
                 </span>
                 <span>{percentualGeral}%</span>
               </div>
@@ -168,8 +170,4 @@ export function Dashboard() {
       </Dialog>
     </div>
   );
-}
-
-function areaContagem(id: string) {
-  return listarMapas().filter((mapa) => mapa.area === id).length;
 }

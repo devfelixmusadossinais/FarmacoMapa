@@ -1,3 +1,5 @@
+import { planoDoEmail } from "@/lib/acesso-store";
+import { podeVerItem } from "@/lib/plano";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { obterItem } from "@/lib/catalog";
@@ -76,6 +78,9 @@ export async function GET(requisicao: Request, contexto: { params: Promise<{ slu
   const { slug } = await contexto.params;
   const item = obterItem(slug);
   if (!item) return new Response("Mapa não encontrado", { status: 404 });
+  if (!podeVerItem(await planoDoEmail(sessao.email), item)) {
+    return new Response("Conteúdo fora do seu plano", { status: 403, headers: { "Cache-Control": "private, no-store" } });
+  }
   if (!item.image) return new Response("Imagem ainda não publicada", { status: 404 });
 
   const url = new URL(requisicao.url);

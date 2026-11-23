@@ -5,7 +5,7 @@ import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { listarAreas } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import type { MetaDiaria, Perfil } from "@/lib/types";
 
 const metas: { valor: MetaDiaria; nome: string; detalhe: string }[] = [
@@ -23,6 +23,7 @@ export function PerfilForm({
   onSubmit: (perfil: Perfil) => void;
   rotuloBotao: string;
 }) {
+  const { listarAreas } = useCatalogo();
   const areas = listarAreas();
   const [nome, setNome] = useState(inicial?.nome ?? "");
   const [areaFoco, setAreaFoco] = useState(inicial?.areaFoco ?? "");

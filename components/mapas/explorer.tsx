@@ -7,11 +7,17 @@ import { ZIP_TODOS } from "@/lib/nomes";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 import { CartaoMapa } from "@/components/mapas/cartao-mapa";
-import { areaPorId, filtrarMapas, listarAreas, TOTAL_MAPAS } from "@/lib/catalog";
+import type { ItemAluno } from "@/lib/catalogo-cliente";
+import { fold } from "@/lib/text";
+import { useStudy } from "@/lib/study-store";
+import { ConviteUpgrade } from "@/components/plano/convite-upgrade";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { pluralMapas } from "@/lib/text";
 
-export function Explorer({ areaInicial, consultaInicial }: { areaInicial: string; consultaInicial: string }) {
+export function Explorer({ areaInicial, consultaInicial, itens }: { areaInicial: string; consultaInicial: string; itens: ItemAluno[] }) {
+  const { areaPorId, listarAreas, TOTAL_MAPAS } = useCatalogo();
   const router = useRouter();
+  const { plano, mapasLiberados } = useStudy();
   const areas = listarAreas();
   const [consulta, setConsulta] = useState(consultaInicial);
   const area = areaPorId(areaInicial);
@@ -51,8 +57,8 @@ export function Explorer({ areaInicial, consultaInicial }: { areaInicial: string
   }
 
   const mapas = useMemo(
-    () => (areaInvalida ? [] : filtrarMapas(area?.id, consultaInicial)),
-    [area?.id, areaInvalida, consultaInicial],
+    () => (areaInvalida ? [] : itens.filter(item => (!area || item.area === area.id) && fold([item.titulo, areaPorId(item.area)?.nome ?? "", item.resumo ?? "", ...(item.keywords ?? []), ...(item.pontosChave ?? [])].join(" ")).includes(fold(consultaInicial)))),
+    [area, areaInvalida, consultaInicial, itens, areaPorId],
   );
 
   const titulo = area ? area.nome : "Todos os mapas";
@@ -68,7 +74,8 @@ export function Explorer({ areaInicial, consultaInicial }: { areaInicial: string
       <h1 className="mt-2 font-heading text-4xl leading-tight text-ink sm:text-5xl">{titulo}</h1>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink/65">{subtitulo}</p>
 
-      <a
+      <p className="mt-2 text-sm text-ink/65">{mapasLiberados} de {TOTAL_MAPAS} mapas liberados</p>
+      {plano === "premium" ? <><a
         href={ZIP_TODOS}
         download
         className="mt-4 inline-flex h-12 items-center gap-2 rounded-2xl bg-pine px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-pine/90"
@@ -76,7 +83,7 @@ export function Explorer({ areaInicial, consultaInicial }: { areaInicial: string
         <Download className="size-4" />
         Baixar todos os {TOTAL_MAPAS} mapas (ZIP, ~125 MB)
       </a>
-      <p className="mt-1.5 text-xs text-ink/50">Um arquivo só, com uma pasta por área. Bom para guardar no tablet ou no computador.</p>
+      <p className="mt-1.5 text-xs text-ink/50">Um arquivo só, com uma pasta por área. Bom para guardar no tablet ou no computador.</p></> : <ConviteUpgrade />}
 
       <div className="relative mt-5">
         <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-ink/40" />

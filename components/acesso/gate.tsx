@@ -38,7 +38,7 @@ export function Gate() {
           <Label htmlFor="email-compra" className="font-heading text-2xl">
             E-mail da compra
           </Label>
-          <p className="mt-1 text-sm text-ink/60">O mesmo e-mail da Hotmart ou da Kiwify.</p>
+          <p className="mt-1 text-sm text-ink/60">O mesmo e-mail da compra.</p>
           <Input
             id="email-compra"
             type="email"

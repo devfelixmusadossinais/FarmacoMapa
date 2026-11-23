@@ -1,11 +1,10 @@
+import { itemDoAluno, planoDaSessao } from "@/lib/catalogo-aluno";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Viewer } from "@/components/mapas/viewer";
-import { obterItem, todosOsSlugs } from "@/lib/catalog";
+import { obterItem } from "@/lib/catalog";
 
-export function generateStaticParams() {
-  return todosOsSlugs().map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -21,5 +20,5 @@ export default async function PaginaMapa({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const item = obterItem(slug);
   if (!item) notFound();
-  return <Viewer item={item} />;
+  return <Viewer item={itemDoAluno(item, await planoDaSessao())} />;
 }

@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { getStore } from "@netlify/blobs";
+import type { Plano } from "./plano";
 import allowlist from "@/data/allowlist.json";
 
 /**
@@ -20,7 +21,7 @@ export type StatusPedido = "pago" | "reembolsado" | "chargeback";
 
 export type RegistroAcesso = {
   email: string;
-  pedidos: Record<string, { status: StatusPedido; origem: string; evento: string; em: string }>;
+  pedidos: Record<string, { status: StatusPedido; plano?: Plano; origem: string; evento: string; em: string }>;
   atualizadoEm: string;
 };
 
@@ -95,15 +96,29 @@ export function temPedidoPago(registro: RegistroAcesso | null) {
   return Object.values(registro.pedidos ?? {}).some((p) => p.status === "pago");
 }
 
-export async function emailAutorizado(email: string) {
+export function planoDoRegistro(registro: RegistroAcesso | null): Plano | null {
+  let plano: Plano | null = null;
+  for (const pedido of Object.values(registro?.pedidos ?? {})) {
+    if (pedido.status !== "pago") continue;
+    if (!pedido.plano || pedido.plano === "premium") return "premium";
+    plano = "basico";
+  }
+  return plano;
+}
+
+export async function planoDoEmail(email: string): Promise<Plano | null> {
   const limpo = normalizar(email);
-  if (listaFixa().has(limpo)) return true;
+  if (listaFixa().has(limpo)) return "premium";
   try {
-    return temPedidoPago(await abrirLoja().ler(limpo));
+    return planoDoRegistro(await abrirLoja().ler(limpo));
   } catch (erro) {
     console.error("[acesso] falha ao ler a loja:", erro instanceof Error ? erro.message : "erro");
-    return false;
+    return null;
   }
+}
+
+export async function emailAutorizado(email: string) {
+  return (await planoDoEmail(email)) !== null;
 }
 
 /**
@@ -114,6 +129,7 @@ export async function registrarPedido(params: {
   email: string;
   pedidoId: string;
   status: StatusPedido;
+  plano?: Plano;
   origem: string;
   evento: string;
 }) {
@@ -131,6 +147,8 @@ export async function registrarPedido(params: {
   const agora = new Date().toISOString();
   atual.pedidos[params.pedidoId] = {
     status: params.status,
+    // Um pedido existente preserva inclusive a ausência de plano (legado Premium).
+    ...(anterior ? (anterior.plano ? { plano: anterior.plano } : {}) : (params.plano ? { plano: params.plano } : {})),
     origem: params.origem,
     evento: params.evento,
     em: agora,

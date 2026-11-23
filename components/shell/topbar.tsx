@@ -1,14 +1,16 @@
 "use client";
 
+import { SeloPlano } from "@/components/plano/selo";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Heart, Menu, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { listarAreas } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { primeiroNome } from "@/lib/text";
 import { useStudy } from "@/lib/study-store";
 
 export function Topbar({ onMenu }: { onMenu: () => void }) {
+  const { listarAreas } = useCatalogo();
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -45,6 +47,7 @@ export function Topbar({ onMenu }: { onMenu: () => void }) {
           <Menu />
         </Button>
 
+        <SeloPlano />
         <form
           className="relative min-w-0 flex-1"
           onSubmit={(evento) => {

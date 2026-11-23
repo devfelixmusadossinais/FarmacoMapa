@@ -158,3 +158,10 @@ O site deste repositório não foi publicado em lugar nenhum.
 
 Webhook: `POST /api/webhooks/cakto`, eventos `purchase_approved`, `refund` e `chargeback`. Valida `X-Cakto-Signature` (HMAC) ou o campo `secret` do corpo contra `CAKTO_WEBHOOK_SECRET`. O e-mail do comprador vai para o Netlify Blobs (loja `acessos`); o login em `/app` aceita quem tem pelo menos um pedido pago, mais `data/allowlist.json` (admin) e `ALLOWLIST_EMAILS`.
 
+O produto é identificado por `data.product.id` ou `data.product` como string; `data` também pode ser uma lista (v2). `CAKTO_PRODUCT_ID_PREMIUM` sobrescreve o padrão público `93beac58-83e0-4d39-92a0-8ed4dc95438e`; `CAKTO_PRODUCT_ID_BASICO` sobrescreve `7c2de375-ee33-4ae2-8cc5-b272bbfd854e`. Produto desconhecido é ignorado, inclusive em reembolso/chargeback, com o ID registrado no log.
+
+Básico libera 80 mapas por cotas proporcionais de maior resto e nenhum bônus; Premium libera o catálogo completo (170 mapas e 5 bônus). Gere `data/plano-basico.json` com `python scripts/gerar-plano-basico.py`; empates seguem a ordem das áreas no catálogo, com mínimo de um mapa por área. Os primeiros N mapas de cada área são selecionados na ordem do catálogo.
+
+O plano é consultado no servidor a cada GET/POST de `/api/acesso` e requisição de imagem, sem gravá-lo no cookie. Pedido Premium pago tem prioridade; reembolso desse pedido mantém Básico quando existir outro pedido Básico pago. Allowlist fixa e pedidos antigos sem plano continuam Premium. Imagens fora do plano retornam 403 antes de ler os bytes, inclusive variantes e download. O ZIP `/downloads/mapa-mental-bioanalise-170-mapas.zip` exige Premium: a edge function valida o cookie e consulta `/api/acesso` no mesmo servidor, sem cache; falha na consulta bloqueia o download.
+
+Testes sem dependência nova (Node 24): `node scripts/testar-plano.test.mjs`. A loja local é exercitada com o contexto da Netlify e o armazenamento de cookies simulados.

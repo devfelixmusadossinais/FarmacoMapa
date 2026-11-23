@@ -1,8 +1,11 @@
+"use client";
+
+import { useStudy } from "@/lib/study-store";
 import { cn } from "cn";
 import { AreaIcon } from "@/components/brand/area-icon";
-import { areaPorId } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { infoImagem, urlImagem, type Variante } from "@/lib/imagens";
-import type { ItemCatalogo } from "@/lib/types";
+import type { ItemAluno } from "@/lib/catalogo-cliente";
 
 export function QuadroMapa({
   item,
@@ -10,12 +13,14 @@ export function QuadroMapa({
   zoomavel = false,
   variante,
 }: {
-  item: ItemCatalogo;
+  item: ItemAluno;
   className?: string;
   zoomavel?: boolean;
   /** thumb nos cartões, md no visualizador, full só no zoom alto. */
   variante?: Variante;
 }) {
+  const { areaPorId } = useCatalogo();
+  const { liberado } = useStudy();
   const area = areaPorId(item.area);
 
   if (item.image) {
@@ -26,7 +31,7 @@ export function QuadroMapa({
         {/* A imagem só existe depois do cookie de acesso. Sem ele a rota responde 401. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={urlImagem(item.slug, item.image, v)}
+          src={liberado(item.slug) ? urlImagem(item.slug, item.image, v) : info?.blur}
           alt={zoomavel ? item.titulo : ""}
           width={info?.w}
           height={info?.h}

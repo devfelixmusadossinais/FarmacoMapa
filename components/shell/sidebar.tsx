@@ -1,5 +1,6 @@
 "use client";
 
+import { SeloPlano } from "@/components/plano/selo";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Gift, Home, LayoutGrid, LogOut, MessageSquarePlus, Sparkles } from "lucide-react";
@@ -8,7 +9,7 @@ import { AreaIcon } from "@/components/brand/area-icon";
 import { Marca } from "@/components/brand/marca";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { contagemDaArea, listarAreas, TOTAL_MAPAS } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { useStudy } from "@/lib/study-store";
 
 function classeItem(ativo: boolean) {
@@ -19,12 +20,13 @@ function classeItem(ativo: boolean) {
 }
 
 export function Sidebar({ onFechar }: { onFechar?: () => void }) {
+  const { contagemDaArea, listarAreas, TOTAL_MAPAS } = useCatalogo();
   const pathname = usePathname();
   const params = useSearchParams();
   const areaAtual = params.get("area");
-  const { revisadosMapas, sair } = useStudy();
+  const { revisadosMapas, sair, mapasLiberados } = useStudy();
   const areas = listarAreas();
-  const percentual = Math.round((revisadosMapas.length / TOTAL_MAPAS) * 100);
+  const percentual = Math.round((revisadosMapas.length / Math.max(1, mapasLiberados)) * 100);
 
   function ir() {
     onFechar?.();
@@ -33,7 +35,7 @@ export function Sidebar({ onFechar }: { onFechar?: () => void }) {
   return (
     <div className="flex h-full min-h-0 flex-col overflow-hidden bg-pine text-white">
       <div className="flex items-start justify-between gap-3 px-4 pt-5 pb-3">
-        <Marca />
+        <div><Marca /><SeloPlano /></div>
         {onFechar ? (
           <Button
             type="button"
@@ -101,7 +103,7 @@ export function Sidebar({ onFechar }: { onFechar?: () => void }) {
             <div className="h-full rounded-full bg-teal-bright" style={{ width: `${percentual}%` }} />
           </div>
           <p className="mt-2 text-xs text-white/65">
-            {revisadosMapas.length} de {TOTAL_MAPAS} mapas revisados
+            {revisadosMapas.length} de {mapasLiberados} mapas revisados
           </p>
         </div>
 

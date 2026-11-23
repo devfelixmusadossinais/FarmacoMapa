@@ -3,17 +3,19 @@
 import { useRouter } from "next/navigation";
 import { Logo } from "@/components/brand/logo";
 import { PerfilForm } from "@/components/estudo/perfil-form";
-import { listarAreas, TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { useStudy } from "@/lib/study-store";
 import type { Perfil } from "@/lib/types";
 
-const numeros = [
+
+
+export function Onboarding() {
+  const { listarAreas, TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } = useCatalogo();
+  const numeros = [
   { valor: TOTAL_MAPAS, rotulo: "Mapas" },
   { valor: TOTAL_AREAS, rotulo: "Áreas" },
   { valor: TOTAL_BONUS, rotulo: "Bônus" },
 ];
-
-export function Onboarding() {
   const { salvarPerfil } = useStudy();
   const router = useRouter();
 

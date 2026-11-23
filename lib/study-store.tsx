@@ -1,15 +1,17 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { CHAVES } from "@/lib/chaves";
-import { ehMapa, slugsValidos } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
+import { useRouter } from "next/navigation";
+import type { Plano } from "@/lib/plano";
 import { hojeLocal } from "@/lib/text";
 import type { Perfil, Progresso } from "@/lib/types";
 
 type Acesso =
   | { status: "carregando" }
   | { status: "anonimo" }
-  | { status: "ok"; email: string };
+  | { status: "ok"; email: string; plano: Plano };
 
 function progressoVazio(): Progresso {
   return {
@@ -43,16 +45,14 @@ function perfilValido(valor: unknown): valor is Perfil {
 }
 
 function apenasSlugs(valor: unknown) {
-  const validos = slugsValidos();
   if (!Array.isArray(valor)) return [];
-  return valor.filter((item): item is string => typeof item === "string" && validos.has(item));
+  return valor.filter((item): item is string => typeof item === "string");
 }
 
 function normalizarProgresso(valor: unknown): Progresso {
   const base = progressoVazio();
   if (!valor || typeof valor !== "object") return base;
   const progresso = valor as Partial<Progresso>;
-  const validos = slugsValidos();
   const revisados = apenasSlugs(progresso.revisados);
   const mesmoDia = progresso.dia === base.dia;
   return {
@@ -60,12 +60,15 @@ function normalizarProgresso(valor: unknown): Progresso {
     dia: base.dia,
     revisadosHoje: mesmoDia ? apenasSlugs(progresso.revisadosHoje).filter((slug) => revisados.includes(slug)) : [],
     ultimoSlug:
-      typeof progresso.ultimoSlug === "string" && validos.has(progresso.ultimoSlug) ? progresso.ultimoSlug : null,
+      typeof progresso.ultimoSlug === "string" ? progresso.ultimoSlug : null,
   };
 }
 
 type ContextoEstudo = {
   acesso: Acesso;
+  plano: Plano | null;
+  mapasLiberados: number;
+  liberado: (slug: string) => boolean;
   hidratado: boolean;
   perfil: Perfil | null;
   progresso: Progresso;
@@ -85,7 +88,14 @@ type ContextoEstudo = {
 
 const Contexto = createContext<ContextoEstudo | null>(null);
 
-export function StudyProvider({ children }: { children: React.ReactNode }) {
+export function StudyProvider({ children, planoInicial, slugsLiberados }: { children: React.ReactNode; planoInicial: Plano | null; slugsLiberados: string[] }) {
+  const router = useRouter();
+  const { ehMapa } = useCatalogo();
+  const [plano, setPlano] = useState(planoInicial);
+  useEffect(() => { setPlano(planoInicial); }, [planoInicial]);
+  const liberados = useMemo(() => new Set(slugsLiberados), [slugsLiberados]);
+  const liberado = useCallback((slug: string) => plano !== null && liberados.has(slug), [plano, liberados]);
+  const mapasLiberados = slugsLiberados.filter(ehMapa).length;
   const [acesso, setAcesso] = useState<Acesso>({ status: "carregando" });
   const [hidratado, setHidratado] = useState(false);
   const [perfil, setPerfil] = useState<Perfil | null>(null);
@@ -101,9 +111,11 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
 
     fetch("/api/acesso")
       .then((resposta) => resposta.json())
-      .then((dados: { autenticado?: boolean; email?: string }) => {
-        if (dados.autenticado && dados.email) setAcesso({ status: "ok", email: dados.email });
-        else setAcesso({ status: "anonimo" });
+      .then((dados: { autenticado?: boolean; email?: string; plano?: Plano }) => {
+        if (dados.autenticado && dados.email && dados.plano) {
+          setAcesso({ status: "ok", email: dados.email, plano: dados.plano });
+          setPlano(dados.plano);
+        } else { setAcesso({ status: "anonimo" }); setPlano(null); }
       })
       .catch(() => setAcesso({ status: "anonimo" }));
   }, []);
@@ -125,21 +137,24 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
   }, [favoritos, hidratado]);
 
   const revisadosMapas = useMemo(
-    () => progresso.revisados.filter((slug) => ehMapa(slug)),
-    [progresso.revisados],
+    () => progresso.revisados.filter((slug) => liberado(slug) && ehMapa(slug)),
+    [progresso.revisados, liberado, ehMapa],
   );
   const revisadosHojeMapas = useMemo(
-    () => progresso.revisadosHoje.filter((slug) => ehMapa(slug)),
-    [progresso.revisadosHoje],
+    () => progresso.revisadosHoje.filter((slug) => liberado(slug) && ehMapa(slug)),
+    [progresso.revisadosHoje, liberado, ehMapa],
   );
 
   const valor = useMemo<ContextoEstudo>(() => {
     return {
       acesso,
+      plano,
+      mapasLiberados,
+      liberado,
       hidratado,
       perfil,
-      progresso,
-      favoritos,
+      progresso: { ...progresso, revisados: progresso.revisados.filter(liberado), revisadosHoje: progresso.revisadosHoje.filter(liberado), ultimoSlug: progresso.ultimoSlug && liberado(progresso.ultimoSlug) ? progresso.ultimoSlug : null },
+      favoritos: favoritos.filter(liberado),
       revisadosMapas,
       revisadosHojeMapas,
       async entrar(email: string) {
@@ -149,9 +164,11 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email }),
           });
-          const dados = (await resposta.json().catch(() => ({}))) as { erro?: string; email?: string };
-          if (!resposta.ok) return dados.erro || "Não foi possível liberar o acesso.";
-          setAcesso({ status: "ok", email: dados.email || email.trim().toLowerCase() });
+          const dados = (await resposta.json().catch(() => ({}))) as { erro?: string; email?: string; plano?: Plano };
+          if (!resposta.ok || !dados.plano) return dados.erro || "Não foi possível liberar o acesso.";
+          setAcesso({ status: "ok", email: dados.email || email.trim().toLowerCase(), plano: dados.plano });
+          setPlano(dados.plano);
+          router.refresh();
           return null;
         } catch {
           return "Sem conexão para validar o e-mail. Tente de novo.";
@@ -160,6 +177,8 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
       async sair() {
         await fetch("/api/acesso", { method: "DELETE" }).catch(() => undefined);
         setAcesso({ status: "anonimo" });
+        setPlano(null);
+        router.refresh();
       },
       salvarPerfil(novo: Perfil) {
         setPerfil({
@@ -169,14 +188,16 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
         });
       },
       alternarFavorito(slug: string) {
+        if (!liberado(slug)) return;
         setFavoritos((atual) =>
           atual.includes(slug) ? atual.filter((item) => item !== slug) : [...atual, slug],
         );
       },
       favorito(slug: string) {
-        return favoritos.includes(slug);
+        return liberado(slug) && favoritos.includes(slug);
       },
       alternarRevisado(slug: string) {
+        if (!liberado(slug)) return;
         setProgresso((atual) => {
           const dia = hojeLocal();
           const base = atual.dia === dia ? atual : { ...atual, dia, revisadosHoje: [] };
@@ -195,9 +216,10 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
         });
       },
       revisado(slug: string) {
-        return progresso.revisados.includes(slug);
+        return liberado(slug) && progresso.revisados.includes(slug);
       },
       registrarAbertura(slug: string) {
+        if (!liberado(slug)) return;
         setProgresso((atual) => {
           const dia = hojeLocal();
           const base = atual.dia === dia ? atual : { ...atual, dia, revisadosHoje: [] };
@@ -210,7 +232,7 @@ export function StudyProvider({ children }: { children: React.ReactNode }) {
         setFavoritos([]);
       },
     };
-  }, [acesso, hidratado, perfil, progresso, favoritos, revisadosMapas, revisadosHojeMapas]);
+  }, [acesso, plano, liberado, mapasLiberados, router, hidratado, perfil, progresso, favoritos, revisadosMapas, revisadosHojeMapas]);
 
   return <Contexto.Provider value={valor}>{children}</Contexto.Provider>;
 }

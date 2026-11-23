@@ -13,9 +13,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { QuadroMapa } from "@/components/mapas/quadro";
-import { areaPorId } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { useStudy } from "@/lib/study-store";
 import type { ItemCatalogo } from "@/lib/types";
+import type { ItemAluno } from "@/lib/catalogo-cliente";
+import { ConviteUpgrade } from "@/components/plano/convite-upgrade";
 
 const MIN = 100;
 const MAX = 300;
@@ -25,7 +27,14 @@ function limitar(valor: number) {
   return Math.min(MAX, Math.max(MIN, valor));
 }
 
-export function Viewer({ item }: { item: ItemCatalogo }) {
+export function Viewer({ item }: { item: ItemAluno }) {
+  const { liberado } = useStudy();
+  if (!liberado(item.slug) || !item.pontosChave || !item.keywords || item.resumo === undefined) return <article><h1 className="font-heading text-4xl text-ink">{item.titulo}</h1><ConviteUpgrade /></article>;
+  return <ConteudoViewer item={item as ItemCatalogo} />;
+}
+
+function ConteudoViewer({ item }: { item: ItemCatalogo }) {
+  const { areaPorId } = useCatalogo();
   const area = areaPorId(item.area);
   const { favorito, alternarFavorito, revisado, alternarRevisado, registrarAbertura } = useStudy();
   const registrar = useRef(registrarAbertura);

@@ -1,5 +1,7 @@
 "use client";
 
+import { BotaoUpgrade } from "@/components/plano/convite-upgrade";
+import { SeloPlano } from "@/components/plano/selo";
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,19 +13,21 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } from "@/lib/catalog";
+import { useCatalogo } from "@/lib/catalogo-cliente";
 import { useStudy } from "@/lib/study-store";
 
-const inclusos = [
+
+
+export function PainelPremium() {
+  const { TOTAL_AREAS, TOTAL_BONUS, TOTAL_MAPAS } = useCatalogo();
+  const inclusos = [
   `${TOTAL_MAPAS} vagas de mapas nas ${TOTAL_AREAS} áreas`,
   `${TOTAL_BONUS} bônus fora da grade principal`,
   "Meta diária de 2, 3 ou 5 mapas",
   "Favoritos e revisados neste navegador",
   "Zoom de 100% a 300% e leitura em tela cheia",
 ];
-
-export function PainelPremium() {
-  const { acesso, sair, limparEstudo, revisadosMapas, favoritos } = useStudy();
+  const { plano, acesso, sair, limparEstudo, revisadosMapas, favoritos } = useStudy();
   const [confirmar, setConfirmar] = useState(false);
   const email = acesso.status === "ok" ? acesso.email : "";
 
@@ -33,8 +37,10 @@ export function PainelPremium() {
         <p className="text-[11px] font-semibold tracking-[0.16em] text-teal-bright">VERSÃO COMPLETA</p>
         <h1 className="mt-3 font-heading text-4xl leading-tight sm:text-5xl">O estudo inteiro, no e-mail da compra</h1>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/75">
-          A compra acontece fora daqui, na Hotmart ou na Kiwify. Este app só libera quem já está na lista e guarda o progresso no próprio aparelho.
+          A compra acontece fora daqui, na Cakto. Este app só libera quem já está na lista e guarda o progresso no próprio aparelho.
         </p>
+        <div className="mt-4"><SeloPlano /></div>
+        {plano === "premium" ? <p className="mt-3 text-sm text-white/75">Premium ativo: 170 mapas + 5 bônus.</p> : <div className="mt-3 text-sm text-white/75"><p>Básico: 80 mapas, sem bônus.</p><p>Premium: 170 mapas + 5 bônus.</p><BotaoUpgrade /></div>}
         <ul className="mt-6 space-y-3">
           {inclusos.map((item) => (
             <li key={item} className="flex items-start gap-3 text-sm">

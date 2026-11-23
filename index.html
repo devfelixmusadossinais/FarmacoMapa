@@ -937,6 +937,11 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
 .kit.basic{margin-top:18px}
 @media(min-width:900px){.kit-grid{grid-template-columns:1.12fr 1fr}.kit.basic{margin-top:0}}
 
+/* popup mais limpo: checklist, sem imagem */
+.upbox ul{margin-top:12px}
+.upbox li:nth-child(n+2):nth-child(-n+6){font-weight:600}
+.upbox li{font-size:14px}
+
 </style>
 </head>
 <body>
@@ -1333,22 +1338,23 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
 <div class="up" id="upsell" role="dialog" aria-modal="true" aria-labelledby="upT">
   <div class="upbox">
     <button class="upx" type="button" data-up-close aria-label="Fechar">×</button>
-    <span class="uptag">ESPERA! CONDIÇÃO ESPECIAL LIBERADA</span>
-    <h3 id="upT">Você ia levar 80 mapas por R$10. Por R$27, leva TUDO.</h3>
-    <p class="upsub">O Premium completo, com 170 mapas e 5 bônus, sai de R$37 por R$27. Só aqui, só agora.</p>
-    <img class="upmk" src="img/web/mockup-premium-400.webp" width="400" height="438" alt="Premium: 170 mapas e 5 bônus" loading="lazy">
-    <div class="upde">De <s>R$37</s> por</div>
+    <span class="uptag">ESPERA!</span>
+    <h3 id="upT">Por só R$17 a mais você leva tudo</h3>
+    <p class="upsub">Desconto liberado só agora: o <b>Premium completo</b> sai mais barato que na página.</p>
+    <div class="upde">De <s>R$37</s> por apenas</div>
     <div class="upval"><small>R$</small>27</div>
-    <div class="upun">PREMIUM PROMOCIONAL</div>
+    <div class="upun">PAGAMENTO ÚNICO</div>
     <ul>
-      <li>170 mapas visuais (mais que o dobro)</li>
-      <li>+90 mapas que não vêm no Básico</li>
-      <li>5 bônus exclusivos</li>
-      <li>Acesso vitalício</li>
+      <li>170 mapas visuais (+90 que não vêm no Básico)</li>
+      <li>Bônus 01: Guia Avançado de Tubos de Coleta</li>
+      <li>Bônus 02: Atlas Visual de Hematologia</li>
+      <li>Bônus 03: Guia Visual de Parasitologia</li>
+      <li>Bônus 04: Checklist para Práticas de Laboratório</li>
+      <li>Bônus 05: Caderno de Revisão para Provas</li>
+      <li>Acesso vitalício, no celular ou impresso</li>
     </ul>
-    <p class="upsub"><b>R$10 de desconto no Premium. Com R$17 a mais que o Básico, você leva mais que o dobro de mapas e os 5 bônus.</b></p>
-    <a href="#" id="checkout-downsell" class="btn pulse caps" data-checkout="promo">Sim, quero tudo por R$27 <span class="ar">→</span></a>
-    <a href="#" id="downsell-decline" class="upno" data-checkout="basico">Não, quero só os 80 mapas por R$10</a>
+    <a href="#" id="checkout-downsell" class="btn pulse caps" data-checkout="promo">Quero o Premium por R$27 <span class="ar">→</span></a>
+    <a href="#" id="downsell-decline" class="upno" data-checkout="basico">Não, quero o básico por R$10</a>
   </div>
 </div>
 

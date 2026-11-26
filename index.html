@@ -942,6 +942,42 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
 .upbox li:nth-child(n+2):nth-child(-n+6){font-weight:600}
 .upbox li{font-size:14px}
 
+/* O que voce vai receber: versao enxuta */
+.wyg-lite{display:grid;gap:10px;margin-top:20px;text-align:left}
+@media(min-width:760px){.wyg-lite{grid-template-columns:repeat(3,1fr)}}
+.wyg-lite .wl{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--ice);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
+.wyg-lite .wi{flex:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--noite2),var(--ice))}
+.wyg-lite .wi svg{width:22px;height:22px;color:#fff;stroke:#fff}
+.wyg-lite p{margin:0;font-size:15px;line-height:1.4;color:var(--ink2)}
+.wyg-lite p b{color:var(--ink)}
+/* apostila vs mapa */
+.avm{padding:40px 0 34px;background:var(--bg)}
+.avm-grid{display:grid;gap:14px;margin-top:22px;text-align:left}
+@media(min-width:760px){.avm-grid{grid-template-columns:1fr 1fr}}
+.avm-c{border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.avm-a{background:#F1F0F5;border:1.5px solid #D9D6E4}
+.avm-m{background:#fff;border:2px solid var(--ice);box-shadow:var(--shadow)}
+.avm-tag{align-self:flex-start;font:800 12px var(--head);letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.avm-a .avm-tag{background:#D9D6E4;color:#5C5870}
+.avm-m .avm-tag{background:var(--ice-d);color:#fff}
+.avm-page{background:#fff;border:1px solid #D9D6E4;border-radius:12px;padding:14px 14px 10px;display:grid;gap:7px;filter:grayscale(1)}
+.avm-page i{display:block;height:7px;border-radius:4px;background:#C9C6D6}
+.avm-page i.s{width:62%}
+.avm-m img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.avm-c ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.avm-c li{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px}
+.avm-a li{color:#6E6A82}
+.avm-a .xx{flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-weight:900;color:#B34A4A}
+.avm-m li svg{flex:none;width:20px;height:20px;color:var(--cta)}
+.quem-grid .qx:last-child:nth-child(odd){grid-column:1/-1}
+/* ancoragem do Premium: pilha de valor */
+.kit.top .vstack{margin:14px 0 6px;border:1.5px dashed rgba(91,63,214,.45);border-radius:14px;padding:10px 12px;display:grid;gap:6px;background:#F6F3FF}
+.kit.top .vs-r,.kit.top .vs-t{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;color:var(--ink)}
+.kit.top .vs-r s,.kit.top .vs-t s{color:var(--ink2);font-weight:700}
+.kit.top .vs-t{border-top:1px solid rgba(91,63,214,.25);padding-top:6px;font-weight:800}
+.kit.top .vs-eco{margin:6px 0 10px;text-align:center;font-size:14px;font-weight:800;color:#15803D}
+.kit.top .vs-eco b{color:#15803D}
+
 </style>
 </head>
 <body>
@@ -1022,10 +1058,10 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
 <section class="wyg-sec cv">
   <div class="wrap center">
     <h2 class="ul rv">O Que Você Vai <span class="hl">Receber</span></h2>
-    <div class="wyg">
-      <div class="wcard rv"><span class="wi"><svg class="ic"><use href="#i-file"/></svg></span><h3>Mais de 80 mapas visuais</h3><p>1 assunto por página, desenhado, lado a lado. Só escolher o tema e revisar. No Premium são 170 mapas em 14 áreas.</p></div>
-      <div class="wcard rv"><span class="wi"><svg class="ic"><use href="#i-phone"/></svg></span><h3>Acesso digital completo</h3><p>Abre no celular, tablet ou notebook, a qualquer hora, direto no aplicativo. Imprima quando quiser.</p></div>
-      <div class="wcard rv"><span class="wi"><svg class="ic"><use href="#i-inf"/></svg></span><h3>Acesso vitalício</h3><p>Paga uma vez e usa do 1º semestre ao estágio. Sem mensalidade, sem assinatura.</p></div>
+    <div class="wyg-lite">
+      <div class="wl rv"><span class="wi"><svg class="ic"><use href="#i-file"/></svg></span><p><b>80 mapas visuais</b> de análises clínicas, 1 assunto por página</p></div>
+      <div class="wl rv"><span class="wi"><svg class="ic"><use href="#i-phone"/></svg></span><p><b>No celular, tablet ou notebook</b>, direto no aplicativo. Imprima se quiser</p></div>
+      <div class="wl rv"><span class="wi"><svg class="ic"><use href="#i-inf"/></svg></span><p><b>Acesso vitalício</b>, sem mensalidade</p></div>
     </div>
     <div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero agora! <span class="ar">→</span></a></div>
   </div>
@@ -1045,6 +1081,49 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
       <div class="dcard rv" style="--c1:var(--solp);--c2:var(--solp-t)"><svg class="ic"><use href="#i-lock"/></svg><h3>Travado na bancada no estágio</h3><p>Com <b>medo de perguntar e mostrar que não sabe</b>.</p></div>
     </div>
     <p class="ponte rv">O problema nunca foi falta de esforço. <em>Matéria visual se aprende vendo.</em></p>
+  </div>
+</section>
+
+<!-- APOSTILA VS MAPA -->
+<section class="avm cv">
+  <div class="wrap center">
+    <div class="rv"><span class="kicker">A diferença</span><h2 class="ul">Apostila <span class="hl">vs</span> Mapa</h2></div>
+    <div class="avm-grid">
+      <div class="avm-c avm-a rv">
+        <span class="avm-tag">Apostila</span>
+        <div class="avm-page" aria-hidden="true"><i></i><i></i><i></i><i class="s"></i><i></i><i></i><i></i><i class="s"></i><i></i><i></i><i></i><i></i><i class="s"></i><i></i></div>
+        <ul>
+          <li><span class="xx">✕</span>Parágrafo atrás de parágrafo</li>
+          <li><span class="xx">✕</span>Difícil de revisar na véspera</li>
+          <li><span class="xx">✕</span>Tudo parecido, nada se destaca</li>
+        </ul>
+      </div>
+      <div class="avm-c avm-m rv">
+        <span class="avm-tag">Mapa visual</span>
+        <img src="img/web/maps/anemias.thumb.webp" width="640" height="427" loading="lazy" decoding="async" alt="Mapa visual de anemias: cada tipo desenhado e comparado numa página">
+        <ul>
+          <li><svg class="ic"><use href="#i-check"/></svg>Um assunto por página</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Desenhado e comparado lado a lado</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Fácil de revisar e de consultar</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero os mapas! <span class="ar">→</span></a></div>
+  </div>
+</section>
+
+<!-- PRA QUEM E -->
+<section class="quem cv">
+  <div class="wrap center">
+    <div class="rv"><span class="kicker">Pra quem é</span><h2>Feito pra quem estuda <span class="hl">ou trabalha com laboratório</span></h2></div>
+    <div class="quem-grid">
+      <div class="qx rv" style="--p:#fff;--t:var(--cta)"><svg class="ic"><use href="#i-award"/></svg>Biomedicina<small>hematologia, urinálise e microbiologia sem decorar parágrafo</small></div>
+      <div class="qx rv" style="--p:#fff;--t:var(--ice-d)"><svg class="ic"><use href="#i-file"/></svg>Farmácia<small>bioquímica clínica e análises pra revisar entre uma prova e outra</small></div>
+      <div class="qx rv" style="--p:#fff;--t:var(--menta-t)"><svg class="ic"><use href="#i-tool"/></svg>Técnico em análises clínicas<small>pra consultar na rotina quando bater a dúvida</small></div>
+      <div class="qx rv" style="--p:#fff;--t:var(--lil-t)"><svg class="ic"><use href="#i-star"/></svg>Estágio ou 1º emprego<small>pra chegar na bancada sabendo o que está vendo</small></div>
+      <div class="qx rv" style="--p:#fff;--t:var(--cta)"><svg class="ic"><use href="#i-clock"/></svg>Quem trabalha e estuda<small>tema por tema, no celular, nos minutos que sobram</small></div>
+    </div>
+    <div class="cta-row rv"><a href="#planos" class="btn pulse caps">Quero os mapas! <span class="ar">→</span></a></div>
   </div>
 </section>
 
@@ -1221,7 +1300,13 @@ h2.ul:after{content:"";display:block;width:72px;height:4px;border-radius:4px;bac
           <li><svg class="ic"><use href="#i-check"/></svg>Celular, tablet ou notebook</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Acesso vitalício, sem mensalidade</li>
         </ul>
-        <div class="price-box"><span class="de">De <s>R$97</s><br>por apenas</span><span class="val"><small>R$</small>37</span><span class="un">pagamento único<br>acesso vitalício</span></div>
+        <div class="vstack">
+          <div class="vs-r"><span>170 mapas visuais</span><s>R$97</s></div>
+          <div class="vs-r"><span>5 bônus incluídos</span><s>R$175</s></div>
+          <div class="vs-t"><span>Valor total</span><s>R$272</s></div>
+        </div>
+        <div class="price-box"><span class="de">Hoje por<br>apenas</span><span class="val"><small>R$</small>37</span><span class="un">pagamento único<br>acesso vitalício</span></div>
+        <p class="vs-eco">Você economiza <b>R$235</b> (86%)</p>
         <a href="#" id="checkout-premium" class="btn block pulse" data-checkout="premium">Quero o Premium Na Promoção <span class="ar">→</span></a>
         <div class="pay"><span>Compra segura</span>·<span>Garantia de 30 dias</span></div>
       </div>
